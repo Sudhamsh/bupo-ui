@@ -8,10 +8,6 @@ import { Form } from 'react-bootstrap';
 class Driver extends Component{
 
     render(){
-        console.log("this.props.currentStep " + this.props.currentStep);
-        if (this.props.currentStep !== 'Driver') { // Prop: The current step
-            return null
-        }
         return(
             <div>
                 <h3>Driver Info</h3>
@@ -32,7 +28,7 @@ class Driver extends Component{
                         <Form.Label>First license at age of</Form.Label>
                         <Form.Control type="number" placeholder="16" />
                     </Form.Group>
-                    <Form.Group controlId="marritalStatus">
+                    <Form.Group controlId="maritalStatus">
                         <Form.Label>Home Ownership</Form.Label>
                         <Form.Control as="select">
                             <option>Married</option>

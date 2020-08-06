@@ -5,31 +5,76 @@
 import React, { Component } from 'react'
 import { Form,ButtonGroup,Button } from 'react-bootstrap';
 
-class AutoPolicyRequest extends Component{
+import { Formiz, useForm } from '@formiz/core';
+import  {isEmail}  from '@formiz/validations'
+import {MyField} from "../MyField"
 
-    render(){
-        if (this.props.currentStep !== 'AutoPolicyRequest') { // Prop: The current step
-            return null
-        }
-        return (
-            <div>
-                    <Form.Group controlId="firstName">
-                        <Form.Label>First Name</Form.Label>
-                        <Form.Control type="text" placeholder="Address" />
-                    </Form.Group>
-                    <Form.Group controlId="lastName">
-                        <Form.Label>Last Name</Form.Label>
-                        <Form.Control type="text" placeholder="" />
-                    </Form.Group>
-                    <Form.Group controlId="email">
-                        <Form.Label>Email</Form.Label>
-                        <Form.Control type="text" placeholder="Never Sold and Never Shared" />
-                    </Form.Group>
+import {
+    Container,
+    Jumbotron,
+    Row,
+    Col,
+    InputGroup,
+    FormControl,
+} from 'react-bootstrap'
 
-            </div>
-        )
-    }
 
+export default function  AutoPolicyRequest(props){
+
+    return (
+        <div>
+            <Container>
+                <Row>
+                    <Col>
+                        <MyField
+                        name="fName"
+                        label="First Name"
+                        required="First Name is required"
+                        defaultValue="Sudhamsh"
+                        />
+                    </Col>
+                </Row>
+                <Row>
+                    <Col>
+                        <MyField
+                        name="lName"
+                        label="Last Name"
+                        required="Last Name is required"
+                        defaultValue="Bachu"
+                        />
+                    </Col>
+                </Row>
+                <Row>
+                    <Col>
+                        <MyField
+                            name="phone"
+                            label="Phone"
+                            required="Phone is required"
+                            defaultValue="480-123-1234"
+
+                        />
+                    </Col>
+                </Row>
+                <Row>
+                    <Col>
+                        <MyField
+                            name="email"
+                            label="Email"
+                            type="email"
+                            required="Email is required"
+                            defaultValue="a@a.com"
+                            validations={[
+                                {
+                                    rule: isEmail(),
+                                    message: 'Not a valid email',
+                                }
+                            ]}
+
+                        />
+                    </Col>
+                </Row>
+            </Container>
+        </div>
+    )
 }
 
-export default   AutoPolicyRequest;

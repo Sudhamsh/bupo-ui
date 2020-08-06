@@ -7,9 +7,6 @@ import { Form } from 'react-bootstrap';
 
 class Automobile extends Component{
     render(){
-        if (this.props.currentStep !== 'Automobile') { // Prop: The current step
-            return null
-        }
         return(
             <div>Car(s)
                 <Form>

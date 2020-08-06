@@ -9,18 +9,9 @@ import { ButtonGroup,
 
 class InfoOptions extends Component{
 
-    constructor(props) {
-        super(props)
-    }
-    sendToParent = (event) => {
-        //console.log(this.props.parentCallback);
-        this.props.parentCallback(event.target.attributes.getNamedItem('data-key').value)
-    }
     render(){
-        console.log("this.props.currentStep " + this.props.currentStep);
-        if (this.props.currentStep !== 'InfoOptions') { // Prop: The current step
-            return null
-        }
+
+
         return(
             <div>
                 <ButtonGroup className="mr-2" aria-label="First group" onClick={this.sendToParent}>

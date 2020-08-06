@@ -2,23 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="245b6ed8-a596-43ea-a44d-804935745976" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/auto.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/components/Header.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/components/auto.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/components/auto/autoCoverage.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/components/auto/autoPolicyRequest.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/components/auto/automobile.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/components/auto/driver.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/components/auto/generalInfo.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/components/auto/infoOptions.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/components/fileUpload.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/components/FieldSelect.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/components/MyField.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/components/auto/address.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/components/auto/automobile.js" afterPath="$PROJECT_DIR$/src/components/auto/vehicle.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/components/auto/generalInfo.js" afterPath="$PROJECT_DIR$/src/components/auto/autoGeneralInfo.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package-lock.json" afterPath="$PROJECT_DIR$/package-lock.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/index.html" afterPath="$PROJECT_DIR$/public/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/App.css" afterPath="$PROJECT_DIR$/src/App.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/App.js" afterPath="$PROJECT_DIR$/src/App.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/auto.js" afterPath="$PROJECT_DIR$/src/components/auto.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/auto/autoCoverage.js" afterPath="$PROJECT_DIR$/src/components/auto/autoCoverage.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/auto/autoPolicyRequest.js" afterPath="$PROJECT_DIR$/src/components/auto/autoPolicyRequest.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/auto/driver.js" afterPath="$PROJECT_DIR$/src/components/auto/driver.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/auto/infoOptions.js" afterPath="$PROJECT_DIR$/src/components/auto/infoOptions.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/fileUpload.js" afterPath="$PROJECT_DIR$/src/components/fileUpload.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/index.js" afterPath="$PROJECT_DIR$/src/index.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -36,33 +35,28 @@
       <file leaf-file-name="App.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/App.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="79" column="60" lean-forward="true" selection-start-line="79" selection-start-column="60" selection-end-line="79" selection-end-column="60" />
-              <folding>
-                <element signature="e#0#26#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="210">
+              <caret line="14" column="8" lean-forward="true" selection-start-line="14" selection-start-column="8" selection-end-line="14" selection-end-column="23" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="fileUpload.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/fileUpload.js">
+      <file leaf-file-name="App.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/App.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="11" column="16" lean-forward="false" selection-start-line="11" selection-start-column="6" selection-end-line="11" selection-end-column="16" />
-              <folding>
-                <element signature="e#48#68#0" expanded="true" />
-                <marker date="1591070665987" expanded="true" signature="1058:1415" ph="..." />
-              </folding>
+            <state relative-caret-position="615">
+              <caret line="41" column="1" lean-forward="false" selection-start-line="41" selection-start-column="1" selection-end-line="41" selection-end-column="1" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="generalInfo.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/auto/generalInfo.js">
+      <file leaf-file-name="autoGeneralInfo.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/components/auto/autoGeneralInfo.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="600">
-              <caret line="42" column="1" lean-forward="true" selection-start-line="42" selection-start-column="1" selection-end-line="42" selection-end-column="1" />
+            <state relative-caret-position="294">
+              <caret line="82" column="28" lean-forward="false" selection-start-line="82" selection-start-column="28" selection-end-line="82" selection-end-column="28" />
               <folding>
                 <element signature="e#48#88#0" expanded="true" />
               </folding>
@@ -70,13 +64,45 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="auto.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="FieldSelect.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/components/FieldSelect.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="45">
+              <caret line="5" column="35" lean-forward="false" selection-start-line="5" selection-start-column="35" selection-end-line="5" selection-end-column="35" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MyField.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/components/MyField.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="98">
+              <caret line="12" column="43" lean-forward="true" selection-start-line="12" selection-start-column="43" selection-end-line="12" selection-end-column="43" />
+              <folding>
+                <element signature="e#0#25#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="useField.d.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/node_modules/@formiz/core/dist/useField.d.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="15">
+              <caret line="1" column="21" lean-forward="false" selection-start-line="1" selection-start-column="21" selection-end-line="1" selection-end-column="21" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="auto.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/auto.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="6">
-              <caret line="46" column="23" lean-forward="false" selection-start-line="46" selection-start-column="12" selection-end-line="46" selection-end-column="23" />
+            <state relative-caret-position="1905">
+              <caret line="127" column="29" lean-forward="false" selection-start-line="127" selection-start-column="29" selection-end-line="127" selection-end-column="29" />
               <folding>
-                <element signature="e#0#40#0" expanded="true" />
+                <element signature="e#0#25#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -85,34 +111,20 @@
       <file leaf-file-name="autoPolicyRequest.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/auto/autoPolicyRequest.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="23" column="50" lean-forward="true" selection-start-line="23" selection-start-column="50" selection-end-line="23" selection-end-column="50" />
-              <folding>
-                <element signature="e#48#88#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="105">
+              <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="18" selection-end-column="24" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="infoOptions.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/auto/infoOptions.js">
+      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="15" column="10" lean-forward="false" selection-start-line="15" selection-start-column="10" selection-end-line="15" selection-end-column="10" />
+            <state relative-caret-position="75">
+              <caret line="5" column="46" lean-forward="false" selection-start-line="5" selection-start-column="46" selection-end-line="5" selection-end-column="46" />
               <folding>
-                <element signature="e#49#89#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="driver.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/auto/driver.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="11" column="34" lean-forward="false" selection-start-line="11" selection-start-column="23" selection-end-line="11" selection-end-column="34" />
-              <folding>
-                <element signature="e#49#89#0" expanded="true" />
+                <element signature="e#0#26#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -121,23 +133,9 @@
       <file leaf-file-name="autoCoverage.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/auto/autoCoverage.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="390">
-              <caret line="28" column="84" lean-forward="true" selection-start-line="28" selection-start-column="84" selection-end-line="28" selection-end-column="84" />
-              <folding>
-                <element signature="e#49#87#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="automobile.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/auto/automobile.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="29" column="69" lean-forward="false" selection-start-line="29" selection-start-column="69" selection-end-line="29" selection-end-column="69" />
-              <folding>
-                <element signature="e#49#89#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="165">
+              <caret line="14" column="58" lean-forward="false" selection-start-line="14" selection-start-column="27" selection-end-line="26" selection-end-column="42" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -156,8 +154,15 @@
       <find>handleSubmit</find>
       <find>Step</find>
       <find>FileUpload</find>
-      <find>parentCallback</find>
+      <find>prev</find>
       <find>handleInfoOptions</find>
+      <find>parentCallback</find>
+      <find>_next</find>
+      <find>Topics</find>
+      <find>master</find>
+      <find>initFormWorkflowTree</find>
+      <find>value</find>
+      <find>required</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -176,22 +181,35 @@
         <option value="$PROJECT_DIR$/public/index.html" />
         <option value="$PROJECT_DIR$/src/components/auto/coverage.js" />
         <option value="$PROJECT_DIR$/src/components/auto/automobile.js" />
-        <option value="$PROJECT_DIR$/src/components/auto/driver.js" />
-        <option value="$PROJECT_DIR$/src/components/auto/autoCoverage.js" />
         <option value="$PROJECT_DIR$/src/components/FileUpload.js" />
+        <option value="$PROJECT_DIR$/src/components/common/tree.js" />
+        <option value="$PROJECT_DIR$/src/components/fileUpload.js" />
         <option value="$PROJECT_DIR$/src/App.js" />
         <option value="$PROJECT_DIR$/src/components/auto/generalInfo.js" />
-        <option value="$PROJECT_DIR$/src/components/auto/autoPolicyRequest.js" />
         <option value="$PROJECT_DIR$/src/components/auto/infoOptions.js" />
-        <option value="$PROJECT_DIR$/src/components/fileUpload.js" />
-        <option value="$PROJECT_DIR$/src/components/common/tree.js" />
+        <option value="$PROJECT_DIR$/src/components/auto/address.js" />
+        <option value="$PROJECT_DIR$/src/components/auto/vehicle.js" />
         <option value="$PROJECT_DIR$/src/components/auto.js" />
+        <option value="$PROJECT_DIR$/src/components/auto/autoCoverage.js" />
+        <option value="$PROJECT_DIR$/src/components/auto/driver.js" />
+        <option value="$PROJECT_DIR$/node_modules/@formiz/core/dist/useField.d.ts" />
+        <option value="$PROJECT_DIR$/src/index.js" />
+        <option value="$PROJECT_DIR$/src/components/MyField.js" />
+        <option value="$PROJECT_DIR$/src/components/auto/autoPolicyRequest.js" />
+        <option value="$PROJECT_DIR$/src/components/auto/autoGeneralInfo.js" />
+        <option value="$PROJECT_DIR$/src/components/FieldSelect.js" />
       </list>
     </option>
   </component>
   <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
   <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER">
     <package-json value="$PROJECT_DIR$/package.json" />
+  </component>
+  <component name="JsFlowSettings">
+    <service-enabled>false</service-enabled>
+    <exe-path />
+    <annotation-enable>false</annotation-enable>
+    <other-services-enabled>false</other-services-enabled>
   </component>
   <component name="JsGulpfileManager">
     <detection-done>true</detection-done>
@@ -280,8 +298,8 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -292,16 +310,17 @@
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.selected.package.eslint" value="$PROJECT_DIR$/node_modules/eslint" />
+    <property name="settings.editor.selected.configurable" value="Settings.JavaScript" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/components/auto" />
-      <recent name="$PROJECT_DIR$/public" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/components/auto" />
       <recent name="$PROJECT_DIR$/src/components" />
       <recent name="$PROJECT_DIR$/src" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/components/auto" />
+      <recent name="$PROJECT_DIR$/public" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -409,27 +428,30 @@
       <workItem from="1589498835301" duration="12000" />
       <workItem from="1589499268615" duration="18000" />
       <workItem from="1589684851689" duration="11296000" />
-      <workItem from="1590600220611" duration="35053000" />
+      <workItem from="1590600220611" duration="53194000" />
+      <workItem from="1592851425299" duration="2991000" />
+      <workItem from="1596549739265" duration="6498000" />
+      <workItem from="1596658495363" duration="5145000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="47600000" />
+    <option name="totallyTimeSpent" value="80375000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1400" height="933" extended-state="0" />
-    <editor active="true" />
     <layout>
+      <window_info id="TypeScript" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32342276" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32883435" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32883435" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.31411043" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.31411043" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -450,11 +472,163 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/components/MyField.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="21" column="1" lean-forward="true" selection-start-line="21" selection-start-column="1" selection-end-line="21" selection-end-column="1" />
+          <folding>
+            <element signature="e#0#25#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="17" column="0" lean-forward="true" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/auto/autoPolicyRequest.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="435">
+          <caret line="33" column="29" lean-forward="false" selection-start-line="33" selection-start-column="29" selection-end-line="33" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/auto/infoOptions.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="20" column="52" lean-forward="false" selection-start-line="20" selection-start-column="52" selection-end-line="20" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/auto/driver.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="11" column="7" lean-forward="false" selection-start-line="11" selection-start-column="7" selection-end-line="13" selection-end-column="9" />
+          <folding>
+            <element signature="e#49#89#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/auto/autoCoverage.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="29" column="39" lean-forward="false" selection-start-line="29" selection-start-column="39" selection-end-line="29" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/auto.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2535">
+          <caret line="178" column="52" lean-forward="true" selection-start-line="178" selection-start-column="52" selection-end-line="178" selection-end-column="52" />
+          <folding>
+            <element signature="e#0#25#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/App.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/fileUpload.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="35" column="95" lean-forward="false" selection-start-line="35" selection-start-column="95" selection-end-line="35" selection-end-column="95" />
+          <folding>
+            <element signature="e#48#68#0" expanded="false" />
+            <marker date="1591123549745" expanded="true" signature="1102:1459" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/auto/autoGeneralInfo.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="9" column="75" lean-forward="false" selection-start-line="9" selection-start-column="75" selection-end-line="9" selection-end-column="75" />
+          <folding>
+            <element signature="e#48#88#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/auto.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="3" column="23" lean-forward="false" selection-start-line="3" selection-start-column="23" selection-end-line="3" selection-end-column="23" />
+          <folding>
+            <element signature="e#0#25#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/MyField.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="21" column="1" lean-forward="true" selection-start-line="21" selection-start-column="1" selection-end-line="21" selection-end-column="1" />
+          <folding>
+            <element signature="e#0#25#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/auto/autoPolicyRequest.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="435">
+          <caret line="33" column="29" lean-forward="false" selection-start-line="33" selection-start-column="29" selection-end-line="33" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/auto/infoOptions.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="20" column="52" lean-forward="false" selection-start-line="20" selection-start-column="52" selection-end-line="20" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/auto/driver.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="11" column="7" lean-forward="false" selection-start-line="11" selection-start-column="7" selection-end-line="13" selection-end-column="9" />
+          <folding>
+            <element signature="e#49#89#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/auto/autoCoverage.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="29" column="39" lean-forward="false" selection-start-line="29" selection-start-column="39" selection-end-line="29" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/App.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="615">
           <caret line="41" column="1" lean-forward="false" selection-start-line="41" selection-start-column="1" selection-end-line="41" selection-end-column="1" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -472,7 +646,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -480,9 +653,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
           <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="6" selection-end-column="25" />
-          <folding>
-            <element signature="e#48#68#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -491,8 +661,8 @@
         <state relative-caret-position="810">
           <caret line="60" column="68" lean-forward="true" selection-start-line="60" selection-start-column="68" selection-end-line="60" selection-end-column="68" />
           <folding>
-            <element signature="e#48#68#0" expanded="true" />
-            <marker date="1591070665987" expanded="true" signature="1058:1415" ph="..." />
+            <element signature="e#48#68#0" expanded="false" />
+            <marker date="1591123549745" expanded="true" signature="1102:1459" ph="..." />
           </folding>
         </state>
       </provider>
@@ -501,7 +671,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -519,7 +688,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -537,7 +705,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -548,6 +715,109 @@
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Header.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="27" column="0" lean-forward="true" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/logo192.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="38" lean-forward="false" selection-start-line="9" selection-start-column="38" selection-end-line="9" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/auto.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="675">
+          <caret line="45" column="0" lean-forward="false" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/common/tree.js" />
+    <entry file="file://$PROJECT_DIR$/src/components/auto/infoOptions.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="9" column="17" lean-forward="false" selection-start-line="9" selection-start-column="6" selection-end-line="9" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/fileUpload.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="426">
+          <caret line="72" column="25" lean-forward="false" selection-start-line="72" selection-start-column="15" selection-end-line="72" selection-end-column="25" />
+          <folding>
+            <element signature="e#48#68#0" expanded="false" />
+            <marker date="1591123549745" expanded="true" signature="1102:1459" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/auto/address.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-36">
+          <caret line="9" column="32" lean-forward="false" selection-start-line="9" selection-start-column="25" selection-end-line="9" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/@formiz/validations/dist/index.d.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-26">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/auto/driver.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="78">
+          <caret line="9" column="13" lean-forward="false" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+          <folding>
+            <element signature="e#49#89#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/@formiz/core/dist/types/field.types.d.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="177">
+          <caret line="12" column="17" lean-forward="false" selection-start-line="12" selection-start-column="17" selection-end-line="12" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/@formiz/core/dist/useField.d.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" column="21" lean-forward="false" selection-start-line="1" selection-start-column="21" selection-end-line="1" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/react-bootstrap/cjs/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="177">
+          <caret line="140" column="0" lean-forward="false" selection-start-line="140" selection-start-column="0" selection-end-line="140" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/auto/vehicle.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="8" column="13" lean-forward="false" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -559,143 +829,75 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Header.js">
+    <entry file="file://$PROJECT_DIR$/src/App.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="27" column="0" lean-forward="true" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
-          <folding>
-            <element signature="e#48#68#0" expanded="false" />
-          </folding>
+        <state relative-caret-position="210">
+          <caret line="14" column="8" lean-forward="true" selection-start-line="14" selection-start-column="8" selection-end-line="14" selection-end-column="23" />
+          <folding />
         </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/logo192.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#26#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="38" lean-forward="false" selection-start-line="9" selection-start-column="38" selection-end-line="9" selection-end-column="54" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/auto.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="675">
-          <caret line="45" column="0" lean-forward="false" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/auto/automobile.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="29" column="69" lean-forward="false" selection-start-line="29" selection-start-column="69" selection-end-line="29" selection-end-column="69" />
-          <folding>
-            <element signature="e#49#89#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/auto/autoCoverage.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="28" column="84" lean-forward="true" selection-start-line="28" selection-start-column="84" selection-end-line="28" selection-end-column="84" />
-          <folding>
-            <element signature="e#49#87#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/App.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="79" column="60" lean-forward="true" selection-start-line="79" selection-start-column="60" selection-end-line="79" selection-end-column="60" />
+        <state relative-caret-position="75">
+          <caret line="5" column="46" lean-forward="false" selection-start-line="5" selection-start-column="46" selection-end-line="5" selection-end-column="46" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/auto/autoPolicyRequest.js">
+    <entry file="file://$PROJECT_DIR$/src/components/auto.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="23" column="50" lean-forward="true" selection-start-line="23" selection-start-column="50" selection-end-line="23" selection-end-column="50" />
+        <state relative-caret-position="1905">
+          <caret line="127" column="29" lean-forward="false" selection-start-line="127" selection-start-column="29" selection-end-line="127" selection-end-column="29" />
           <folding>
-            <element signature="e#48#88#0" expanded="true" />
+            <element signature="e#0#25#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/auto/infoOptions.js">
+    <entry file="file://$PROJECT_DIR$/src/components/auto/autoCoverage.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="15" column="10" lean-forward="false" selection-start-line="15" selection-start-column="10" selection-end-line="15" selection-end-column="10" />
-          <folding>
-            <element signature="e#49#89#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/auto/driver.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="11" column="34" lean-forward="false" selection-start-line="11" selection-start-column="23" selection-end-line="11" selection-end-column="34" />
-          <folding>
-            <element signature="e#49#89#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/common/tree.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+        <state relative-caret-position="165">
+          <caret line="14" column="58" lean-forward="false" selection-start-line="14" selection-start-column="27" selection-end-line="26" selection-end-column="42" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/fileUpload.js">
+    <entry file="file://$PROJECT_DIR$/src/components/MyField.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="11" column="16" lean-forward="false" selection-start-line="11" selection-start-column="6" selection-end-line="11" selection-end-column="16" />
+        <state relative-caret-position="98">
+          <caret line="12" column="43" lean-forward="true" selection-start-line="12" selection-start-column="43" selection-end-line="12" selection-end-column="43" />
           <folding>
-            <element signature="e#48#68#0" expanded="true" />
-            <marker date="1591070665987" expanded="true" signature="1058:1415" ph="..." />
+            <element signature="e#0#25#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/auto/generalInfo.js">
+    <entry file="file://$PROJECT_DIR$/src/components/auto/autoPolicyRequest.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="600">
-          <caret line="42" column="1" lean-forward="true" selection-start-line="42" selection-start-column="1" selection-end-line="42" selection-end-column="1" />
+        <state relative-caret-position="105">
+          <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="18" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/auto/autoGeneralInfo.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="294">
+          <caret line="82" column="28" lean-forward="false" selection-start-line="82" selection-start-column="28" selection-end-line="82" selection-end-column="28" />
           <folding>
             <element signature="e#48#88#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/auto.js">
+    <entry file="file://$PROJECT_DIR$/src/components/FieldSelect.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="6">
-          <caret line="46" column="23" lean-forward="false" selection-start-line="46" selection-start-column="12" selection-end-line="46" selection-end-column="23" />
-          <folding>
-            <element signature="e#0#40#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="45">
+          <caret line="5" column="35" lean-forward="false" selection-start-line="5" selection-start-column="35" selection-end-line="5" selection-end-column="35" />
+          <folding />
         </state>
       </provider>
     </entry>

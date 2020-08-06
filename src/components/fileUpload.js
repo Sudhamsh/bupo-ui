@@ -33,8 +33,7 @@ class FileUpload extends Component{
         submitForm("multipart/form-data", formData, (msg) => console.log(msg));
     }
     render(){
-
-        if (this.props.currentStep !== 'FileUpload') { // Prop: The current step
+        if (this.props.currentNode !== undefined && this.props.currentNode.data !== 'FileUpload') { // Prop: The current step
             return null
         }
         return (
