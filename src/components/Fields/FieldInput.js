@@ -1,40 +1,39 @@
-/**
- * Created by sudhamshbachu on 8/5/20.
- */
-
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
+import {
+    Input, InputGroup, InputRightElement, Spinner,
+} from '@chakra-ui/core';
 import { useField, fieldPropTypes, fieldDefaultProps } from '@formiz/core';
 import { FormGroup } from '../FormGroup';
 
 const propTypes = {
     label: PropTypes.node,
+    type: PropTypes.string,
     placeholder: PropTypes.string,
     helper: PropTypes.node,
-    // eslint-disable-next-line react/forbid-prop-types
-    options: PropTypes.array,
     ...fieldPropTypes,
 };
 const defaultProps = {
     label: '',
+    type: 'text',
     placeholder: '',
     helper: '',
-    options: [],
     ...fieldDefaultProps,
 };
 
-export const FieldSelect = (props) => {
+export const FieldInput = (props) => {
     const {
         errorMessage,
         id,
         isValid,
         isSubmitted,
+        isValidating,
         resetKey,
         setValue,
         value,
     } = useField(props);
     const {
-        children, label, options, required, placeholder, helper, ...otherProps
+        label, type, required, placeholder, helper, ...otherProps
     } = props;
     const [isTouched, setIsTouched] = useState(false);
     const showError = !isValid && (isTouched || isSubmitted);
@@ -55,26 +54,27 @@ export const FieldSelect = (props) => {
 
     return (
         <FormGroup {...formGroupProps}>
-            <Select
-                id={id}
-                key={resetKey}
-                value={value || ''}
-                onBlur={() => setIsTouched(true)}
-                aria-invalid={showError}
-                aria-describedby={!isValid ? `${id}-error` : null}
-                placeholder={placeholder}
-                onChange={(e) => setValue(e.target.value)}
-            >
-                {(options || []).map((item) => (
-                    <option key={item.value} value={item.value}>
-                        {item.label || item.value}
-                    </option>
-                ))}
-            </Select>
-            {children}
+            <InputGroup>
+                <Input
+                    key={resetKey}
+                    type={type || 'text'}
+                    id={id}
+                    value={value ?? ''}
+                    onChange={(e) => setValue(e.target.value)}
+                    onBlur={() => setIsTouched(true)}
+                    aria-invalid={showError}
+                    aria-describedby={!isValid ? `${id}-error` : null}
+                    placeholder={placeholder}
+                />
+                {(isTouched || isSubmitted) && isValidating && (
+                    <InputRightElement>
+                        <Spinner size="sm" />
+                    </InputRightElement>
+                )}
+            </InputGroup>
         </FormGroup>
     );
 };
 
-FieldSelect.propTypes = propTypes;
-FieldSelect.defaultProps = defaultProps;
+FieldInput.propTypes = propTypes;
+FieldInput.defaultProps = defaultProps;

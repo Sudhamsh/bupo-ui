@@ -5,7 +5,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Header from './components/Header';
 
 import AutoForm from './components/auto.js'
-import AutoGeneralInfo from './components/auto/autoGeneralInfo'
+import AutoGeneralInfo from './components/generalInfo'
 
 import {
     Container,

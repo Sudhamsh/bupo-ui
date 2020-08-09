@@ -3,9 +3,7 @@
  */
 
 import React, { Component } from 'react'
-import { ButtonGroup,
-         Button,
-        } from 'react-bootstrap';
+import { Button,Box,Grid,ThemeProvider,CSSReset } from "@chakra-ui/core";
 
 class InfoOptions extends Component{
 
@@ -13,12 +11,19 @@ class InfoOptions extends Component{
 
 
         return(
-            <div>
-                <ButtonGroup className="mr-2" aria-label="First group" onClick={this.sendToParent}>
-                    <Button data-key="UPLOAD">Upload Policy</Button>
-                    <Button data-key="ENTER_DETAILS">Enter Details</Button>
-                </ButtonGroup>
-            </div>
+            <ThemeProvider>
+                <CSSReset />
+                <Stack spacing={10}>
+                    <Text fontSize="3xl">Information Options</Text>
+                </Stack>
+
+                <SimpleGrid columns={1}>
+                    <Button>Upload Policy</Button>
+                    <Button>Enter Details</Button>
+                </SimpleGrid>
+            </ThemeProvider>
+
+
         )
     }
 

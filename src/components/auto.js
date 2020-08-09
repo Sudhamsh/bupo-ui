@@ -5,12 +5,13 @@ import {
     useForm,
 } from '@formiz/core'
 import { isEmail } from '@formiz/validations'
-import { MyField } from './MyField'
-import  AutoGeneralInfo  from './auto/autoGeneralInfo'
+import { MyField } from './Fields/FieldInput'
+import  GeneralInfo  from './generalInfo'
 import  Vehicle  from './auto/vehicle'
 import  Driver  from './auto/driver'
-import AutoPolicyRequest from './auto/autoPolicyRequest'
+import PolicyRequest from './PolicyRequest'
 import Coverage from "./auto/autoCoverage";
+import { Button,Box,Grid,ThemeProvider,CSSReset,Stack,Text,SimpleGrid,ButtonGroup, } from "@chakra-ui/core";
 
 export const MyForm = () => {
     const myForm = useForm()
@@ -23,6 +24,8 @@ export const MyForm = () => {
     }
 
     return (
+        <ThemeProvider>
+            <CSSReset />
         <Formiz
             connect={myForm}
             onValidSubmit={handleSubmit}
@@ -33,27 +36,12 @@ export const MyForm = () => {
                 onSubmit={myForm.submitStep}
             >
 
-                <div className="demo-form__tabs">
-                    {myForm.steps.map(step => (
-                        <button
-                            key={step.name}
-                            className={`demo-form__tab ${step.name === myForm.currentStep.name ? 'is-active' : ''}`}
-                            type="button"
-                            onClick={() => myForm.goToStep(step.name)}
-                        >
-                            {!step.isValid && step.isSubmitted && (
-                                <small className="mr-2">⚠️</small>
-                            )}
-                            { step.label } { step.isEnabled }
-                        </button>
-                    ))}
-                </div>
 
                 <FormizStep
                     name="step1" // Split the form with FormizStep
                     label="General Info"
                 >
-                    <AutoPolicyRequest/>
+                    <PolicyRequest/>
                 </FormizStep>
 
 
@@ -63,32 +51,32 @@ export const MyForm = () => {
                     label="Info Options"
                 >
 
-                    <div className="mt-4 text-center">
+                    <Stack spacing={10}>
+                        <Text fontSize="3xl">Information Options</Text>
+                    </Stack>
 
-                        <button
-                            type="button"
-                            onClick={(e) => {
-                                setIsUploadVisible(true);
-                                setIsManualEntryVisible(false);
-                                myForm.goToStep("step3");
+                    <ButtonGroup spacing={4} padding={4} alignItems="center">
+                        <Button variantColor="teal" size="lg"
+                                onClick={(e) => {
+                                    setIsUploadVisible(true);
+                                    setIsManualEntryVisible(false);
+                                    myForm.goToStep("step3");
 
-                            }}
-                            className="demo-button is-secondary is-small mx-1"
+                                }}
                         >
-                            Policy Upload
-                        </button>
-                        <button
-                            type="button"
-                            onClick={(e) => {
-                                setIsManualEntryVisible(true);
-                                setIsUploadVisible(false);
-                                myForm.goToStep("step4");
-                            }}
-                            className="demo-button is-secondary is-small mx-1"
+                            Upload Policy
+                        </Button>
+                        <Button variantColor="teal" size="lg"
+                                onClick={(e) => {
+                                    setIsManualEntryVisible(true);
+                                    setIsUploadVisible(false);
+                                    myForm.goToStep("step4");
+                                }}
                         >
-                            Manual Entry
-                        </button>
-                    </div>
+                            Enter Details
+                        </Button>
+                    </ButtonGroup>
+
                 </FormizStep>
 
                 <FormizStep
@@ -105,7 +93,7 @@ export const MyForm = () => {
                     isEnabled={isManualEntryVisible}
                     label="Manual Entry"
                 >
-                    <AutoGeneralInfo/>
+                    <GeneralInfo/>
                 </FormizStep>
                 <FormizStep
                     name="step5" // Split the form with FormizStep
@@ -129,22 +117,33 @@ export const MyForm = () => {
                 </FormizStep>
 
                 {/* Update the submit button to allow navigation between steps. */}
-                {!myForm.isFirstStep && (
-                    <button type="button" onClick={myForm.prevStep}>
-                        Back
-                    </button>
-                )}
-                {myForm.isLastStep ? (
-                    <button type="submit" disabled={!myForm.isValid}>
-                        Submit
-                    </button>
-                ) : (
-                    <button type="submit" disabled={!myForm.isStepValid}>
-                        Continue
-                    </button>
-                )}
+                <Grid templateColumns="1fr 2fr 1fr" alignItems="center">
+
+                    {
+                        !myForm.isFirstStep && (
+                        <Button
+                            gridColumn="1"
+                            onClick={myForm.prevStep}
+                        >
+                            Previous
+                        </Button>
+                    )}
+
+                    <Button
+                        type="submit"
+                        gridColumn="3"
+                        isDisabled={
+                            !myForm.isStepValid && myForm.isStepSubmitted
+                        }
+                    >
+                        {myForm.isLastStep ? 'Submit' : 'Next'}
+                    </Button>
+                </Grid>
+
+
             </form>
         </Formiz>
+        </ThemeProvider>
     )
 }
 
