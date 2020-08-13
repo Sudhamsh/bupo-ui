@@ -5,6 +5,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Header from './components/Header';
 
 import AutoForm from './components/auto.js'
+import Driver from './components/auto/driver.js'
 import AutoGeneralInfo from './components/generalInfo'
 
 import {
@@ -45,6 +46,9 @@ function App() {
                 <Route exact path="/" component={Home}/>
                 <Route path="/about" component={About}/>
                 <Route path="/auto" component={AutoForm}/>
+
+                /* Test routes*/
+                <Route path="/auto/driver" component={Driver}/>
             </Router>
         </Container>
         <br/>

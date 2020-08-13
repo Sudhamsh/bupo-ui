@@ -1,0 +1,30 @@
+{
+  "TESLA": [
+    {
+      "value": "Model 3"
+    },
+    {
+      "value": "Model X"
+    },
+    {
+      "value": "Model S"
+    },
+    {
+      "value": "Model Y"
+    },
+    {
+      "value": "Roadster"
+    }
+  ],
+  "BMW": [
+    {
+      "value": "X3"
+    },
+    {
+      "value": "X5"
+    },
+    {
+      "value": "3 Series"
+    }
+  ]
+}

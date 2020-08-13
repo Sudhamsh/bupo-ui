@@ -14,15 +14,14 @@ class Coverage extends Component {
         <ThemeProvider>
             <CSSReset />
             <Stack spacing={10}>
-                <Text fontSize="3xl">Vehicle(s)</Text>
+                <Text fontSize="3xl">Coverage</Text>
             </Stack>
 
-            <SimpleGrid columns={1}>
+            <SimpleGrid columns={1} maxW="200px">
                 <FieldSelect
                     name="docker.user"
                     label="Bodily Injury Limits"
                     placeholder="Select one..."
-                    required="Required"
                     keepValue
                     options={[
                         { value: '015', label: '$15,000/$30,000' },

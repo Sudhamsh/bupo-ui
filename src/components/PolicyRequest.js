@@ -2,14 +2,14 @@
  * Created by sudhamshbachu on 6/1/20.
  */
 
-import React, { Component } from 'react'
+import React, { useState,Component } from 'react'
 import { Form,ButtonGroup,Button } from 'react-bootstrap';
 
 import { Formiz, useForm } from '@formiz/core';
 import  {isEmail}  from '@formiz/validations'
 import {FieldInput} from "./Fields/FieldInput"
+import {FieldAutoComplete} from "./Fields/FieldAutoComplete"
 import { ThemeProvider,CSSReset,SimpleGrid,Text,Stack, } from "@chakra-ui/core";
-
 
 
 export default function  PolicyRequest(props){
@@ -21,7 +21,10 @@ export default function  PolicyRequest(props){
             <Text fontSize="3xl">Basic Information</Text>
         </Stack>
 
-        <SimpleGrid columns={1}>
+        <SimpleGrid columns={1} maxW="200px">
+
+
+
             <FieldInput
                 name="fName"
                 label="First Name"

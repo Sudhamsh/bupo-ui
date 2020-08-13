@@ -29,7 +29,6 @@ class GeneralInfo extends Component{
                     name="docker.user"
                     label="Home Ownership"
                     placeholder="Select one..."
-                    required="Required"
                     keepValue
                     options={[
                         { value: 'own', label: 'Own' },
