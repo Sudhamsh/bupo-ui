@@ -2,7 +2,7 @@
  * Created by sudhamshbachu on 6/1/20.
  */
 
-import React, { useState,Component } from 'react'
+import React, { useState,Component,useEffect, } from 'react'
 import { Form,ButtonGroup,Button } from 'react-bootstrap';
 
 import { Formiz, useForm } from '@formiz/core';
@@ -14,6 +14,7 @@ import { ThemeProvider,CSSReset,SimpleGrid,Text,Stack, } from "@chakra-ui/core";
 
 export default function  PolicyRequest(props){
 
+
     return (
     <ThemeProvider>
         <CSSReset />
@@ -22,8 +23,6 @@ export default function  PolicyRequest(props){
         </Stack>
 
         <SimpleGrid columns={1} maxW="200px">
-
-
 
             <FieldInput
                 name="fName"

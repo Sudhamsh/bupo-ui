@@ -59,7 +59,7 @@ export const MyForm = () => {
 
                     <FormizStep
                         name="step2" // Split the form with FormizStep
-                        /* Tech Debt - Should move to a separate module*/
+
                         label="Info Options"
                     >
 
@@ -73,7 +73,6 @@ export const MyForm = () => {
                                         setIsUploadVisible(true);
                                         setIsManualEntryVisible(false);
                                         myForm.goToStep("step3");
-
                                     }}
                             >
                                 Upload Policy

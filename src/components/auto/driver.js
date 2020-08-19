@@ -7,9 +7,11 @@ import {
         ThemeProvider,CSSReset,SimpleGrid,Text,Stack,Button, Flex,Box,IconButton,
         Divider,
         } from "@chakra-ui/core";
-import {  useForm } from '@formiz/core';
+//import {  useForm } from '@formiz/core';
 import {FieldInput} from "../Fields/FieldInput"
 import { v4 as uuidv4 } from 'uuid'
+import vehicleMakes from "../../data/vehicleMakes.json"
+import allModelsByMakeByYear from "../../data/models.json"
 
 
 const driverCollection = [
@@ -20,12 +22,13 @@ const driverCollection = [
 ];
 
 export const Driver = () =>{
-    const form = useForm({ subscribe: 'form' });
+    //const form = useForm({ subscribe: 'form' });
     const [drivers, setDrivers] = useState(driverCollection);
 
     useEffect(() => {
         setDrivers(driverCollection);
-    }, [form.resetKey]);
+    });
+    // [form.resetKey]);
 
     const addItem = () => {
         console.log('addItem' +  uuidv4());

@@ -6,7 +6,7 @@ import {FieldInput} from "../Fields/FieldInput"
 import {FieldAutoComplete} from "../Fields/FieldAutoComplete"
 import React, { Component,useState, useEffect, } from 'react'
 import vehicleMakes from "../../data/vehicleMakes.json"
-import allModelsByMake from "../../data/models.json"
+import allModelsByMakeByYear from "../../data/models.json"
 import {
     ThemeProvider,CSSReset,SimpleGrid,Text,Stack,Button, Flex,Box,IconButton,
     Divider,
@@ -24,9 +24,14 @@ const defaultCollection = [
 
 
 export const Automobile = () =>{
+
+
     const form = useForm({ subscribe: 'form' });
-    const [models, setModels] = useState([]);
     const [autoYears, setAutoYears] = useState([]);
+    const [makes, setMakes] = useState([]);
+    const [models, setModels] = useState([]);
+    const [userSelectedYear, setUserSelectedYear] = useState([]);
+
 
     const [collection, setCollection] = useState(defaultCollection);
     useEffect(() => {
@@ -40,13 +45,10 @@ export const Automobile = () =>{
             var latestModel = new Date().getFullYear() + 1;
             console.log(  startModelYear+ "This Year:" +latestModel);
             for( var i = startModelYear ; i <= latestModel ; i++){
-                var tempYear= {"value" : i};
-                autoYears.push(tempYear);
+                autoYears.push(i+"");
             }
+            setAutoYears(autoYears);
         }
-
-        setAutoYears(autoYears);
-
     });
 
 
@@ -68,13 +70,20 @@ export const Automobile = () =>{
     };
 
     function setMake(make){
-        console.log("make : " + make)
-        setModels(allModelsByMake[make])
-        console.log("models : " + allModelsByMake[make])
+        console.log(userSelectedYear + " : make : " + make)
+        setModels(allModelsByMakeByYear[userSelectedYear][make])
+        console.log("models : " + allModelsByMakeByYear[userSelectedYear][make])
+    }
+
+    function setModel(model){
+        console.log("model : " + model)
     }
 
     function selectedYear(year){
-
+        setUserSelectedYear( year);
+        console.log(year);
+        console.log( vehicleMakes[year])
+        setMakes(vehicleMakes[year])
     }
 
     return(
@@ -88,9 +97,9 @@ export const Automobile = () =>{
                 <Box borderWidth="1px" rounded="lg" p="6">
                     <SimpleGrid columns={1} maxW="200px">
 
-                        <FieldAutoComplete label="Year" name="year" items={autoYears} setValue={selectedYear}/>
-                        <FieldAutoComplete label="Make" name="make" items={vehicleMakes} setValue={setMake}/>
-                        <FieldAutoComplete label="Model" name="model" items={models}/>
+                        <FieldAutoComplete label="Year" name="year" items={autoYears} setValue={selectedYear} value="2000"/>
+                        <FieldAutoComplete label="Make" name="make" items={makes} setValue={setMake}/>
+                        <FieldAutoComplete label="Model" name="model" items={models} setValue={setModel}/>
                         <FieldInput
                             name="vin"
                             label="VIN #"

@@ -5,11 +5,11 @@ import Downshift from 'downshift'
 import { Input,InputGroup, } from "@chakra-ui/core";
 import React, { useEffect, useState } from 'react';
 import {FormGroup} from '../FormGroup'
-import { useField, fieldPropTypes, fieldDefaultProps } from '@formiz/core';
+
 
 export const FieldAutoComplete = (props) => {
     const {
-        items, label,setValue, type, required, placeholder, helper, ...otherProps
+        items, label,setValue, type, required, placeholder, helper, value,...otherProps
     } = props;
 
     const formGroupProps = {
@@ -18,8 +18,9 @@ export const FieldAutoComplete = (props) => {
 
     return (
         <Downshift
-            itemToString={item => (item ? item.value : '')}
-            onChange={selection => setValue(selection.value)}
+            itemToString={item => (item ? item : '')}
+            onChange={selection => setValue(selection)}
+            initialSelectedItem={value}
         >
             {({
                   getInputProps,
@@ -47,11 +48,11 @@ export const FieldAutoComplete = (props) => {
                     <ul {...getMenuProps()}>
                         {isOpen
                             ? items
-                                .filter(item => !inputValue || item.value.toString().toLowerCase().includes(inputValue.toString().toLowerCase()))
+                                .filter(item => !inputValue || item.toString().toLowerCase().includes(inputValue.toLowerCase()))
                                 .map((item, index) => (
                                     <li
                                         {...getItemProps({
-                                            key: item.value,
+                                            key: item,
                                             index,
                                             item,
                                             style: {
@@ -61,7 +62,7 @@ export const FieldAutoComplete = (props) => {
                                             },
                                         })}
                                     >
-                                        {item.value}
+                                        {item}
                                     </li>
                                 ))
                             : null}
