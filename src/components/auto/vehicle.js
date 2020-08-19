@@ -15,27 +15,22 @@ import {  useForm } from '@formiz/core';
 
 import { v4 as uuidv4 } from 'uuid'
 
-const defaultCollection = [
+const defaultVehicles = [
     {
         id: uuidv4(),
-        fName: 'New Driver',
+
     },
 ];
 
 
 export const Automobile = () =>{
 
-
     const form = useForm({ subscribe: 'form' });
     const [autoYears, setAutoYears] = useState([]);
-    const [makes, setMakes] = useState([]);
-    const [models, setModels] = useState([]);
-    const [userSelectedYear, setUserSelectedYear] = useState([]);
+    const [vehicles, setVehicles] = useState(defaultVehicles);
 
-
-    const [collection, setCollection] = useState(defaultCollection);
     useEffect(() => {
-        setCollection(defaultCollection);
+        setVehicles(defaultVehicles);
     }, [form.resetKey]);
 
     useEffect(() => {
@@ -49,41 +44,49 @@ export const Automobile = () =>{
             }
             setAutoYears(autoYears);
         }
-    });
+
+        console.log("useEffect....");
+    });//[vehicles]);
 
 
     const addItem = () => {
-        console.log('addItem' +  uuidv4());
-        setCollection((c) => [
+        setVehicles((c) => [
             ...c,
             {
                 id: uuidv4(),
-                fName: 'New Driver',
+
             },
         ]);
-
-        console.log('addItem' +  JSON.stringify(collection));
     };
 
     const removeItem = (id) => {
-        setCollection((c) => c.filter((x) => x.id !== id));
+        setVehicles((c) => c.filter((x) => x.id !== id));
     };
 
-    function setMake(make){
-        console.log(userSelectedYear + " : make : " + make)
-        setModels(allModelsByMakeByYear[userSelectedYear][make])
-        console.log("models : " + allModelsByMakeByYear[userSelectedYear][make])
+    function setMake(make,index){
+
+        vehicles[index]["selectedMake"] = make;
+
+        //Reset model if it has a value
+        vehicles[index]["selectedModel"] = "";
+        vehicles[index]["models"] = allModelsByMakeByYear[vehicles[index]["year"]][make];
+
+        setVehicles( JSON.parse(JSON.stringify(vehicles)))
+        //console.log("models : " + allModelsByMakeByYear[userSelectedYear][make])
     }
 
-    function setModel(model){
-        console.log("model : " + model)
+    function setModel(model,index){
+        vehicles[index]["selectedModel"] = model;
     }
 
-    function selectedYear(year){
-        setUserSelectedYear( year);
-        console.log(year);
-        console.log( vehicleMakes[year])
-        setMakes(vehicleMakes[year])
+    function selectedYear(year,index){
+        console.log("index"+index);
+        vehicles[index]["year"] = year;
+        vehicles[index]["makes"] = vehicleMakes[year];
+
+        //reset make if it has a value
+        vehicles[index]["selectedMake"] = "";
+        setVehicles( JSON.parse(JSON.stringify(vehicles)))
     }
 
     return(
@@ -92,21 +95,20 @@ export const Automobile = () =>{
             <Stack spacing={10}>
                 <Text fontSize="3xl">Vehicle(s)</Text>
             </Stack>
-
-            {collection.map(({ id, fName }, index) => (
+            {vehicles.map(({ id,models,selectedMake,selectedModel }, index) => (
                 <Box borderWidth="1px" rounded="lg" p="6">
                     <SimpleGrid columns={1} maxW="200px">
 
-                        <FieldAutoComplete label="Year" name="year" items={autoYears} setValue={selectedYear} value="2000"/>
-                        <FieldAutoComplete label="Make" name="make" items={makes} setValue={setMake}/>
-                        <FieldAutoComplete label="Model" name="model" items={models} setValue={setModel}/>
+                        <FieldAutoComplete label="Year" name={`vehicles[${index}].year`} index={index} items={autoYears} setValueCallback={selectedYear} value=""/>
+                        <FieldAutoComplete label="Make" name={`vehicles[${index}].make`}  index={index} items={vehicles[index]["makes"]} setValueCallback={setMake}  value={vehicles[index]["selectedMake"]}/>
+                        <FieldAutoComplete label="Model" name={`vehicles[${index}].model`}  index={index} items={vehicles[index]["models"]} setValueCallback={setModel}  value={selectedModel}/>
                         <FieldInput
-                            name="vin"
+                            name={`vehicles[${index}].vin`}
                             label="VIN #"
                             defaultValue="57x3v"
                         />
                         <FieldInput
-                            name="yearlyMileage"
+                            name={`vehicles[${index}].yearlyMileage`}
                             label="Yearly Mileage"
                             required="Yearly Mileage is required"
                             defaultValue="6000"
@@ -116,7 +118,7 @@ export const Automobile = () =>{
             ))}
 
 
-            {collection.length <= 20 && (
+            {vehicles.length <= 20 && (
                 <Button label="Add member" onClick={addItem} p="6"> Add Driver</Button>
 
             )}

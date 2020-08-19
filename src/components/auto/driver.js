@@ -107,29 +107,7 @@ export const Driver = () =>{
         )}
 
     </ThemeProvider>
-        // <div>
-        //     <h3></h3>
-        //     <Form>
-        //
-        //         <Form.Group controlId="dob">
-        //             <Form.Label>Date of Birth</Form.Label>
-        //             <Form.Control type="date" min="1930-01-01" max="2020-01-01"/>
-        //         </Form.Group>
-        //         <Form.Group controlId="licenseAgeAt">
-        //             <Form.Label>First license at age of</Form.Label>
-        //             <Form.Control type="number" placeholder="16" />
-        //         </Form.Group>
-        //         <Form.Group controlId="maritalStatus">
-        //             <Form.Label>Home Ownership</Form.Label>
-        //             <Form.Control as="select">
-        //                 <option>Married</option>
-        //                 <option>Single</option>
-        //                 <option>Widowed</option>
-        //                 <option>Divorced</option>
-        //             </Form.Control>
-        //         </Form.Group>
-        //     </Form>
-        // </div>
+
     )
 
 
