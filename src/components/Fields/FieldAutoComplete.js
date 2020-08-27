@@ -4,12 +4,13 @@
 import Downshift from 'downshift'
 import { Input,InputGroup, } from "@chakra-ui/core";
 import React, { useEffect, useState } from 'react';
+import { useField, fieldPropTypes, fieldDefaultProps } from '@formiz/core';
 import {FormGroup} from '../FormGroup'
 
 
 export const FieldAutoComplete = (props) => {
     const {
-        items, index, label,setValueCallback, type, required, placeholder, helper, value,...otherProps
+        items,name, index, label,setValueCallback, type, required, placeholder, helper,value,setValue,...otherProps
     } = props;
 
     const formGroupProps = {
@@ -41,10 +42,11 @@ export const FieldAutoComplete = (props) => {
                         {...getRootProps({}, {suppressRefError: true})}
                     >
                         <FormGroup {...formGroupProps}>
-                            <InputGroup>
+                            <InputGroup >
                             <Input {...getInputProps()} />
                             </InputGroup>
                         </FormGroup>
+
                     </div>
                     <ul {...getMenuProps()}>
                         {isOpen

@@ -11,8 +11,8 @@ import {
     ThemeProvider,CSSReset,SimpleGrid,Text,Stack,Button, Flex,Box,IconButton,
     Divider,
 } from "@chakra-ui/core";
+import {AddPlaceholder} from "../AddPlaceholder"
 import {  useForm } from '@formiz/core';
-
 import { v4 as uuidv4 } from 'uuid'
 
 const defaultVehicles = [
@@ -99,7 +99,7 @@ export const Automobile = () =>{
                 <Box borderWidth="1px" rounded="lg" p="6">
                     <SimpleGrid columns={1} maxW="200px">
 
-                        <FieldAutoComplete label="Year" name={`vehicles[${index}].year`} index={index} items={autoYears} setValueCallback={selectedYear} value=""/>
+                        <FieldAutoComplete label="Year" name={`vehicles[${index}].year1`} index={index} items={autoYears} setValueCallback={selectedYear} value=""/>
                         <FieldAutoComplete label="Make" name={`vehicles[${index}].make`}  index={index} items={vehicles[index]["makes"]} setValueCallback={setMake}  value={vehicles[index]["selectedMake"]}/>
                         <FieldAutoComplete label="Model" name={`vehicles[${index}].model`}  index={index} items={vehicles[index]["models"]} setValueCallback={setModel}  value={selectedModel}/>
                         <FieldInput
@@ -107,6 +107,14 @@ export const Automobile = () =>{
                             label="VIN #"
                             defaultValue="57x3v"
                         />
+                        <FieldInput
+                            name={`vehicles[${index}].year1`}
+                            label="Yearly Mileage"
+                            required="Yearly Mileage is required"
+                            defaultValue="2012"
+                            type="hidden"
+                        />
+
                         <FieldInput
                             name={`vehicles[${index}].yearlyMileage`}
                             label="Yearly Mileage"
@@ -119,37 +127,11 @@ export const Automobile = () =>{
 
 
             {vehicles.length <= 20 && (
-                <Button label="Add member" onClick={addItem} p="6"> Add Driver</Button>
+                <AddPlaceholder label="Add Vehicle" onClick={addItem} />
 
             )}
         </ThemeProvider>
-        // {/*<div>*/}
-        //     {/*<Form>*/}
-        //         {/*<Form.Group controlId="make">*/}
-        //             {/*<Form.Label>Make</Form.Label>*/}
-        //             {/*<Form.Control type="text" placeholder="" />*/}
-        //         {/*</Form.Group>*/}
-        //         {/*<Form.Group controlId="model">*/}
-        //             {/*<Form.Label>Model</Form.Label>*/}
-        //             {/*<Form.Control type="text" placeholder="" />*/}
-        //         {/*</Form.Group>*/}
-        //         {/*<Form.Group controlId="year">*/}
-        //             {/*<Form.Label>Year</Form.Label>*/}
-        //             {/*<Form.Control type="number"  maxlength="4"/>*/}
-        //         {/*</Form.Group>*/}
-        //         {/*<Form.Group controlId="vin">*/}
-        //             {/*<Form.Label>VIN #</Form.Label>*/}
-        //             {/*<Form.Control type="text" placeholder="16" />*/}
-        //         {/*</Form.Group>*/}
-        //         {/*<Form.Group controlId="yearlyMileage">*/}
-        //             {/*<Form.Label>Expected Yearly Mileage</Form.Label>*/}
-        //             {/*<Form.Control type="number" placeholder="" maxlength="6"/>*/}
-        //         {/*</Form.Group>*/}
-        //     {/*</Form>*/}
-        // {/*</div>*/}
     )
-
-
 }
 
 export default Automobile;

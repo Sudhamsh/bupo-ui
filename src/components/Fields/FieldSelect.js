@@ -34,7 +34,9 @@ export const FieldSelect = (props) => {
         resetKey,
         setValue,
         value,
+        name,
     } = useField(props);
+    console.log(" select name:"+name);
     const {
         children, label, options, required, placeholder, helper, ...otherProps
     } = props;
@@ -66,6 +68,7 @@ export const FieldSelect = (props) => {
                 aria-describedby={!isValid ? `${id}-error` : null}
                 placeholder={placeholder}
                 onChange={(e) => setValue(e.target.value)}
+                name={name}
             >
                 {(options || []).map((item) => (
                     <option key={item.value} value={item.value}>

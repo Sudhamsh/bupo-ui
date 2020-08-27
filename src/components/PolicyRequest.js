@@ -9,11 +9,11 @@ import { Formiz, useForm } from '@formiz/core';
 import  {isEmail}  from '@formiz/validations'
 import {FieldInput} from "./Fields/FieldInput"
 import {FieldAutoComplete} from "./Fields/FieldAutoComplete"
-import { ThemeProvider,CSSReset,SimpleGrid,Text,Stack, } from "@chakra-ui/core";
+import { ThemeProvider,CSSReset,SimpleGrid,Text,Stack,Box, } from "@chakra-ui/core";
 
 
 export default function  PolicyRequest(props){
-
+    const [apiResp, setApiResp] = useState([]);
 
     return (
     <ThemeProvider>
@@ -22,43 +22,46 @@ export default function  PolicyRequest(props){
             <Text fontSize="3xl">Basic Information</Text>
         </Stack>
 
-        <SimpleGrid columns={1} maxW="200px">
+        <Box alignItems="center">
+            <SimpleGrid columns={1} maxW="200px" >
 
-            <FieldInput
-                name="fName"
-                label="First Name"
-                required="First Name is required"
-                defaultValue="Sudhamsh"
-            />
-            <FieldInput
-                name="lName"
-                label="Last Name"
-                required="Last Name is required"
-                defaultValue="Bachu"
-            />
-            <FieldInput
-                name="phone"
-                label="Phone"
-                required="Phone is required"
-                defaultValue="480-123-1234"
-                type="tel"
+                <FieldInput
+                    name="firstName"
+                    label="First Name"
+                    defaultValue="Sudhamsh"
+                    required="First Name is required"
 
-            />
-            <FieldInput
-                name="email"
-                label="Email"
-                type="email"
-                required="Email is required"
-                defaultValue="a@a.com"
-                validations={[
-                    {
-                        rule: isEmail(),
-                        message: 'Not a valid email',
-                    }
-                ]}
+                />
+                <FieldInput
+                    name="lastName"
+                    label="Last Name"
+                    required="Last Name is required"
+                    defaultValue="Bachu"
+                />
+                <FieldInput
+                    name="phone"
+                    label="Phone"
+                    required="Phone is required"
+                    defaultValue="480-123-1234"
+                    type="tel"
 
-            />
-        </SimpleGrid>
+                />
+                <FieldInput
+                    name="email"
+                    label="Email"
+                    type="email"
+                    required="Email is required"
+                    defaultValue="a@a.com"
+                    validations={[
+                        {
+                            rule: isEmail(),
+                            message: 'Not a valid email',
+                        }
+                    ]}
+
+                />
+            </SimpleGrid>
+        </Box>
 
     </ThemeProvider>
 

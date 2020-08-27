@@ -2,7 +2,6 @@
  * Created by sudhamshbachu on 5/29/20.
  */
 import React, { Component } from 'react'
-import { Form } from 'react-bootstrap';
 import {FieldInput} from "./Fields/FieldInput"
 import {FieldSelect} from "./Fields/FieldSelect"
 import { ThemeProvider,CSSReset } from "@chakra-ui/core";
@@ -10,6 +9,7 @@ import { SimpleGrid,
         Stack,
         Text,
         } from "@chakra-ui/core";
+import { isLength } from '@formiz/validations'
 
 
 
@@ -24,9 +24,9 @@ class GeneralInfo extends Component{
                 <Text fontSize="3xl">General Information</Text>
             </Stack>
 
-            <SimpleGrid columns={1}>
+            <SimpleGrid columns={1} maxW="200px">
                 <FieldSelect
-                    name="docker.user"
+                    name="homeOwnership"
                     label="Home Ownership"
                     placeholder="Select one..."
                     keepValue
@@ -39,33 +39,38 @@ class GeneralInfo extends Component{
                     name="addressFirstLine"
                     label="Address First Line"
                     required="First Name is required"
-                    defaultValue="Sudhamsh"
+                    defaultValue="44038 Renoir Ter"
                 />
                 <FieldInput
                     name="aptNo"
                     label="Apt No #"
-                    required="First Name is required"
-                    defaultValue="400"
+                    defaultValue=""
                     type="number"
                 />
                 <FieldInput
                     name="city"
                     label="City"
-                    required="First Name is required"
-                    defaultValue="Sudhamsh"
+                    required="City is required"
+                    defaultValue="Fremont"
                 />
                 <FieldInput
                     name="state"
                     label="State"
-                    required="First Name is required"
-                    defaultValue="Sudhamsh"
+                    required="State is required"
+                    defaultValue="CA"
                 />
                 <FieldInput
                     name="zip"
                     label="Zip"
-                    required="First Name is required"
-                    defaultValue="400"
+                    required="Zip is required"
+                    defaultValue="40000"
                     type="number"
+                    validations={[
+                        {
+                            rule: isLength(5),
+                            message: 'Zip should be 5 digits (xxxxx)',
+                        },
+                    ]}
                 />
 
             </SimpleGrid>
