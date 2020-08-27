@@ -9,7 +9,7 @@ import vehicleMakes from "../../data/vehicleMakes.json"
 import allModelsByMakeByYear from "../../data/models.json"
 import {
     ThemeProvider,CSSReset,SimpleGrid,Text,Stack,Button, Flex,Box,IconButton,
-    Divider,
+    Divider,Input,
 } from "@chakra-ui/core";
 import {AddPlaceholder} from "../AddPlaceholder"
 import {  useForm } from '@formiz/core';
@@ -69,7 +69,7 @@ export const Automobile = () =>{
 
         //Reset model if it has a value
         vehicles[index]["selectedModel"] = "";
-        vehicles[index]["models"] = allModelsByMakeByYear[vehicles[index]["year"]][make];
+        vehicles[index]["models"] = allModelsByMakeByYear[vehicles[index]["selectedYear"]][make];
 
         setVehicles( JSON.parse(JSON.stringify(vehicles)))
         //console.log("models : " + allModelsByMakeByYear[userSelectedYear][make])
@@ -79,9 +79,9 @@ export const Automobile = () =>{
         vehicles[index]["selectedModel"] = model;
     }
 
-    function selectedYear(year,index){
-        console.log("index"+index);
-        vehicles[index]["year"] = year;
+    function selectedYearCallback(year,index){
+
+        vehicles[index]["selectedYear"] = year;
         vehicles[index]["makes"] = vehicleMakes[year];
 
         //reset make if it has a value
@@ -96,23 +96,19 @@ export const Automobile = () =>{
                 <Text fontSize="3xl">Vehicle(s)</Text>
             </Stack>
             {vehicles.map(({ id,models,selectedMake,selectedModel }, index) => (
-                <Box borderWidth="1px" rounded="lg" p="6">
+                <Box borderWidth="1px" rounded="lg" p="6" maxW="200px">
                     <SimpleGrid columns={1} maxW="200px">
 
-                        <FieldAutoComplete label="Year" name={`vehicles[${index}].year1`} index={index} items={autoYears} setValueCallback={selectedYear} value=""/>
+                        <FieldAutoComplete label="Year" name={`vehicles[${index}].year`} index={index} items={autoYears} setValueCallback={selectedYearCallback} value=""/>
                         <FieldAutoComplete label="Make" name={`vehicles[${index}].make`}  index={index} items={vehicles[index]["makes"]} setValueCallback={setMake}  value={vehicles[index]["selectedMake"]}/>
                         <FieldAutoComplete label="Model" name={`vehicles[${index}].model`}  index={index} items={vehicles[index]["models"]} setValueCallback={setModel}  value={selectedModel}/>
+
+
                         <FieldInput
                             name={`vehicles[${index}].vin`}
                             label="VIN #"
                             defaultValue="57x3v"
-                        />
-                        <FieldInput
-                            name={`vehicles[${index}].year1`}
-                            label="Yearly Mileage"
-                            required="Yearly Mileage is required"
-                            defaultValue="2012"
-                            type="hidden"
+
                         />
 
                         <FieldInput

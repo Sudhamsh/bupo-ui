@@ -10,8 +10,19 @@ import {FormGroup} from '../FormGroup'
 
 export const FieldAutoComplete = (props) => {
     const {
-        items,name, index, label,setValueCallback, type, required, placeholder, helper,value,setValue,...otherProps
+        items,name, index, label,setValueCallback, type, required, placeholder, helper,...otherProps
     } = props;
+
+    const {
+        errorMessage,
+        id,
+        isValid,
+        isSubmitted,
+        isValidating,
+        resetKey,
+        setValue,
+        value,
+    } = useField(props);
 
     const formGroupProps = {
         label,
@@ -21,7 +32,7 @@ export const FieldAutoComplete = (props) => {
     return (
         <Downshift
             itemToString={item => (item ? item : '')}
-            onChange={selection => setValueCallback(selection,index)}
+            onChange={selection => setValue(selection) || setValueCallback(selection,index)}
             initialSelectedItem={value}
         >
             {({

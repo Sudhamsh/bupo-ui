@@ -16,7 +16,7 @@ import SimpleStorage from 'react-simple-storage'
 import { useToastValues } from '../hooks/useToastValues'
 
 export const MyForm = () => {
-    const myForm = useForm()
+    const myForm = useForm({ subscribe: 'form' })
     const toastValues = useToastValues();
     const toast = useToast();
     const [isUploadVisible, setIsUploadVisible] = React.useState(true)
