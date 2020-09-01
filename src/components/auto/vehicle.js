@@ -116,6 +116,7 @@ export const Automobile = () =>{
                             label="Yearly Mileage"
                             required="Yearly Mileage is required"
                             defaultValue="6000"
+                            type="number"
                         />
                     </SimpleGrid>
                 </Box>

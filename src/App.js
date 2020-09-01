@@ -4,9 +4,9 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 import Header from './components/Header';
 
-import AutoForm from './components/auto.js'
+import Auto from './components/auto.js'
 import Driver from './components/auto/driver.js'
-import AutoGeneralInfo from './components/generalInfo'
+import AutoLookup from './components/auto/AutoLookup'
 
 import {
     Container,
@@ -45,10 +45,10 @@ function App() {
             <Router>
                 <Route exact path="/" component={Home}/>
                 <Route path="/about" component={About}/>
-                <Route path="/auto" component={AutoForm}/>
+                <Route path="/auto" component={Auto}/>
 
-                /* Test routes*/
-                <Route path="/auto/driver" component={Driver}/>
+                {/*<Route path="/auto/search" component={AutoLookup}/>*/}
+
             </Router>
         </Container>
         <br/>

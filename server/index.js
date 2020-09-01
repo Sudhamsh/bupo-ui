@@ -10,8 +10,7 @@ app.use(pino);
 
 
 
-var apiProxy = createProxyMiddleware('/rest/*', {target: 'http://localhost:8080'});
-app.use(apiProxy)
+app.use('/rest', createProxyMiddleware({ target: 'http://localhost:8080', changeOrigin: false }));
 
 app.get('/api/greeting', (req, res) => {
     const name = req.query.name || 'World';

@@ -9,14 +9,6 @@ import { useForm } from "react-hook-form";
 
 export default function  Address(props){
 
-    console.log("AutoPolicyRequest"+props.currentNode.data);
-
-
-    if (props.currentNode !== undefined && props.currentNode.data !== 'AutoPolicyRequest') { // Prop: The current step
-        return null
-    }
-
-
     return (
         <div>
                 <Form.Group controlId="firstName">

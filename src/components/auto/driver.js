@@ -11,7 +11,6 @@ import {  useForm } from '@formiz/core';
 import {FieldInput} from "../Fields/FieldInput"
 import {FieldSelect} from "../Fields/FieldSelect"
 import { v4 as uuidv4 } from 'uuid'
-import vehicleMakes from "../../data/vehicleMakes.json"
 import {AddPlaceholder} from "../AddPlaceholder"
 
 

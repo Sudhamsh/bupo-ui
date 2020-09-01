@@ -15,7 +15,7 @@ import { Button,Box,Grid,ThemeProvider,CSSReset,Stack,Text,SimpleGrid,ButtonGrou
 import SimpleStorage from 'react-simple-storage'
 import { useToastValues } from '../hooks/useToastValues'
 
-export const MyForm = () => {
+export const Auto = () => {
     const myForm = useForm({ subscribe: 'form' })
     const toastValues = useToastValues();
     const toast = useToast();
@@ -36,7 +36,7 @@ export const MyForm = () => {
             .then(response => response.json())
             .then(data => setUniqueCode(data.uniqueCode));
     }
-    if(false){
+    if(uniqueCode){
         return (
             <Box maxW="32rem">
                 <Text fontSize="4xl">Thank You, Your Policy Request code : {uniqueCode}</Text>
@@ -132,4 +132,4 @@ export const MyForm = () => {
     }
 }
 
-export default MyForm;
+export default Auto;
