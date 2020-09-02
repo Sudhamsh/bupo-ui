@@ -44,10 +44,10 @@ function App() {
         <Container fluid>
             <Router>
                 <Route exact path="/" component={Home}/>
-                <Route path="/about" component={About}/>
-                <Route path="/auto" component={Auto}/>
+                <Route exact path="/about" component={About}/>
+                <Route exact path="/auto" component={Auto}/>
 
-                {/*<Route path="/auto/search" component={AutoLookup}/>*/}
+                <Route exact path="/auto/search" component={AutoLookup}/>
 
             </Router>
         </Container>

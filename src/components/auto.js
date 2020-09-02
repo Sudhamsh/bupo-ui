@@ -46,9 +46,7 @@ export const Auto = () => {
         return (
         <ThemeProvider>
             <CSSReset />
-            <Box maxW="32rem">
-                <Text fontSize="4xl">Thank You, Your Policy Request code : {uniqueCode}</Text>
-            </Box>
+
                 <Formiz
                     connect={myForm}
                     onValidSubmit={handleSubmit}
