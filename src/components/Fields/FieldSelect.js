@@ -36,7 +36,7 @@ export const FieldSelect = (props) => {
         value,
         name,
     } = useField(props);
-    console.log(" select name:"+name);
+    console.log(" value :"+value);
     const {
         children, label, options, required, placeholder, helper, ...otherProps
     } = props;
@@ -71,7 +71,7 @@ export const FieldSelect = (props) => {
                 name={name}
             >
                 {(options || []).map((item) => (
-                    <option key={item.value} value={item.value}>
+                    <option key={item.value} value={item.value} selected={item.value === value ? 'selected' : ''}>
                         {item.label || item.value}
                     </option>
                 ))}

@@ -14,8 +14,14 @@ import Coverage from "./auto/autoCoverage";
 import { Button,Box,Grid,ThemeProvider,CSSReset,Stack,Text,SimpleGrid,ButtonGroup,useToast,Heading,Spinner, } from "@chakra-ui/core";
 import SimpleStorage from 'react-simple-storage'
 import { useToastValues } from '../hooks/useToastValues'
+import {getWithExpiry} from '../utils'
 
-export const Auto = () => {
+export const Auto = (props) => {
+    console.log("props:" + JSON.stringify(props))
+    const {
+        policyData
+    } = props;
+    console.log(" Auto policyData" +  JSON.stringify(policyData) )
     const myForm = useForm({ subscribe: 'form' })
     const toastValues = useToastValues();
     const toast = useToast();
@@ -27,14 +33,28 @@ export const Auto = () => {
 
     const handleSubmit = (values) => {
         console.log(values);
-        const requestOptions = {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(values)
-        };
-        fetch('/rest/auto', requestOptions)
-            .then(response => response.json())
-            .then(data => setUniqueCode(data.uniqueCode));
+        const code = getWithExpiry("code");
+        if(code) {
+            values["code"] = code;
+            const requestOptions = {
+                method: 'PUT',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify(values)
+            };
+            fetch('/rest/auto', requestOptions)
+                .then(response => response.json())
+                .then(data => setUniqueCode(data.uniqueCode));
+        }
+        else{
+            const requestOptions = {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify(values)
+            };
+            fetch('/rest/auto', requestOptions)
+                .then(response => response.json())
+                .then(data => setUniqueCode(data.uniqueCode));
+        }
     }
     if(uniqueCode){
         return (
@@ -63,7 +83,7 @@ export const Auto = () => {
                             name="step1" // Split the form with FormizStep
                             label="General Info"
                         >
-                            <PolicyRequest/>
+                            <PolicyRequest policyData={policyData}/>
                         </FormizStep>
 
 
@@ -72,27 +92,27 @@ export const Auto = () => {
                             isEnabled={isManualEntryVisible}
                             label="Manual Entry"
                         >
-                            <GeneralInfo/>
+                            <GeneralInfo policyData={policyData}/>
                         </FormizStep>
                         <FormizStep
                             name="step5" // Split the form with FormizStep
                             label="Driver"
                         >
-                            <Driver/>
+                            <Driver policyData={policyData}/>
                         </FormizStep>
 
                         <FormizStep
                             name="step6" // Split the form with FormizStep
                             label="Vehicle"
                         >
-                            <Vehicle/>
+                            <Vehicle policyData={policyData}/>
                         </FormizStep>
 
                         <FormizStep
                             name="step7" // Split the form with FormizStep
                             label="Coverage"
                         >
-                            <Coverage/>
+                            <Coverage policyData={policyData}/>
                         </FormizStep>
 
 

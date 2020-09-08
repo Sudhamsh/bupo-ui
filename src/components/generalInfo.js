@@ -13,10 +13,10 @@ import { isLength } from '@formiz/validations'
 
 
 
-class GeneralInfo extends Component{
-    render(){
+export const GeneralInfo = (props) => {
+    const { policyData } = props;
 
-        return(
+    return(
         <ThemeProvider>
             <CSSReset />
 
@@ -29,41 +29,41 @@ class GeneralInfo extends Component{
                     name="homeOwnership"
                     label="Home Ownership"
                     placeholder="Select one..."
-                    keepValue
+                    defaultValue={policyData ?  policyData.homeOwnership : ""}
                     options={[
                         { value: 'own', label: 'Own' },
                         { value: 'rent', label: 'Rent' },
                     ]}
                 />
                 <FieldInput
-                    name="addressFirstLine"
+                    name="address.firstLine"
                     label="Address First Line"
                     required="First Name is required"
-                    defaultValue="44038 Renoir Ter"
+                    defaultValue={policyData && policyData.address ?  policyData.address.firstLine : "44038 Renoir Ter"}
                 />
                 <FieldInput
-                    name="aptNo"
+                    name="address.aptNo"
                     label="Apt No #"
-                    defaultValue=""
+                    defaultValue={policyData && policyData.address ?  policyData.address.aptNo : ""}
                     type="number"
                 />
                 <FieldInput
-                    name="city"
+                    name="address.city"
                     label="City"
                     required="City is required"
-                    defaultValue="Fremont"
+                    defaultValue={policyData && policyData.address ?  policyData.address.city : "Fremont"}
                 />
                 <FieldInput
-                    name="state"
+                    name="address.state"
                     label="State"
                     required="State is required"
-                    defaultValue="CA"
+                    defaultValue={policyData && policyData.address ?  policyData.address.state : "CA"}
                 />
                 <FieldInput
-                    name="zip"
+                    name="address.zip"
                     label="Zip"
                     required="Zip is required"
-                    defaultValue="40000"
+                    defaultValue={policyData && policyData.address ?  policyData.address.zip : "40000"}
                     type="number"
                     validations={[
                         {
@@ -75,8 +75,8 @@ class GeneralInfo extends Component{
 
             </SimpleGrid>
         </ThemeProvider>
-        )
-    }
+    )
+
 
 }
 

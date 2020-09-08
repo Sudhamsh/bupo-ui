@@ -11,8 +11,8 @@ import {FieldInput} from "./Fields/FieldInput"
 import {FieldAutoComplete} from "./Fields/FieldAutoComplete"
 import { ThemeProvider,CSSReset,SimpleGrid,Text,Stack,Box, } from "@chakra-ui/core";
 
-
-export default function  PolicyRequest(props){
+export const PolicyRequest = (props) => {
+    const { policyData } = props;
     const [apiResp, setApiResp] = useState([]);
 
     return (
@@ -28,7 +28,7 @@ export default function  PolicyRequest(props){
                 <FieldInput
                     name="firstName"
                     label="First Name"
-                    defaultValue="Sudhamsh"
+                    defaultValue={policyData ?  policyData.firstName : "Sudhamsh"}
                     required="First Name is required"
 
                 />
@@ -36,13 +36,13 @@ export default function  PolicyRequest(props){
                     name="lastName"
                     label="Last Name"
                     required="Last Name is required"
-                    defaultValue="Bachu"
+                    defaultValue={policyData ?  policyData.lastName : "Bachu"}
                 />
                 <FieldInput
                     name="phone"
                     label="Phone"
                     required="Phone is required"
-                    defaultValue="480-123-1234"
+                    defaultValue={policyData ?  policyData.phone : "480-123-1234"}
                     type="tel"
 
                 />
@@ -51,7 +51,7 @@ export default function  PolicyRequest(props){
                     label="Email"
                     type="email"
                     required="Email is required"
-                    defaultValue="a@a.com"
+                    defaultValue={policyData ?  policyData.email : "a@a.com"}
                     validations={[
                         {
                             rule: isEmail(),
@@ -69,4 +69,6 @@ export default function  PolicyRequest(props){
 
     )
 }
+
+export default PolicyRequest;
 

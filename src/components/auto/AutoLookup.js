@@ -9,39 +9,56 @@ import {
 import {  useForm,Formiz, } from '@formiz/core';
 import {FieldInput} from "../Fields/FieldInput"
 import Auto from "../auto"
-
+import {  useToast } from '@chakra-ui/core';
 import { useHistory } from "react-router-dom";
+import {setWithExpiry} from '../../utils'
 
 export const AutoLookup = () =>{
     const myForm = useForm()
     const [showSearch, setShowSearch] = useState(true);
+    const [policyData, setPolicyData] = useState(null);
     let history = useHistory();
+    const toast = useToast();
 
     useEffect(() => {
         return history.listen(location => {
-
 
             if (history.action === 'POP') {
                 setShowSearch(true)
             }
         })
-    }, [  ])
+    }, [policyData]);
 
+    function handleErrors(response) {
+        if (!response.ok) {
+            alert('Error')
+            throw Error(response.statusText);
+        }
+        return response;
+    }
     const handleSubmit = (values) => {
-         console.log(values);
+
          const params = new URLSearchParams(values).toString();
          console.log(params);
         const requestOptions = {
             method: 'GET',
         };
         fetch('/rest/auto/search?'+params, requestOptions)
+            .then(handleErrors)
             .then(response => response.json())
             .then((data) => {
+                    console.log("data"+ data)
+                    if(data.count == 1 ){
+                        console.log("data"+ data.results[0])
+                        setPolicyData(data.results[0]);
+                        setWithExpiry("code", values.code,10 * 60 * 1000); // Expires after 10 minutes
+                    }
                     setShowSearch(false);
-                    let newUrlIS =  window.location.origin + '/auto';
-                    window.history.pushState({"html":"a.html","pageTitle":"test"},"", newUrlIS);
-                }
-            );
+                    let newUrl =  window.location.origin + '/auto';
+                    window.history.pushState({"html":"a.html","pageTitle":"test"},"", newUrl);
+                }).catch(function(error) {
+                    console.log("Error:" +error);
+                });
     }
     if(showSearch) {
         return (
@@ -62,7 +79,7 @@ export const AutoLookup = () =>{
                                 name="code"
                                 label="Quote Code"
                                 required="Quote Code is required"
-                                defaultValue="1VP7Y-AZ32G-YTW7P-8BFA2"
+                                defaultValue="NZUSG-D6WLS-2XHDN-OWSPH"
                             />
                             <FieldInput
                                 name="lastName"
@@ -97,7 +114,7 @@ export const AutoLookup = () =>{
             </ThemeProvider>
         )
     }else{
-        return <Auto/>
+        return <Auto policyData={policyData}/>
     }
 }
 

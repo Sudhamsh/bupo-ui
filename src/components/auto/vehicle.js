@@ -23,14 +23,48 @@ const defaultVehicles = [
 ];
 
 
-export const Automobile = () =>{
-
+export const Vehicle = (props) =>{
+    const { policyData } = props;
     const form = useForm({ subscribe: 'form' });
     const [autoYears, setAutoYears] = useState([]);
-    const [vehicles, setVehicles] = useState(defaultVehicles);
+
+
+    //If there is existing Policy Data we need to trigger downshift items list
+    let existingVehicles =  defaultVehicles;
+    if(policyData){
+        existingVehicles =  policyData.vehicles;
+        existingVehicles.map(({ id,models,selectedMake,selectedModel }, index) => {
+
+            //Reset makes if it has a value
+            const yearValue = existingVehicles[index]["year"];
+            if(yearValue) {
+
+                existingVehicles[index]["selectedYear"] = yearValue;
+                existingVehicles[index]["makes"] = vehicleMakes[yearValue];
+            }
+
+            const  make = existingVehicles[index]["make"]
+            if(make){
+                existingVehicles[index]["models"] = allModelsByMakeByYear[2019][make];
+            }
+            //existingVehicles[index]["makes"] = allModelsByMakeByYear[2019]["BMW"];
+
+
+            //Reset model if it has a value
+            //existingVehicles[index]["makes"] = allModelsByMakeByYear[2019]["BMW"];
+            //existingVehicles[index]["make"] = "BMW";
+
+
+            }
+        );
+
+    }
+    const [vehicles, setVehicles] = useState(existingVehicles);
+
+
 
     useEffect(() => {
-        setVehicles(defaultVehicles);
+
     }, [form.resetKey]);
 
     useEffect(() => {
@@ -80,7 +114,7 @@ export const Automobile = () =>{
     }
 
     function selectedYearCallback(year,index){
-
+        console.log("selectedYearCallback....");
         vehicles[index]["selectedYear"] = year;
         vehicles[index]["makes"] = vehicleMakes[year];
 
@@ -95,19 +129,39 @@ export const Automobile = () =>{
             <Stack spacing={10}>
                 <Text fontSize="3xl">Vehicle(s)</Text>
             </Stack>
-            {vehicles.map(({ id,models,selectedMake,selectedModel }, index) => (
+            {   vehicles.map(({ id,models,selectedMake,selectedModel,makes }, index) => (
+
                 <Box borderWidth="1px" rounded="lg" p="6" maxW="200px">
                     <SimpleGrid columns={1} maxW="200px">
 
-                        <FieldAutoComplete label="Year" name={`vehicles[${index}].year`} index={index} items={autoYears} setValueCallback={selectedYearCallback} value=""/>
-                        <FieldAutoComplete label="Make" name={`vehicles[${index}].make`}  index={index} items={vehicles[index]["makes"]} setValueCallback={setMake}  value={vehicles[index]["selectedMake"]}/>
-                        <FieldAutoComplete label="Model" name={`vehicles[${index}].model`}  index={index} items={vehicles[index]["models"]} setValueCallback={setModel}  value={selectedModel}/>
+                        <FieldAutoComplete
+                            label="Year"
+                            name={`vehicles[${index}].year`}
+                            index={index} items={autoYears}
+                            setValueCallback={selectedYearCallback} defaultValue={policyData ? vehicles[index].year : '' }
+                            />
 
+                        <FieldAutoComplete
+                            label="Make"
+                            name={`vehicles[${index}].make`}
+                            index={index} items={vehicles[index]["makes"]}
+                            setValueCallback={setMake}
+                            value={vehicles[index]["selectedMake"]}
+                            defaultValue={policyData ? vehicles[index].make : '' }/>
+
+                        <FieldAutoComplete
+                            label="Model"
+                            name={`vehicles[${index}].model`}
+                            index={index}
+                            items={vehicles[index]["models"]}
+                            setValueCallback={setModel}
+                            value={selectedModel}
+                            defaultValue={policyData ? vehicles[index].model : '' }/>
 
                         <FieldInput
                             name={`vehicles[${index}].vin`}
                             label="VIN #"
-                            defaultValue="57x3v"
+                            defaultValue={policyData ? vehicles[index].vin : "57x3v" }
 
                         />
 
@@ -115,7 +169,7 @@ export const Automobile = () =>{
                             name={`vehicles[${index}].yearlyMileage`}
                             label="Yearly Mileage"
                             required="Yearly Mileage is required"
-                            defaultValue="6000"
+                            defaultValue={policyData ? vehicles[index].yearlyMileage : "9999" }
                             type="number"
                         />
                     </SimpleGrid>
@@ -131,4 +185,4 @@ export const Automobile = () =>{
     )
 }
 
-export default Automobile;
+export default Vehicle;

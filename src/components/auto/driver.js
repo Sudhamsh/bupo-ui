@@ -14,20 +14,27 @@ import { v4 as uuidv4 } from 'uuid'
 import {AddPlaceholder} from "../AddPlaceholder"
 
 
-const driverCollection = [
+const defaultDrivers = [
     {
-        id: uuidv4(),
         fName: 'New Driver',
     },
 ];
 
-export const Driver = () =>{
+export const Driver = (props) =>{
+    const { policyData } = props;
     const form = useForm({ subscribe: 'form' });
-    const [drivers, setDrivers] = useState(driverCollection);
+
 
     useEffect(() => {
-        setDrivers(driverCollection);
+
     },[form.resetKey]);
+
+    let existingDrivers = defaultDrivers;
+    if(policyData && policyData.drivers) {
+        existingDrivers = policyData.drivers;
+    }
+
+    const [drivers, setDrivers] = useState(existingDrivers);
 
     const addItem = () => {
         console.log('addItem' +  uuidv4());
@@ -84,14 +91,14 @@ export const Driver = () =>{
                                 name={`drivers[${index}].dateOfBirth`}
                                 label="Date of Birth"
                                 required="Date of Birth is required"
-                                defaultValue="01/01/1980"
+                                defaultValue={(policyData && policyData.drivers && policyData.drivers[index]) ?  policyData.drivers[index].dateOfBirth : "1980-01-01"}
                                 type="date"
                             />
                             <FieldSelect
                                 name={`drivers[${index}].educationLevel`}
                                 label="Education Level"
                                 placeholder="Select one..."
-                                keepValue
+                                defaultValue={(policyData && policyData.drivers && policyData.drivers[index]) ?  policyData.drivers[index].educationLevel : ""}
                                 options={[
                                     { value: 'HIGH_SCHOOL', label: 'High School' },
                                     { value: 'ASSOCIATE_DEGREE', label: 'Associate Degree' },
@@ -105,6 +112,7 @@ export const Driver = () =>{
                                 name={`drivers[${index}].maritalStatus`}
                                 label="Marrital Status"
                                 placeholder="Select one..."
+                                defaultValue={(policyData  && policyData.drivers && policyData.drivers[index]) ?  policyData.drivers[index].maritalStatus : ""}
                                 keepValue
                                 options={[
                                     { value: 'Married', label: 'Married' },
