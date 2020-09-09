@@ -7,6 +7,9 @@ import Header from './components/Header';
 import Auto from './components/auto.js'
 import Driver from './components/auto/driver.js'
 import AutoLookup from './components/auto/AutoLookup'
+import {
+    ThemeProvider,CSSReset
+} from "@chakra-ui/core";
 
 import {
     Container,
@@ -36,40 +39,44 @@ const About = () => (
 
 function App() {
     return (
-    <Container>
-        <Header/>
-        <Jumbotron>
-            Get Best price in the market with least effort. Or Let seller come to you. Or Seller bids for your business.
-        </Jumbotron>
-        <Container fluid>
-            <Router>
-                <Route exact path="/" component={Home}/>
-                <Route exact path="/about" component={About}/>
-                <Route exact path="/auto" component={Auto}/>
+        <ThemeProvider>
+            <CSSReset />
+            <Header/>
+            <Container>
 
-                <Route exact path="/auto/search" component={AutoLookup}/>
+                <Jumbotron>
+                    Get Best price in the market with least effort. Or Let seller come to you. Or Seller bids for your business.
+                </Jumbotron>
+                <Container fluid>
+                    <Router>
+                        <Route exact path="/" component={Home}/>
+                        <Route exact path="/about" component={About}/>
+                        <Route exact path="/auto" component={Auto}/>
 
-            </Router>
-        </Container>
-        <br/>
-        <Container className="bg-grey">
-            <Row>
-                <Col sm={4}>
+                        <Route exact path="/auto/search" component={AutoLookup}/>
 
-                </Col>
-                <Col sm={8}>
-                    <h2>Our Values</h2>
-                </Col>
-            </Row>
-        </Container>
-        <Container fluid>
-            <h2>SERVICES</h2>
-            Auto & Home Insurance Quotes
+                    </Router>
+                </Container>
+                <br/>
+                <Container className="bg-grey">
+                    <Row>
+                        <Col sm={4}>
 
-        </Container>
-        <hr/>
-        <span>Footer</span>
-    </Container>
+                        </Col>
+                        <Col sm={8}>
+                            <h2>Our Values</h2>
+                        </Col>
+                    </Row>
+                </Container>
+                <Container fluid>
+                    <h2>SERVICES</h2>
+                    Auto & Home Insurance Quotes
+
+                </Container>
+                <hr/>
+                <span>Footer</span>
+            </Container>
+        </ThemeProvider>
 
     )
 }
