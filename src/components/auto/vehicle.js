@@ -10,6 +10,12 @@ import allModelsByMakeByYear from "../../data/models.json"
 import {
     ThemeProvider,CSSReset,SimpleGrid,Text,Stack,Button, Flex,Box,IconButton,
     Divider,Input,
+    Accordion,
+    AccordionItem,
+    AccordionHeader,
+    AccordionPanel,
+    AccordionIcon,
+    Icon,
 } from "@chakra-ui/core";
 import {AddPlaceholder} from "../AddPlaceholder"
 import {  useForm } from '@formiz/core';
@@ -35,33 +41,22 @@ export const Vehicle = (props) =>{
         existingVehicles =  policyData.vehicles;
         existingVehicles.map(({ id,models,selectedMake,selectedModel }, index) => {
 
-            //Reset makes if it has a value
-            const yearValue = existingVehicles[index]["year"];
-            if(yearValue) {
+                //Reset makes if it has a value
+                const yearValue = existingVehicles[index]["year"];
+                if (yearValue) {
 
-                existingVehicles[index]["selectedYear"] = yearValue;
-                existingVehicles[index]["makes"] = vehicleMakes[yearValue];
-            }
+                    existingVehicles[index]["selectedYear"] = yearValue;
+                    existingVehicles[index]["makes"] = vehicleMakes[yearValue];
+                }
 
-            const  make = existingVehicles[index]["make"]
-            if(make){
-                existingVehicles[index]["models"] = allModelsByMakeByYear[2019][make];
-            }
-            //existingVehicles[index]["makes"] = allModelsByMakeByYear[2019]["BMW"];
-
-
-            //Reset model if it has a value
-            //existingVehicles[index]["makes"] = allModelsByMakeByYear[2019]["BMW"];
-            //existingVehicles[index]["make"] = "BMW";
-
-
-            }
-        );
+                const make = existingVehicles[index]["make"]
+                if (make) {
+                    existingVehicles[index]["models"] = allModelsByMakeByYear[2019][make];
+                }
+            });
 
     }
     const [vehicles, setVehicles] = useState(existingVehicles);
-
-
 
     useEffect(() => {
 
@@ -129,58 +124,81 @@ export const Vehicle = (props) =>{
             <Stack spacing={10}>
                 <Text fontSize="3xl">Vehicle(s)</Text>
             </Stack>
-            {   vehicles.map(({ id,models,selectedMake,selectedModel,makes }, index) => (
+            <Accordion>
+                {   vehicles.map(({ id,models,selectedMake,selectedModel,makes }, index) => (
+                    <AccordionItem>
+                        <AccordionHeader _expanded={{ bg: "green.500", color: "black" }}>
+                            <Box flex="1" textAlign="left">
+                                Vehicle :  {vehicles[index].selectedYear} - {vehicles[index].make} -  {vehicles[index].model}
+                            </Box>
+                            <AccordionIcon />
+                        </AccordionHeader>
+                        <AccordionPanel pb={4}>
+                            <Box borderWidth="1px" rounded="lg" p="6">
+                                <Box  textAlign="right">
+                                    <Icon
+                                        aria-label="Delete"
+                                        icon="delete"
+                                        onClick={() => removeItem(id)}
+                                        variant="ghost"
+                                        name="delete"
+                                        size="32px"
+                                        color="red.500" />
+                                </Box>
+                                <SimpleGrid key={id} direction="row" spacing="4" mb="6" data-test={`repeater-item[${index}]`} maxW="200px">
+                                    <FieldAutoComplete
+                                        label="Year"
+                                        name={`vehicles[${index}].year`}
+                                        index={index} items={autoYears}
+                                        required="Year is required"
+                                        setValueCallback={selectedYearCallback} defaultValue={policyData ? vehicles[index].year : '' }
+                                        />
 
-                <Box borderWidth="1px" rounded="lg" p="6" maxW="200px">
-                    <SimpleGrid columns={1} maxW="200px">
+                                    <FieldAutoComplete
+                                        label="Make"
+                                        name={`vehicles[${index}].make`}
+                                        index={index} items={vehicles[index]["makes"]}
+                                        setValueCallback={setMake}
+                                        value={vehicles[index]["selectedMake"]}
+                                        required="Make is required"
+                                        defaultValue={policyData ? vehicles[index].make : '' }/>
 
-                        <FieldAutoComplete
-                            label="Year"
-                            name={`vehicles[${index}].year`}
-                            index={index} items={autoYears}
-                            setValueCallback={selectedYearCallback} defaultValue={policyData ? vehicles[index].year : '' }
-                            />
+                                    <FieldAutoComplete
+                                        label="Model"
+                                        name={`vehicles[${index}].model`}
+                                        index={index}
+                                        items={vehicles[index]["models"]}
+                                        setValueCallback={setModel}
+                                        value={selectedModel}
+                                        required="Model is required"
+                                        defaultValue={policyData ? vehicles[index].model : '' }/>
 
-                        <FieldAutoComplete
-                            label="Make"
-                            name={`vehicles[${index}].make`}
-                            index={index} items={vehicles[index]["makes"]}
-                            setValueCallback={setMake}
-                            value={vehicles[index]["selectedMake"]}
-                            defaultValue={policyData ? vehicles[index].make : '' }/>
+                                    <FieldInput
+                                        name={`vehicles[${index}].vin`}
+                                        label="VIN #"
+                                        defaultValue={policyData ? vehicles[index].vin : "57x3v" }
 
-                        <FieldAutoComplete
-                            label="Model"
-                            name={`vehicles[${index}].model`}
-                            index={index}
-                            items={vehicles[index]["models"]}
-                            setValueCallback={setModel}
-                            value={selectedModel}
-                            defaultValue={policyData ? vehicles[index].model : '' }/>
+                                    />
 
-                        <FieldInput
-                            name={`vehicles[${index}].vin`}
-                            label="VIN #"
-                            defaultValue={policyData ? vehicles[index].vin : "57x3v" }
-
-                        />
-
-                        <FieldInput
-                            name={`vehicles[${index}].yearlyMileage`}
-                            label="Yearly Mileage"
-                            required="Yearly Mileage is required"
-                            defaultValue={policyData ? vehicles[index].yearlyMileage : "9999" }
-                            type="number"
-                        />
-                    </SimpleGrid>
-                </Box>
-            ))}
+                                    <FieldInput
+                                        name={`vehicles[${index}].yearlyMileage`}
+                                        label="Yearly Mileage"
+                                        required="Yearly Mileage is required"
+                                        defaultValue={policyData ? vehicles[index].yearlyMileage : "9999" }
+                                        type="number"
+                                    />
+                                </SimpleGrid>
+                            </Box>
+                        </AccordionPanel>
+                    </AccordionItem>
+                ))}
 
 
-            {vehicles.length <= 20 && (
-                <AddPlaceholder label="Add Vehicle" onClick={addItem} />
+                {vehicles.length <= 20 && (
+                    <AddPlaceholder label="Add Vehicle" onClick={addItem} />
 
-            )}
+                )}
+            </Accordion>
         </ThemeProvider>
     )
 }

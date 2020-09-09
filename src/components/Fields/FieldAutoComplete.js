@@ -24,8 +24,18 @@ export const FieldAutoComplete = (props) => {
         value,
     } = useField(props);
 
+    const [isTouched, setIsTouched] = useState(false);
+    const showError = !isValid && (isTouched || isSubmitted);
+
     const formGroupProps = {
         label,
+        errorMessage,
+        helper,
+        id,
+        isRequired: !!required,
+        label,
+        showError,
+        ...otherProps,
     };
 
 

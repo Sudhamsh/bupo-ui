@@ -6,6 +6,12 @@ import React, { Component,useState, useEffect, } from 'react'
 import {
         ThemeProvider,CSSReset,SimpleGrid,Text,Stack,Button, Flex,Box,IconButton,
         Divider,
+        Accordion,
+        AccordionItem,
+        AccordionHeader,
+        AccordionPanel,
+        AccordionIcon,
+        Icon,
         } from "@chakra-ui/core";
 import {  useForm } from '@formiz/core';
 import {FieldInput} from "../Fields/FieldInput"
@@ -57,89 +63,97 @@ export const Driver = (props) =>{
     <ThemeProvider>
         <CSSReset />
         <Stack spacing={10}>
-            <Text fontSize="3xl">Drivers()</Text>
+            <Text fontSize="3xl">Driver(s)</Text>
         </Stack>
-            {drivers.map(({ id, fName }, index) => (
-                <Box borderWidth="1px" rounded="lg" p="6">
-                    <SimpleGrid key={id} direction="row" spacing="4" mb="6" data-test={`repeater-item[${index}]`} maxW="200px">
-
-                            <Stack spacing={10} maxW="200px">
-                                <Text fontSize="3xl">Driver : {fName}
-                                <IconButton
+        <Accordion>
+            {drivers.map(({ id, firstName, lastName}, index) => (
+                <AccordionItem>
+                    <AccordionHeader _expanded={{ bg: "green.500", color: "white" }}>
+                        <Box flex="1" textAlign="left">
+                            Driver : {firstName} {lastName}
+                        </Box>
+                        <AccordionIcon />
+                    </AccordionHeader>
+                    <AccordionPanel >
+                        <Box borderWidth="1px" rounded="lg" p="6">
+                            <Box  textAlign="right">
+                                <Icon
                                     aria-label="Delete"
                                     icon="delete"
                                     onClick={() => removeItem(id)}
                                     variant="ghost"
-                                />
-                                </Text>
-                            </Stack>
+                                    name="delete"
+                                    size="32px"
+                                    color="red.500" />
+                            </Box>
+                            <SimpleGrid key={id} direction="row" spacing="4" mb="6" data-test={`repeater-item[${index}]`} maxW="200px">
+                                    <FieldInput
+                                        name={`drivers[${index}].firstName`}
+                                        label="First Name"
+                                        required="First Name is required"
+                                        defaultValue="Sudhamsh"
 
-                            <FieldInput
-                                name={`drivers[${index}].firstName`}
-                                label="First Name"
-                                required="First Name is required"
-                                defaultValue="Sudhamsh"
+                                    />
+                                    <FieldInput
+                                        name={`drivers[${index}].lastName`}
+                                        label="Last Name"
+                                        required="Last Name is required"
+                                        defaultValue="Bachu"
+                                    />
+                                    <FieldInput
+                                        name={`drivers[${index}].dateOfBirth`}
+                                        label="Date of Birth"
+                                        required="Date of Birth is required"
+                                        defaultValue={(policyData && policyData.drivers && policyData.drivers[index]) ?  policyData.drivers[index].dateOfBirth : "1980-01-01"}
+                                        type="date"
+                                    />
+                                    <FieldSelect
+                                        name={`drivers[${index}].educationLevel`}
+                                        label="Education Level"
+                                        placeholder="Select one..."
+                                        defaultValue={(policyData && policyData.drivers && policyData.drivers[index]) ?  policyData.drivers[index].educationLevel : ""}
+                                        options={[
+                                            { value: 'HIGH_SCHOOL', label: 'High School' },
+                                            { value: 'ASSOCIATE_DEGREE', label: 'Associate Degree' },
+                                            { value: 'BACHELORS_DEGREE', label: 'Bachelor\'s Degree' },
+                                            { value: 'MASTERS_DEGREE', label: 'Master\'s Degree' },
+                                            { value: 'DOCTORAL_DEGREE', label: 'Doctoral degree' },
 
-                            />
-                            <FieldInput
-                                name={`drivers[${index}].lastName`}
-                                label="Last Name"
-                                required="Last Name is required"
-                                defaultValue="Bachu"
-                            />
-                            <FieldInput
-                                name={`drivers[${index}].dateOfBirth`}
-                                label="Date of Birth"
-                                required="Date of Birth is required"
-                                defaultValue={(policyData && policyData.drivers && policyData.drivers[index]) ?  policyData.drivers[index].dateOfBirth : "1980-01-01"}
-                                type="date"
-                            />
-                            <FieldSelect
-                                name={`drivers[${index}].educationLevel`}
-                                label="Education Level"
-                                placeholder="Select one..."
-                                defaultValue={(policyData && policyData.drivers && policyData.drivers[index]) ?  policyData.drivers[index].educationLevel : ""}
-                                options={[
-                                    { value: 'HIGH_SCHOOL', label: 'High School' },
-                                    { value: 'ASSOCIATE_DEGREE', label: 'Associate Degree' },
-                                    { value: 'BACHELORS_DEGREE', label: 'Bachelor\'s Degree' },
-                                    { value: 'MASTERS_DEGREE', label: 'Master\'s Degree' },
-                                    { value: 'DOCTORAL_DEGREE', label: 'Doctoral degree' },
-
-                                ]}
-                            />
-                            <FieldSelect
-                                name={`drivers[${index}].maritalStatus`}
-                                label="Marrital Status"
-                                placeholder="Select one..."
-                                defaultValue={(policyData  && policyData.drivers && policyData.drivers[index]) ?  policyData.drivers[index].maritalStatus : ""}
-                                keepValue
-                                options={[
-                                    { value: 'Married', label: 'Married' },
-                                    { value: 'Single', label: 'Single' },
-                                    { value: 'Widowed', label: 'Widowed' },
-                                    { value: 'Divorced', label: 'Divorced' },
-                                    { value: 'N/A', label: 'N/A' },
-                                ]}
-                            />
-                            <FieldInput
-                                name={`drivers[${index}].licenseAgeAt`}
-                                label="First License Age At"
-                                required="First License At"
-                                defaultValue="16"
-                                type="number"
-                            />
+                                        ]}
+                                    />
+                                    <FieldSelect
+                                        name={`drivers[${index}].maritalStatus`}
+                                        label="Marrital Status"
+                                        placeholder="Select one..."
+                                        defaultValue={(policyData  && policyData.drivers && policyData.drivers[index]) ?  policyData.drivers[index].maritalStatus : ""}
+                                        keepValue
+                                        options={[
+                                            { value: 'Married', label: 'Married' },
+                                            { value: 'Single', label: 'Single' },
+                                            { value: 'Widowed', label: 'Widowed' },
+                                            { value: 'Divorced', label: 'Divorced' },
+                                            { value: 'N/A', label: 'N/A' },
+                                        ]}
+                                    />
+                                    <FieldInput
+                                        name={`drivers[${index}].licenseAgeAt`}
+                                        label="First License Age At"
+                                        required="First License At"
+                                        defaultValue="16"
+                                        type="number"
+                                    />
 
 
-                    </SimpleGrid>
-                </Box>
+                            </SimpleGrid>
+                        </Box>
+                    </AccordionPanel>
+                </AccordionItem>
             ))}
 
-        {drivers.length <= 20 && (
-
-            <AddPlaceholder label="Add Driver" onClick={addItem} />
-        )}
-
+            {drivers.length <= 20 && (
+                <AddPlaceholder label="Add Driver" onClick={addItem} />
+            )}
+        </Accordion>
     </ThemeProvider>
 
     )
