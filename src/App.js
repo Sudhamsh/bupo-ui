@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { useHistory } from "react-router-dom";
 
 import Header from './components/Header';
 import Home from './components/Home';
@@ -9,7 +10,7 @@ import Auto from './components/auto.js'
 import Driver from './components/auto/driver.js'
 import AutoLookup from './components/auto/AutoLookup'
 import {
-    ThemeProvider,CSSReset,Box,Stack,Text
+    ThemeProvider,CSSReset,Box,Stack,Text,Button,Flex,
 } from "@chakra-ui/core";
 
 import {
@@ -32,17 +33,29 @@ const About = () => (
 )
 
 
-function App() {
+
+export const App = () =>{
+    const history = useHistory();
+
+    const autoSearch = () =>{
+        window.location.href = '/auto/search'
+    }
+
     return (
         <ThemeProvider>
             <CSSReset />
             <Header/>
             <Container>
 
-                <Stack spacing={3} p="6" align="center">
-                    <Text fontSize="4xl"> Save money and protect your Privacy.
-                    </Text>
-                </Stack>
+                <Flex justify="space-between">
+                    <Flex  align="flex-end">
+                        <Text fontSize="4xl"> Save money with Privacy Protection.</Text>
+                    </Flex>
+                    <Flex  align="center" justify="right">
+                        <Button leftIcon="search" onClick={autoSearch}>Retrieve Existing Quote</Button>
+                    </Flex>
+                </Flex>
+
 
                 <Container fluid>
                     <Router>

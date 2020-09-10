@@ -44,10 +44,7 @@ const Header = props => {
                         <MenuItem minH="48px" as="a" href="#">About Us</MenuItem>
                         <MenuItem minH="48px" as="a" href="#">Contact Us</MenuItem>
                     </MenuList>
-
                 </Menu>
-
-
                 <a class="btn btn-outline-primary" href="#">Sign up</a>
             </div>
 
