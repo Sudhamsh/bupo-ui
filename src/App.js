@@ -3,12 +3,13 @@ import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 import Header from './components/Header';
+import Home from './components/Home';
 
 import Auto from './components/auto.js'
 import Driver from './components/auto/driver.js'
 import AutoLookup from './components/auto/AutoLookup'
 import {
-    ThemeProvider,CSSReset
+    ThemeProvider,CSSReset,Box,Stack,Text
 } from "@chakra-ui/core";
 
 import {
@@ -24,12 +25,6 @@ import {
 } from 'react-router-dom'
 
 
-const Home = () => (
-    <div>
-        <h2>Home</h2>
-    </div>
-)
-
 const About = () => (
     <div>
         <h2>About</h2>
@@ -44,9 +39,11 @@ function App() {
             <Header/>
             <Container>
 
-                <Jumbotron>
-                    Get Best price in the market with least effort. Or Let seller come to you. Or Seller bids for your business.
-                </Jumbotron>
+                <Stack spacing={3} p="6" align="center">
+                    <Text fontSize="4xl"> Save money and protect your Privacy.
+                    </Text>
+                </Stack>
+
                 <Container fluid>
                     <Router>
                         <Route exact path="/" component={Home}/>
