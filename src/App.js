@@ -9,6 +9,8 @@ import Home from './components/Home';
 import Auto from './components/auto.js'
 import Driver from './components/auto/driver.js'
 import AutoLookup from './components/auto/AutoLookup'
+import SubmitQuote from './components/agent/quote/SubmitQuote'
+import PolicyRequests from './components/agent/PolicyRequests'
 import {
     ThemeProvider,CSSReset,Box,Stack,Text,Button,Flex,
 } from "@chakra-ui/core";
@@ -64,6 +66,9 @@ export const App = () =>{
                         <Route exact path="/auto" component={Auto}/>
 
                         <Route exact path="/auto/search" component={AutoLookup}/>
+                        <Route exact path="/auto/quote" component={SubmitQuote}/>
+                        <Route exact path="/agent/requests" component={PolicyRequests}/>
+
 
                     </Router>
                 </Container>

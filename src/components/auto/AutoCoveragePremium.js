@@ -9,19 +9,16 @@ import {FieldSelect} from "../Fields/FieldSelect"
 
 
 
-export const Coverage = (props) =>{
-    const { policyData } = props;
+export const AutoCoveragePremium = (props) =>{
+    const { policyData,index} = props;
 
     return (
         <ThemeProvider>
             <CSSReset />
-            <Stack spacing={10}>
-                <Text fontSize="3xl">Coverage</Text>
-            </Stack>
 
-            <SimpleGrid columns={1} maxW="200px">
+            <SimpleGrid columns={2} spacing={10}>
                 <FieldSelect
-                    name="coverage.bodilyInjuryLimit"
+                    name={`quote[${index}].bodilyInjuryLimit`}
                     label="Bodily Injury Limits"
                     placeholder="Select one..."
                     defaultValue={policyData && policyData.coverage ?  policyData.coverage.bodilyInjuryLimit : ""}
@@ -39,9 +36,16 @@ export const Coverage = (props) =>{
                         { value: '$500,000/$500,000', label: '$500,000/$500,000' },
                     ]}
                 />
+                <FieldInput
+                    name={`quote[${index}].bilPremium`}
+                    label="Premium"
+                    required="Premium is required"
+                    type="number"
+                    defaultValue="10"
+                />
 
                 <FieldSelect
-                    name="coverage.propDamLiability"
+                    name={`quote[${index}].propDamLiability`}
                     label="Property Damage Liability"
                     placeholder="Select one..."
                     defaultValue={policyData && policyData.coverage ?  policyData.coverage.propDamLiability : ""}
@@ -55,9 +59,16 @@ export const Coverage = (props) =>{
                         { value: '$50,000', label: '$50,000' },
                     ]}
                 />
+                <FieldInput
+                    name={`quote[${index}].pdlPremium`}
+                    label="Premium"
+                    required="Premium is required"
+                    defaultValue="11"
+                    type="number"
+                />
 
                 <FieldSelect
-                    name="coverage.medicalPayments"
+                    name={`quote[${index}].medicalPayments`}
                     label="Medical Payments"
                     placeholder="Select one..."
                     defaultValue={policyData && policyData.coverage ?  policyData.coverage.medicalPayments : ""}
@@ -72,16 +83,23 @@ export const Coverage = (props) =>{
                         { value: '$25,000', label: '$25,000' },
                     ]}
                 />
+                <FieldInput
+                    name={`quote[${index}].mpPremium`}
+                    label="Premium"
+                    required="Premium is required"
+                    type="number"
+                    defaultValue="13"
+                />
 
                 <FieldSelect
-                    name="coverage.uninsuredMotorist"
+                    name={`quote[${index}].uninsuredMotorist`}
                     label="Uninsured/UnderInsured Motorist"
                     placeholder="Select one..."
                     defaultValue={policyData && policyData.coverage ?  policyData.coverage.uninsuredMotorist : ""}
                     keepValue
                     options={[
                         { value: '$15,000/$30,000', label: '$15,000/$30,000' },
-                        { value: '$20,000/$40,000', label: '$20,000/$40,000' },
+                        { value: '$20,000/$40,00', label: '$20,000/$40,000' },
                         { value: '$25,000/$50,000', label: '$25,000/$50,000' },
                         { value: '$30,000/$60,000', label: '$30,000/$60,000' },
                         { value: '$50,000/$100,000', label: '$50,000/$100,000' },
@@ -92,9 +110,16 @@ export const Coverage = (props) =>{
                         { value: '$500,000/$500,000', label: '$500,000/$500,000' },
                     ]}
                 />
+                <FieldInput
+                    name={`quote[${index}].mPremium`}
+                    label="Premium"
+                    required="Premium is required"
+                    type="number"
+                    defaultValue="14"
+                />
             </SimpleGrid>
         </ThemeProvider>
     )
 }
 
-export default Coverage;
+export default AutoCoveragePremium;
