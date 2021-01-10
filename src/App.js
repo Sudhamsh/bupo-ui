@@ -7,10 +7,14 @@ import Header from './components/Header';
 import Home from './components/Home';
 
 import Auto from './components/auto.js'
-import Driver from './components/auto/driver.js'
 import AutoLookup from './components/auto/AutoLookup'
 import SubmitQuote from './components/agent/quote/SubmitQuote'
 import PolicyRequests from './components/agent/PolicyRequests'
+import ViewQuotes from './components/auto/ViewQuotes'
+import Properties from './components/reit/properties'
+import CreateTenant from './components/tenant/CreateTenant'
+import OrgMgmt from './components/tenant/OrgMgmt'
+
 import {
     ThemeProvider,CSSReset,Box,Stack,Text,Button,Flex,
 } from "@chakra-ui/core";
@@ -68,7 +72,10 @@ export const App = () =>{
                         <Route exact path="/auto/search" component={AutoLookup}/>
                         <Route exact path="/auto/quote" component={SubmitQuote}/>
                         <Route exact path="/agent/requests" component={PolicyRequests}/>
-
+                        <Route exact path="/viewQuotes" component={ViewQuotes}/>
+                        <Route exact path="/properties" component={Properties}/>
+                        <Route exact path="/createTenant" component={CreateTenant}/>
+                        <Route exact path="/OrgMgmt" component={OrgMgmt}/>
 
                     </Router>
                 </Container>

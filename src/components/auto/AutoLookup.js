@@ -79,7 +79,7 @@ export const AutoLookup = () =>{
                                 name="code"
                                 label="Quote Code"
                                 required="Quote Code is required"
-                                defaultValue="NZUSG-D6WLS-2XHDN-OWSPH"
+                                defaultValue="BKH2Z-5R7X7-8QD8B-WIYFF"
                             />
                             <FieldInput
                                 name="lastName"

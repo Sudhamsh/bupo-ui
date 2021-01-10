@@ -24,6 +24,7 @@ export const Coverage = (props) =>{
                     name="coverage.bodilyInjuryLimit"
                     label="Bodily Injury Limits"
                     placeholder="Select one..."
+                    required="Medical Payments is required"
                     defaultValue={policyData && policyData.coverage ?  policyData.coverage.bodilyInjuryLimit : ""}
                     keepValue
                     options={[
@@ -43,6 +44,7 @@ export const Coverage = (props) =>{
                 <FieldSelect
                     name="coverage.propDamLiability"
                     label="Property Damage Liability"
+                    required="Medical Payments is required"
                     placeholder="Select one..."
                     defaultValue={policyData && policyData.coverage ?  policyData.coverage.propDamLiability : ""}
                     keepValue
@@ -59,6 +61,7 @@ export const Coverage = (props) =>{
                 <FieldSelect
                     name="coverage.medicalPayments"
                     label="Medical Payments"
+                    required="Medical Payments is required"
                     placeholder="Select one..."
                     defaultValue={policyData && policyData.coverage ?  policyData.coverage.medicalPayments : ""}
                     keepValue
@@ -76,6 +79,7 @@ export const Coverage = (props) =>{
                 <FieldSelect
                     name="coverage.uninsuredMotorist"
                     label="Uninsured/UnderInsured Motorist"
+                    required="Required"
                     placeholder="Select one..."
                     defaultValue={policyData && policyData.coverage ?  policyData.coverage.uninsuredMotorist : ""}
                     keepValue

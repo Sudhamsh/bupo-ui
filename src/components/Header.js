@@ -5,6 +5,20 @@ import {
     Container,
 
 } from 'react-bootstrap'
+import { GoogleLogin } from 'react-google-login';
+import {
+    Modal,
+    ModalOverlay,
+    ModalContent,
+    ModalHeader,
+    ModalFooter,
+    ModalBody,
+    ModalCloseButton,
+    useDisclosure,
+    useToast
+} from "@chakra-ui/core";
+
+
 
 const MenuItems = ({ children }) => (
     <Text mt={{ base: 4, md: 0 }} mr={6} display="block">
@@ -16,6 +30,87 @@ const MenuItems = ({ children }) => (
 const Header = props => {
     const [show, setShow] = React.useState(false);
     const handleToggle = () => setShow(!show);
+    const { isOpen, onOpen, onClose } = useDisclosure();
+    const [ isLoggedIn, setIsLoggedIn] = React.useState(false);
+    const [ isLoading, setIsLoading] = React.useState(false);
+    const [ userDisplayName, setUserDisplayName] = React.useState();
+    const toast = useToast();
+
+    const onSuccess = (res) => {
+        console.log('Login Success: currentUser:', res.profileObj);
+        if(res.profileObj) {
+            setIsLoggedIn(true);
+            let name = res.profileObj.givenName == null ? res.profileObj.name : res.profileObj.givenName;
+            setUserDisplayName(name)
+            //createUser(res.profileObj,"google")
+        }
+    };
+
+
+    function handleErrors(response) {
+        if (!response.ok) {
+            toast({
+                title: "Error",
+                description: "Unexpected Error Occured. Please retry.",
+                status: "error",
+                duration: 9000,
+                isClosable: true,
+            })
+            throw Error(response.statusText);
+        }
+        return response;
+    }
+
+    const createUser = (userDetails, type) =>{
+        let apiPayload = {};
+        if(type == "google"){
+            apiPayload["email"] = userDetails.email;
+            let name = userDetails.givenName == null ? userDetails.name : userDetails.givenName;
+            apiPayload["displayName"] = name;
+        }
+
+        const requestOptions = {
+            method: 'POST',
+            body: JSON.stringify(apiPayload),
+            headers: {
+                "Content-Type": "application/json"
+            },
+        };
+        fetch('/rest/user', requestOptions)
+            .then(response => {
+                setIsLoading(false);
+                if(response.status == 409){
+                    toast({
+                        title: "User Exists already",
+                        description: "User Exists",
+                        status: "error",
+                        duration: 9000,
+                        isClosable: true,
+                    })
+                }
+            })
+            .then((result) => {
+                    setIsLoading(false);
+                },
+                // Note: it's important to handle errors here
+                // instead of a catch() block so that we don't swallow
+                // exceptions from actual bugs in components.
+                (error) => {
+                    setIsLoading(false);
+                    toast({
+                        title: "Error",
+                        description: "Error",
+                        status: "error",
+                        duration: 9000,
+                        isClosable: true,
+                    })
+                });
+    }
+
+    const onFailure = (res) => {
+        console.log('Login failed: res:', JSON.stringify(res));
+        setIsLoggedIn(false);
+    };
 
     return (
         <>
@@ -35,6 +130,15 @@ const Header = props => {
                         <MenuItem minH="48px" as="a" href="#">Visitor</MenuItem>
                     </MenuList>
                 </Menu>
+                <Menu >
+                    <MenuButton as={Button} rightIcon="chevron-down" variantColor="black" align="top">
+                        Admin
+                    </MenuButton>
+                    <MenuList>
+                        <MenuItem minH="48px" as="a" href="/createTenant">Create Tenant</MenuItem>
+                        <MenuItem minH="48px" as="a" href="/OrgMgmt">Org Management</MenuItem>
+                    </MenuList>
+                </Menu>
 
                 <Menu>
                     <MenuButton as={Button} rightIcon="chevron-down" variantColor="black" align="top">
@@ -45,7 +149,42 @@ const Header = props => {
                         <MenuItem minH="48px" as="a" href="#">Contact Us</MenuItem>
                     </MenuList>
                 </Menu>
-                <a class="btn btn-outline-primary" href="#">Sign up</a>
+
+
+                {
+                    !isLoggedIn &&
+                         <Button class="btn btn-outline-primary" onClick={onOpen}>Sign In</Button>
+
+                }
+                {
+                    isLoggedIn &&
+                    <Text color="tomato">{userDisplayName}</Text>
+                }
+
+
+
+
+                <Modal isOpen={isOpen} onClose={onClose}>
+                    <ModalOverlay />
+                    <ModalContent>
+                        <ModalHeader>Modal Title</ModalHeader>
+                        <ModalCloseButton />
+                        <GoogleLogin
+                            clientId="760467338442-8mqcug72s5vn07njthobdd8tb6eqkek8.apps.googleusercontent.com"
+                            buttonText="Login"
+                            onSuccess={onSuccess}
+                            onFailure={onFailure}
+                            cookiePolicy={'none'}
+                        />
+                        <ModalFooter>
+                            <Button variantColor="blue" mr={3} onClick={onClose}>
+                                Close
+                            </Button>
+                            <Button variant="ghost">Create Account</Button>
+                        </ModalFooter>
+                    </ModalContent>
+                </Modal>
+
             </div>
 
         </nav>

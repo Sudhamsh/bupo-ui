@@ -24,6 +24,7 @@ import {FieldInput} from "../../Fields/FieldInput"
 import {FieldSelect} from "../../Fields/FieldSelect"
 import AutoCoveragePremium from "../../auto/AutoCoveragePremium"
 import {AddPlaceholder} from "../../AddPlaceholder"
+import { useToast } from "@chakra-ui/core";
 
 const defaultQuotes = [
     {
@@ -34,6 +35,7 @@ export const SubmitQuote = (props) =>{
     const [quotes, setQuotes] = useState(defaultQuotes);
     const [policyDetails, setPolicyDetails] = useState(null);
     const myForm = useForm({ subscribe: 'form' })
+    const toast = useToast();
 
     const addItem = () => {
         setQuotes((c) => [
@@ -46,7 +48,13 @@ export const SubmitQuote = (props) =>{
 
     function handleErrors(response) {
         if (!response.ok) {
-            alert('Error')
+            toast({
+                title: "Error",
+                description: "Unexpected Error Occured. Please retry.",
+                status: "error",
+                duration: 9000,
+                isClosable: true,
+            })
             throw Error(response.statusText);
         }
         return response;
@@ -57,11 +65,13 @@ export const SubmitQuote = (props) =>{
 
         const requestOptions = {
             method: 'PUT',
-            body: JSON.stringify(values)
+            body: JSON.stringify(values),
+            headers: {
+                "Content-Type": "application/json"
+            },
         };
         fetch('/rest/quote/code/'+policyDetails.code, requestOptions)
             .then(handleErrors);
-
 
     }
 
@@ -73,28 +83,30 @@ export const SubmitQuote = (props) =>{
             //Get code from URL
             const queryString = window.location.search;
             const params = new URLSearchParams(queryString);
+            if(params.get('code')) {
+                fetch('/rest/auto/code/' + params.get('code'), requestOptions)
+                    .then(handleErrors)
+                    .then(response => response.json())
+                    .then((data) => {
+                        console.log("data" + data)
+                        if (data != null && data.results.length == 1) {
+                            console.log("JSON : " + JSON.stringify(data.results[0]));
 
-            fetch('/rest/auto/code/'+params.get('code'), requestOptions)
-                .then(handleErrors)
-                .then(response => response.json())
-                .then((data) => {
-                    console.log("data" + data)
-                    if (data != null && data.results.length == 1) {
-                        console.log("JSON : " + JSON.stringify(data.results[0]));
+                            setPolicyDetails(data.results[0])
+                        } else {
+                            alert("Error");
+                        }
 
-                        setPolicyDetails(data.results[0])
-                    } else {
-                        alert("Error");
-                    }
-
-                }).catch(function (error) {
-                console.log("Error:" + error);
-            });
+                    }).catch(function (error) {
+                    console.log("Error:" + error);
+                });
+            }
         }
     },[policyDetails])
     return(
         <ThemeProvider>
             <CSSReset />
+
 
             <Heading as="h1" size="xl">Provide Quote</Heading>
             <Box  borderWidth="1px" rounded="lg" overflow="hidden" p="6">

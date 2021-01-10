@@ -111,6 +111,7 @@ export const Driver = (props) =>{
                                         name={`drivers[${index}].educationLevel`}
                                         label="Education Level"
                                         placeholder="Select one..."
+                                        required="Education Level is required"
                                         defaultValue={(policyData && policyData.drivers && policyData.drivers[index]) ?  policyData.drivers[index].educationLevel : ""}
                                         options={[
                                             { value: 'HIGH_SCHOOL', label: 'High School' },
@@ -125,6 +126,7 @@ export const Driver = (props) =>{
                                         name={`drivers[${index}].maritalStatus`}
                                         label="Marrital Status"
                                         placeholder="Select one..."
+                                        required="Marrital Status is required"
                                         defaultValue={(policyData  && policyData.drivers && policyData.drivers[index]) ?  policyData.drivers[index].maritalStatus : ""}
                                         keepValue
                                         options={[

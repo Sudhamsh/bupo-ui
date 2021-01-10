@@ -2,15 +2,36 @@
  * Created by sudhamshbachu on 5/29/20.
  */
 
-import React, {Component} from 'react'
+import React, {Component,useState,useEffect,} from 'react'
 import { ThemeProvider,CSSReset,SimpleGrid,Text,Stack, } from "@chakra-ui/core";
 import {FieldInput} from "../Fields/FieldInput"
 import {FieldSelect} from "../Fields/FieldSelect"
 
-
+let fieldValues = {};
 
 export const AutoCoveragePremium = (props) =>{
     const { policyData,index} = props;
+    const [quoteTotal,setQuoteTotal] = useState(0);
+
+    // There may be a simplier way to do it.
+    function addToQuoteTotal(fieldName, fieldValue){
+        console.log(index+ "fieldValues" + JSON.stringify(fieldValues))
+        if(!fieldValues[index]){
+            fieldValues[index] = {};
+        }
+        fieldValues[index][fieldName] =  fieldValue;
+
+
+
+        var total = 0;
+        for( var el in fieldValues[index] ) {
+            if( fieldValues[index].hasOwnProperty( el ) ) {
+                total += parseFloat( fieldValues[index][el] );
+            }
+        }
+
+        setQuoteTotal(total);
+    }
 
     return (
         <ThemeProvider>
@@ -18,7 +39,7 @@ export const AutoCoveragePremium = (props) =>{
 
             <SimpleGrid columns={2} spacing={10}>
                 <FieldSelect
-                    name={`quote[${index}].bodilyInjuryLimit`}
+                    name={`quotes[${index}].bodilyInjuryLimit`}
                     label="Bodily Injury Limits"
                     placeholder="Select one..."
                     defaultValue={policyData && policyData.coverage ?  policyData.coverage.bodilyInjuryLimit : ""}
@@ -37,15 +58,17 @@ export const AutoCoveragePremium = (props) =>{
                     ]}
                 />
                 <FieldInput
-                    name={`quote[${index}].bilPremium`}
+                    name={`quotes[${index}].bilPremium`}
+                    id={`quotes[${index}].bilPremium`}
                     label="Premium"
                     required="Premium is required"
                     type="number"
                     defaultValue="10"
+                    parentCallBack={addToQuoteTotal}
                 />
 
                 <FieldSelect
-                    name={`quote[${index}].propDamLiability`}
+                    name={`quotes[${index}].propDamLiability`}
                     label="Property Damage Liability"
                     placeholder="Select one..."
                     defaultValue={policyData && policyData.coverage ?  policyData.coverage.propDamLiability : ""}
@@ -60,15 +83,16 @@ export const AutoCoveragePremium = (props) =>{
                     ]}
                 />
                 <FieldInput
-                    name={`quote[${index}].pdlPremium`}
+                    name={`quotes[${index}].pdlPremium`}
                     label="Premium"
                     required="Premium is required"
                     defaultValue="11"
                     type="number"
+                    parentCallBack={addToQuoteTotal}
                 />
 
                 <FieldSelect
-                    name={`quote[${index}].medicalPayments`}
+                    name={`quotes[${index}].medicalPayments`}
                     label="Medical Payments"
                     placeholder="Select one..."
                     defaultValue={policyData && policyData.coverage ?  policyData.coverage.medicalPayments : ""}
@@ -84,15 +108,16 @@ export const AutoCoveragePremium = (props) =>{
                     ]}
                 />
                 <FieldInput
-                    name={`quote[${index}].mpPremium`}
+                    name={`quotes[${index}].mpPremium`}
                     label="Premium"
                     required="Premium is required"
                     type="number"
                     defaultValue="13"
+                    parentCallBack={addToQuoteTotal}
                 />
 
                 <FieldSelect
-                    name={`quote[${index}].uninsuredMotorist`}
+                    name={`quotes[${index}].uninsuredMotorist`}
                     label="Uninsured/UnderInsured Motorist"
                     placeholder="Select one..."
                     defaultValue={policyData && policyData.coverage ?  policyData.coverage.uninsuredMotorist : ""}
@@ -111,12 +136,15 @@ export const AutoCoveragePremium = (props) =>{
                     ]}
                 />
                 <FieldInput
-                    name={`quote[${index}].mPremium`}
+                    name={`quotes[${index}].uniPremium`}
                     label="Premium"
                     required="Premium is required"
                     type="number"
                     defaultValue="14"
+                    parentCallBack={addToQuoteTotal}
                 />
+                <Text><b>Total</b></Text>
+                <Text>{quoteTotal}</Text>
             </SimpleGrid>
         </ThemeProvider>
     )
