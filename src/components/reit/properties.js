@@ -10,6 +10,10 @@ import { MdBuild , MdCall } from "react-icons/md"
 import { IconButton,SearchIcon } from "@chakra-ui/core"
 import { AiOutlineStar,AiFillStar,AiOutlineProfile } from "react-icons/ai";
 import { Switch } from "@chakra-ui/core";
+import PropertyDetails from "./PropertyDetails";
+import Notes from "./Notes"
+import { Link,Icon } from "@chakra-ui/core";
+import {formatCurrency} from "../common/utils";
 
 export const Properties = (props) =>{
 
@@ -22,7 +26,7 @@ export const Properties = (props) =>{
 
     function handleErrors(response) {
         if (!response.ok) {
-            alert('Error')
+            alert('Error 3')
             throw Error(response.statusText);
         }
         return response;
@@ -32,27 +36,7 @@ export const Properties = (props) =>{
         // return something here
     }
 
-    function generateLoi() {
-        const requestOptions = {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-        };
 
-        fetch('/rest/reit/doc', requestOptions)
-            .then(handleErrors)
-            .then(response => response.json())
-            .then((data) => {
-                if (data != null && data.results) {
-                    console.log("JSON : " + JSON.stringify(data.results));
-
-                } else {
-                    alert("Error");
-                }
-            }).catch(function (error) {
-            console.log("Error:" + error);
-        });
-
-    }
 
      function fav(propertyId){
         setIsFav(true);
@@ -144,6 +128,44 @@ export const Properties = (props) =>{
 
     };
 
+    function getNotes(propertyId){
+        const requestOptions = {
+            method: 'GET',
+            headers: {'Content-Type': 'application/json'},
+        };
+
+        fetch('/rest/property/settings/propertyId/'+propertyId+"/notes", requestOptions)
+            .then(response => {
+                setIsLoading(false);
+                if(response.status == 200){
+
+                }else{
+                    toast({
+                        title: "Error while saving fav. Try again.",
+                        status: "error",
+                        duration: 9000,
+                        isClosable: true,
+                    })
+                }
+            })
+            .then((result) => {
+                    setIsLoading(false);
+                },
+                // Note: it's important to handle errors here
+                // instead of a catch() block so that we don't swallow
+                // exceptions from actual bugs in components.
+                (error) => {
+                    setIsLoading(false);
+                    toast({
+                        title: "Failed to get previous notes. Try again.",
+                        status: "error",
+                        duration: 9000,
+                        isClosable: true,
+                    })
+                });
+
+    };
+
     //this.fav = this.fav.bind(this);
 
     useEffect(()=>{
@@ -175,6 +197,8 @@ export const Properties = (props) =>{
 
     },[isFav]);
 
+
+
     const columns = [
     {
         dataField: 'id',
@@ -189,7 +213,6 @@ export const Properties = (props) =>{
                     return (
                        <>
                         <Box as={AiOutlineStar} size="32px" color="yellow.400" onClick={() => fav(row.id)}/>
-                        <Box as={AiOutlineProfile} size="32px" color="yellow.400" onClick={() => fav(row.id)}/>
                        </>
                     );
 
@@ -197,7 +220,7 @@ export const Properties = (props) =>{
         }
     },{
         dataField: 'propertyName',
-        text: 'Product Name',
+        text: 'Property Name',
     }, {
         dataField: 'remainingTerm',
         text: 'Remaining Term',
@@ -209,52 +232,58 @@ export const Properties = (props) =>{
     },  {
         dataField: 'externalLink',
         text: 'External Link',
-        sort: true
+        sort: true,
+        formatter: (cellContent, row) => {
+        return (
+            <Link href={cellContent} isExternal>
+                Source <Icon name="external-link" mx="2px" />
+            </Link>
+        );
+    }
     }, {
         dataField: 'askingPrice',
         text: 'Asking Price',
         sort: true,
-        sort: true
+        formatter: (cellContent, row) => {
+            return (
+                formatCurrency(cellContent)
+            );
+        }
     }, {
         dataField: 'cap',
         text: 'CAP',
         sort: true,
-        sort: true
+    },{
+        dataField: 'noi',
+        text: 'NOI',
+        sort: true,
+        formatter: (cellContent, row) => {
+            return (
+                formatCurrency(cellContent)
+            );
+        }
     },{
         dataField: 'population',
         text: 'Population',
         sort: true,
-        sort: true
+        formatter: (cellContent, row) => {
+            return (
+                formatCurrency(cellContent)
+            );
+        }
     }, {
         dataField: 'weightedScore',
         text: 'Weighted Score',
         sort: true,
-        sort: true
-    },
-        {
-            dataField: 'df1',
-            isDummyField: true,
-            text: 'Actions',
-            formatter: (cellContent, row) => {
-                return (
-                    <Button onClick={generateLoi}>
-                        Generate LOI
-                    </Button>
-                );
-
-            }
-        }];
-    // "remainingTerm": 8.9,
-    //     "norRemainingTerm": 0.0,
-    //     "cap": 6.75,
-    //     "norCap": 0.0,
-    //     "weightedScore": 0.0,
-    //     "askingPrice": 2151852.0,
-    //     "pricePerSqft": 0.0,
-    //     "norPricePerSqft": 0.0,
-    //     "rentPerSqft": 0.0,
-    //     "norRentPerSqft": 0.0
-    //const propertiesList = [{"remainingTerm":8.9,"norRemainingTerm":0,"cap":6.75,"norCap":0,"weightedScore":0,"askingPrice":2151852,"pricePerSqft":0,"norPricePerSqft":0,"rentPerSqft":0,"norRentPerSqft":0}];
+    }];
+    const expandRow = {
+        renderer: row => (
+            <div>
+                <PropertyDetails propId={`${row.id}`} listNoi={`${row.noi}`} listCap={`${row.cap}`} askingPrice={`${row.askingPrice}`}/>
+            </div>
+        ),
+        showExpandColumn: true
+    };
 
     if(propertiesList == null) {
         return (
@@ -264,7 +293,15 @@ export const Properties = (props) =>{
         return (
             <ThemeProvider>
                 <CSSReset />
-                <BootstrapTable keyField='id' data={ propertiesList } columns={ columns } filter={ filterFactory() } striped noDataIndication={ indication }/>
+                <BootstrapTable
+                    keyField='id'
+                    data={ propertiesList }
+                    columns={ columns }
+                    filter={ filterFactory() }
+                    striped
+                    noDataIndication={ indication }
+                    expandRow={ expandRow }
+                />
             </ThemeProvider>
         )
     }
