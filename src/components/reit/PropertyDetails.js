@@ -5,8 +5,11 @@ import React, { Component,useState, useEffect, } from 'react'
 import {Tags} from "./Tags"
 import {Notes} from "./Notes"
 import {Docs} from "./Docs"
+import {AiOutlineLock} from "react-icons/ai"
+import { Tabs, TabList, TabPanels, Tab, TabPanel,Box,Badge,Icon,Popover,
+    } from "@chakra-ui/core";
+import {getWithExpiry} from '../common/utils'
 
-import { Tabs, TabList, TabPanels, Tab, TabPanel } from "@chakra-ui/core";
 export const PropertyDetails = (props) =>{
 
     const[propId, setPropId] = useState(props.propId);
@@ -29,7 +32,12 @@ export const PropertyDetails = (props) =>{
                     <Tags propId={propId}/>
                 </TabPanel>
                 <TabPanel>
-                    <Notes propId={propId} />
+                    {getWithExpiry("userDisplayName") ?
+                        <Notes propId={propId} /> :
+                        <>
+                            <Icon name="lock" color="red.500"/><Badge variantColor="red">Login required!!!</Badge>
+                        </>
+                    }
                 </TabPanel>
                 <TabPanel>
                     <Docs propId={propId} listNoi={listNoi} listCap={listCap} askingPrice={askingPrice}/>

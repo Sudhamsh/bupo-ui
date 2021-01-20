@@ -5,7 +5,9 @@ import {
     Container,
 
 } from 'react-bootstrap'
-import { GoogleLogin } from 'react-google-login';
+
+import {storeToken,getWithExpiry} from './common/utils'
+import {Login} from './Login';
 import {
     Modal,
     ModalOverlay,
@@ -15,9 +17,19 @@ import {
     ModalBody,
     ModalCloseButton,
     useDisclosure,
-    useToast
+    useToast,
+    Popover,
+    PopoverTrigger,
+    PopoverContent,
+    PopoverHeader,
+    PopoverBody,
+    PopoverFooter,
+    PopoverArrow,
+    PopoverCloseButton,
+    ButtonGroup,
 } from "@chakra-ui/core";
-
+import { AiOutlineLogout } from "react-icons/ai";
+import {removeKey} from '../components/common/utils';
 
 
 const MenuItems = ({ children }) => (
@@ -31,86 +43,26 @@ const Header = props => {
     const [show, setShow] = React.useState(false);
     const handleToggle = () => setShow(!show);
     const { isOpen, onOpen, onClose } = useDisclosure();
-    const [ isLoggedIn, setIsLoggedIn] = React.useState(false);
-    const [ isLoading, setIsLoading] = React.useState(false);
-    const [ userDisplayName, setUserDisplayName] = React.useState();
-    const toast = useToast();
 
-    const onSuccess = (res) => {
-        console.log('Login Success: currentUser:', res.profileObj);
-        if(res.profileObj) {
-            setIsLoggedIn(true);
-            let name = res.profileObj.givenName == null ? res.profileObj.name : res.profileObj.givenName;
-            setUserDisplayName(name)
-            //createUser(res.profileObj,"google")
-        }
-    };
+    const displaySessionData = getWithExpiry("userDisplayName");
+    console.log("displaySessionData" + displaySessionData)
+    const [ userDisplayName, setUserDisplayName] = React.useState( displaySessionData);
+    const [ isLoggedIn, setIsLoggedIn] = React.useState(displaySessionData && true);
 
 
-    function handleErrors(response) {
-        if (!response.ok) {
-            toast({
-                title: "Error",
-                description: "Unexpected Error Occured. Please retry.",
-                status: "error",
-                duration: 9000,
-                isClosable: true,
-            })
-            throw Error(response.statusText);
-        }
-        return response;
+    const successCallBack = (displayName) =>{
+        console.log('header successCallBack' + displayName);
+        setUserDisplayName(displayName);
+        setIsLoggedIn(true);
+        onClose();
     }
 
-    const createUser = (userDetails, type) =>{
-        let apiPayload = {};
-        if(type == "google"){
-            apiPayload["email"] = userDetails.email;
-            let name = userDetails.givenName == null ? userDetails.name : userDetails.givenName;
-            apiPayload["displayName"] = name;
-        }
-
-        const requestOptions = {
-            method: 'POST',
-            body: JSON.stringify(apiPayload),
-            headers: {
-                "Content-Type": "application/json"
-            },
-        };
-        fetch('/rest/user', requestOptions)
-            .then(response => {
-                setIsLoading(false);
-                if(response.status == 409){
-                    toast({
-                        title: "User Exists already",
-                        description: "User Exists",
-                        status: "error",
-                        duration: 9000,
-                        isClosable: true,
-                    })
-                }
-            })
-            .then((result) => {
-                    setIsLoading(false);
-                },
-                // Note: it's important to handle errors here
-                // instead of a catch() block so that we don't swallow
-                // exceptions from actual bugs in components.
-                (error) => {
-                    setIsLoading(false);
-                    toast({
-                        title: "Error",
-                        description: "Error",
-                        status: "error",
-                        duration: 9000,
-                        isClosable: true,
-                    })
-                });
+    const logOut = () =>{
+        removeKey('token');
+        removeKey('userDisplayName');
+        //TODO: change this to event driven
+        window.location.reload(true);
     }
-
-    const onFailure = (res) => {
-        console.log('Login failed: res:', JSON.stringify(res));
-        setIsLoggedIn(false);
-    };
 
     return (
         <>
@@ -158,24 +110,36 @@ const Header = props => {
                 }
                 {
                     isLoggedIn &&
-                    <Text color="tomato">{userDisplayName}</Text>
+                    <>
+                    <Popover>
+                        <PopoverTrigger>
+                            <Button>{userDisplayName}</Button>
+                        </PopoverTrigger>
+                        <PopoverContent zIndex={4}>
+                            <PopoverArrow />
+                            <PopoverCloseButton />
+                            <PopoverBody>
+                                <ButtonGroup spacing={4}>
+                                    <Button rightIcon={AiOutlineLogout} variantColor="red" variant="solid" onClick={logOut}>
+                                        Sign Out
+                                    </Button>
+
+                                </ButtonGroup>
+                            </PopoverBody>
+                        </PopoverContent>
+                    </Popover>
+                    </>
                 }
-
-
-
 
                 <Modal isOpen={isOpen} onClose={onClose}>
                     <ModalOverlay />
                     <ModalContent>
                         <ModalHeader>Modal Title</ModalHeader>
                         <ModalCloseButton />
-                        <GoogleLogin
-                            clientId="760467338442-8mqcug72s5vn07njthobdd8tb6eqkek8.apps.googleusercontent.com"
-                            buttonText="Login"
-                            onSuccess={onSuccess}
-                            onFailure={onFailure}
-                            cookiePolicy={'none'}
-                        />
+                        <ModalBody>
+                            <Login successCallBack={successCallBack}/>
+
+                        </ModalBody>
                         <ModalFooter>
                             <Button variantColor="blue" mr={3} onClick={onClose}>
                                 Close

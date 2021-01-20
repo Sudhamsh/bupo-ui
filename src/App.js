@@ -31,6 +31,10 @@ import {
     Link
 } from 'react-router-dom'
 
+import axios from 'axios';
+import {getWithExpiry} from './components/common/utils'
+
+
 
 const About = () => (
     <div>
@@ -42,7 +46,8 @@ const About = () => (
 
 export const App = () =>{
     const history = useHistory();
-
+    axios.defaults.headers.common['Authorization'] = getWithExpiry('token');
+    axios.defaults.headers.post['Content-Type'] = 'application/json';
     const autoSearch = () =>{
         window.location.href = '/auto/search'
     }

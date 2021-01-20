@@ -21,6 +21,7 @@ import {
     useDisclosure,
     useToast
 } from "@chakra-ui/core";
+import axios from 'axios';
 
 
 export const Notes = (props) =>{
@@ -47,31 +48,41 @@ export const Notes = (props) =>{
 
         if(prevNotes == null) {
             setIsLoading(true);
-            fetch('/rest/reit/property/propertyId/'+propId+'/notes/', requestOptions)
-                .then(handleErrors)
-                .then(response => response.json())
-                .then((data) => {
+            axios.get('/rest/reit/property/propertyId/'+propId+'/notes/',)
+                .then((response) => {
                     setIsLoading(false);
-                    console.log("data" + data)
-                    if (data != null) {
-                        setPrevNotes(data.notes);
+                    if (response && response.data != null) {
+                        setPrevNotes(response.data.notes);
                     }
+                })
+                .catch((error) => {
+                    setIsLoading(false);
+                    // Error
+                    toast({
+                        title: "Notes retrieval Failed.",
+                        status: "error",
+                        duration: 9000,
+                        isClosable: true,
+                    })
+                    if (error.response) {
+                        // The request was made and the server responded with a status code
+                        // that falls out of the range of 2xx
+                        // console.log(error.response.data);
+                        // console.log(error.response.status);
+                        // console.log(error.response.headers);
+                    } else if (error.request) {
+                        // The request was made but no response was received
+                        // `error.request` is an instance of XMLHttpRequest in the
+                        // browser and an instance of
+                        // http.ClientRequest in node.js
+                        console.log(error.request);
+                    } else {
+                        // Something happened in setting up the request that triggered an Error
+                        console.log('Error', error.message);
+                    }
+                    console.log(error.config);
+                });
 
-                },
-                    // Note: it's important to handle errors here
-                    // instead of a catch() block so that we don't swallow
-                    // exceptions from actual bugs in components.
-                    (error) => {
-                        setIsLoading(false);
-                        toast({
-                            title: "Failed to get Notes. Try again.",
-                            status: "error",
-                            duration: 9000,
-                            isClosable: true,
-                        })
-                    }).catch(function (error) {
-                console.log("Error:" + error);
-            });
         }
     },[]);
 

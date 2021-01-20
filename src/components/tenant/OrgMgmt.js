@@ -23,14 +23,10 @@ export const OrgMgmt = (props) => {
             </Stack>
             <Tabs isFitted variant="enclosed">
                 <TabList>
-                    <Tab>Teams</Tab>
                     <Tab>Members</Tab>
                 </TabList>
 
                 <TabPanels>
-                    <TabPanel>
-                        <p><Teams/></p>
-                    </TabPanel>
                     <TabPanel>
                         <p><Members/></p>
                     </TabPanel>
