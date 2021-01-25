@@ -43,84 +43,90 @@ export const Tags = (props) =>{
     }
 
     useEffect(()=>{
-        const requestOptions = {
-            method: 'GET',
-            headers: { 'Content-Type': 'application/json' },
-        };
-        console.log("propId:"+propId)
+
         if(propId != null) {
             setIsLoading(true);
 
-            fetch('/rest/reit/tag/propertyId/'+propId, requestOptions)
-                .then(handleErrors)
-                .then(response => response.json())
-                .then((data) => {
-                        setIsLoading(false);
-                        setTags(data);
 
-                    },
-                    // Note: it's important to handle errors here
-                    // instead of a catch() block so that we don't swallow
-                    // exceptions from actual bugs in components.
-                    (error) => {
-                        setIsLoading(false);
-                        toast({
-                            title: "Failed to get tags. Try again.",
-                            status: "error",
-                            duration: 9000,
-                            isClosable: true,
-                        })
-                    }).catch(function (error) {
-                console.log("Error:" + error);
-            });
+            axios.get('/rest/reit/tag/propertyId/'+propId,)
+                .then((response) => {
+                    setIsLoading(false);
+                    setTags(response.data);
+                })
+                .catch((error) => {
+                    setIsLoading(false);
+                    // Error
+                    toast({
+                        title: "Failed to get tags. Try again.",
+                        status: "error",
+                        duration: 9000,
+                        isClosable: true,
+                    })
+                    if (error.response) {
+                        // The request was made and the server responded with a status code
+                        // that falls out of the range of 2xx
+                        // console.log(error.response.data);
+                        // console.log(error.response.status);
+                        // console.log(error.response.headers);
+                    } else if (error.request) {
+                        // The request was made but no response was received
+                        // `error.request` is an instance of XMLHttpRequest in the
+                        // browser and an instance of
+                        // http.ClientRequest in node.js
+                        console.log(error.request);
+                    } else {
+                        // Something happened in setting up the request that triggered an Error
+                        console.log('Error', error.message);
+                    }
+                    console.log(error.config);
+                });
         }
     },[]);
 
     const deleteTag = (delTagValue) =>{
         console.log("tagValue..."+delTagValue);
 
-        const requestOptions = {
-            method: 'DELETE',
-            headers: {'Content-Type': 'application/json'}
-        };
-        fetch('/rest/reit/tag/propertyId/'+propId+'/tag/'+delTagValue, requestOptions)
-            .then(response => {
+        axios.delete('/rest/reit/property/propertyId/'+propId+'/notes/',)
+            .then((response) => {
                 setIsLoading(false);
-                if(response.status == 200){
-                    //updated displayed tags
-                    setTags(tags.filter(function (e){
-                        return e != delTagValue;
-                    }));
-                    toast({
-                        title: "Tag Deleted",
-                        status: "success",
-                        duration: 9000,
-                        isClosable: true,
-                    })
-                }else{
-                    toast({
-                        title: "Tag Delete failed. Try again.",
-                        status: "error",
-                        duration: 9000,
-                        isClosable: true,
-                    })
-                }
+                setTags(tags.filter(function (e){
+                    return e != delTagValue;
+                }));
+                toast({
+                    title: "Tag Deleted",
+                    status: "success",
+                    duration: 9000,
+                    isClosable: true,
+                })
+
             })
-            .then((result) => {
-                    setIsLoading(false);
-                },
-                // Note: it's important to handle errors here
-                // instead of a catch() block so that we don't swallow
-                // exceptions from actual bugs in components.
-                (error) => {
-                    setIsLoading(false);
-                    toast({
-                        title: "Tag Delete failed. Try again.",
-                        status: "error",
-                        duration: 9000,
-                        isClosable: true,
-                    })
-                });
+            .catch((error) => {
+                setIsLoading(false);
+                // Error
+                toast({
+                    title: "Tag Delete failed. Try again.",
+                    status: "error",
+                    duration: 9000,
+                    isClosable: true,
+                })
+                if (error.response) {
+                    // The request was made and the server responded with a status code
+                    // that falls out of the range of 2xx
+                    // console.log(error.response.data);
+                    // console.log(error.response.status);
+                    // console.log(error.response.headers);
+                } else if (error.request) {
+                    // The request was made but no response was received
+                    // `error.request` is an instance of XMLHttpRequest in the
+                    // browser and an instance of
+                    // http.ClientRequest in node.js
+                    console.log(error.request);
+                } else {
+                    // Something happened in setting up the request that triggered an Error
+                    console.log('Error', error.message);
+                }
+                console.log(error.config);
+            });
     }
 
     const handleSubmit = (values) => {

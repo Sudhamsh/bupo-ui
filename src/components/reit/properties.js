@@ -14,6 +14,7 @@ import PropertyDetails from "./PropertyDetails";
 import Notes from "./Notes"
 import { Link,Icon } from "@chakra-ui/core";
 import {formatCurrency} from "../common/utils";
+import axios from 'axios'
 
 export const Properties = (props) =>{
 
@@ -36,79 +37,96 @@ export const Properties = (props) =>{
         // return something here
     }
 
-
-
      function fav(propertyId){
         setIsFav(true);
-         const requestOptions = {
-             method: 'PUT',
-             headers: {'Content-Type': 'application/json'},
-         };
-         fetch('/rest/reit/settings/propertyId/'+propertyId, requestOptions)
-             .then(response => {
+
+         axios.put('/rest/reit/settings/propertyId/'+propertyId)
+             .then((response) => {
                  setIsLoading(false);
-                 if(response.status == 200){
-                     toast({
-                         title: "Fav Saved.",
-                         status: "success",
-                         duration: 9000,
-                         isClosable: true,
-                     })
-                 }else{
-                     toast({
-                         title: "Error while saving fav. Try again.",
-                         status: "error",
-                         duration: 9000,
-                         isClosable: true,
-                     })
-                 }
+                 toast({
+                     title: "Fav Saved.",
+                     status: "success",
+                     duration: 9000,
+                     isClosable: true,
+                 })
              })
-             .then((result) => {
-                     setIsLoading(false);
-                 },
-                 // Note: it's important to handle errors here
-                 // instead of a catch() block so that we don't swallow
-                 // exceptions from actual bugs in components.
-                 (error) => {
-                     setIsLoading(false);
-                     toast({
-                         title: "Failed to create Org.",
-                         description: "We've created your account for you.",
-                         status: "error",
-                         duration: 9000,
-                         isClosable: true,
-                     })
-                 });
-
+             .catch((error) => {
+                 setIsLoading(false);
+                 // Error
+                 toast({
+                     title: "Error while saving fav. Try again.",
+                     status: "error",
+                     duration: 9000,
+                     isClosable: true,
+                 })
+                 if (error.response) {
+                     // The request was made and the server responded with a status code
+                     // that falls out of the range of 2xx
+                     // console.log(error.response.data);
+                     // console.log(error.response.status);
+                     // console.log(error.response.headers);
+                 } else if (error.request) {
+                     // The request was made but no response was received
+                     // `error.request` is an instance of XMLHttpRequest in the
+                     // browser and an instance of
+                     // http.ClientRequest in node.js
+                     console.log(error.request);
+                 } else {
+                     // Something happened in setting up the request that triggered an Error
+                     console.log('Error', error.message);
+                 }
+                 console.log(error.config);
+             });
     };
-
-
 
 
     //this.fav = this.fav.bind(this);
 
     useEffect(()=>{
-        const requestOptions = {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-        };
+
         if(propertiesList == null) {
-            fetch('/rest/reit/property', requestOptions)
-                .then(handleErrors)
-                .then(response => response.json())
-                .then((data) => {
-                    console.log("data" + data)
+            axios.post('/rest/reit/property')
+                .then((response) => {
+                    setIsLoading(false);
+                    const data = response.data;
                     if (data != null && data.results) {
                         console.log("JSON : " + JSON.stringify(data.results));
 
                         setPropertiesList(data.results)
                     } else {
-                        alert("Error");
+                        toast({
+                            title: "Error Getting Property list.",
+                            status: "error",
+                            duration: 9000,
+                            isClosable: true,
+                        })
                     }
+                })
+                .catch((error) => {
+                    setIsLoading(false);
 
-                }).catch(function (error) {
-                console.log("Error:" + error);
-            });
+                    if (error.response) {
+                        // Error
+                        toast({
+                            title: "Error Getting Property list.",
+                            status: "error",
+                            duration: 9000,
+                            isClosable: true,
+                        })
+                    } else if (error.request) {
+                        // Error
+                        toast({
+                            title: "Error Getting Property list. Remote Server took a break :)",
+                            status: "error",
+                            duration: 9000,
+                            isClosable: true,
+                        })
+                    } else {
+                        // Something happened in setting up the request that triggered an Error
+                        console.log('Error', error.message);
+                    }
+                    console.log(error.config);
+                });
         }
     },[propertiesList]);
 

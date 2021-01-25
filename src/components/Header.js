@@ -30,6 +30,7 @@ import {
 } from "@chakra-ui/core";
 import { AiOutlineLogout } from "react-icons/ai";
 import {removeKey} from '../components/common/utils';
+import axios from 'axios'
 
 
 const MenuItems = ({ children }) => (
@@ -43,7 +44,8 @@ const Header = props => {
     const [show, setShow] = React.useState(false);
     const handleToggle = () => setShow(!show);
     const { isOpen, onOpen, onClose } = useDisclosure();
-
+    const [isLoading, setIsLoading] = React.useState(false)
+    const toast = useToast()
     const displaySessionData = getWithExpiry("userDisplayName");
     console.log("displaySessionData" + displaySessionData)
     const [ userDisplayName, setUserDisplayName] = React.useState( displaySessionData);
@@ -61,7 +63,42 @@ const Header = props => {
         removeKey('token');
         removeKey('userDisplayName');
         //TODO: change this to event driven
-        window.location.reload(true);
+
+        axios.delete("/rest/user")
+            .then((response) => {
+                setIsLoading(false);
+                window.location.reload(true);
+            })
+            .catch((error) => {
+                setIsLoading(false);
+                // Error
+                toast({
+                    title: "Logout Failed.",
+                    status: "error",
+                    duration: 9000,
+                    isClosable: true,
+                })
+                if (error.response) {
+                    // The request was made and the server responded with a status code
+                    // that falls out of the range of 2xx
+                    // console.log(error.response.data);
+                    // console.log(error.response.status);
+                    // console.log(error.response.headers);
+                } else if (error.request) {
+                    // The request was made but no response was received
+                    // `error.request` is an instance of XMLHttpRequest in the
+                    // browser and an instance of
+                    // http.ClientRequest in node.js
+                    console.log(error.request);
+                } else {
+                    // Something happened in setting up the request that triggered an Error
+                    console.log('Error', error.message);
+                }
+                console.log(error.config);
+            });
+
+
+
     }
 
     return (

@@ -146,9 +146,6 @@ export const Notes = (props) =>{
     }
 
     const notesColumns = [{
-        dataField: 'id',
-        text: 'Product ID'
-    }, {
         dataField: 'epochTime',
         text: 'Product Name'
     }, {
@@ -190,7 +187,7 @@ export const Notes = (props) =>{
                 isLoading ? <Spinner/>:""
 
             }
-            <BootstrapTable keyField='id' data={ prevNotes } columns={ notesColumns } />
+            <BootstrapTable keyField='epochTime' data={ prevNotes } columns={ notesColumns } />
         </>
     );
 }
