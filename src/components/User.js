@@ -21,7 +21,6 @@ export const User = (props) => {
     const toast = useToast()
     const handleSubmit = (values) => {
         setIsLoading(true);
-        console.log(values);
 
         axios.post("/rest/user",values)
             .then((response) => {
@@ -109,19 +108,19 @@ export const User = (props) => {
                     ]}
 
                 />
-                {/*<FieldSelect*/}
-                    {/*name="role"*/}
-                    {/*label="Role"*/}
-                    {/*placeholder="Select one..."*/}
-                    {/*required="Education Level is required"*/}
-                    {/*options={[*/}
-                        {/*{ value: 'ORG_ADMIN', label: 'ORG_ADMIN' },*/}
-                        {/*{ value: 'AGENT_ADMIN', label: 'AGENT_ADMIN' },*/}
-                        {/*{ value: 'AGENT_MEMBER', label: 'AGENT_MEMBER' },*/}
-                        {/*{ value: 'BUYER', label: 'BUYER' },*/}
-                        {/*{ value: 'SELLER', label: 'SELLER' },*/}
-                    {/*]}*/}
-                {/*/>*/}
+                <FieldSelect
+                    name="role"
+                    label="Role"
+                    placeholder="Select one..."
+                    required="Education Level is required"
+                    options={[
+                        { value: 'ORG_ADMIN', label: 'ORG_ADMIN' },
+                        { value: 'AGENT_ADMIN', label: 'AGENT_ADMIN' },
+                        { value: 'AGENT_MEMBER', label: 'AGENT_MEMBER' },
+                        { value: 'BUYER', label: 'BUYER' },
+                        { value: 'SELLER', label: 'SELLER' },
+                    ]}
+                />
                 <Button
                     type="submit"
                     disabled={!userForm.isStepValid && userForm.isStepSubmitted}

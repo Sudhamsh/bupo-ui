@@ -22,15 +22,16 @@ import {
     useToast
 } from "@chakra-ui/core";
 import axios from 'axios';
-
+import BootstrapTable from 'react-bootstrap-table-next';
 
 export const Notes = (props) =>{
     const[propId, setPropId] = useState(props.propId);
 
-    const[prevNotes, setPrevNotes] = useState();
+    const[prevNotes, setPrevNotes] = useState([]);
     const myForm = useForm({ subscribe: 'form' })
     const [isLoading, setIsLoading] = React.useState(false)
     const toast = useToast()
+    let init = false;
 
     function handleErrors(response) {
         if (!response.ok) {
@@ -46,13 +47,14 @@ export const Notes = (props) =>{
             headers: { 'Content-Type': 'application/json' },
         };
 
-        if(prevNotes == null) {
+        if(!init) {
+            init = true;
             setIsLoading(true);
             axios.get('/rest/reit/property/propertyId/'+propId+'/notes/',)
                 .then((response) => {
                     setIsLoading(false);
                     if (response && response.data != null) {
-                        setPrevNotes(response.data.notes);
+                        setPrevNotes(response.data);
                     }
                 })
                 .catch((error) => {
@@ -90,14 +92,11 @@ export const Notes = (props) =>{
     const handleSubmit = (values) => {
         setIsLoading(true);
         console.log(values);
-        const requestOptions = {
-            method: 'PUT',
-            headers: {'Content-Type': 'application/json'},
-            body: JSON.stringify(values)
-        };
-        fetch('/rest/reit/property/propertyId/'+propId+'/notes/'+values.newNote, requestOptions)
-            .then(response => {
+
+        axios.put('/rest/reit/property/propertyId/'+propId+'/notes/',values)
+            .then((response) => {
                 setIsLoading(false);
+
                 if(response.status == 200){
                     toast({
                         title: "Note Saved",
@@ -114,23 +113,51 @@ export const Notes = (props) =>{
                     })
                 }
             })
-            .then((result) => {
-                    setIsLoading(false);
-                },
-                // Note: it's important to handle errors here
-                // instead of a catch() block so that we don't swallow
-                // exceptions from actual bugs in components.
-                (error) => {
-                    setIsLoading(false);
-                    toast({
-                        title: "Failed to save Notes. Try again.",
-                        description: "We've created your account for you.",
-                        status: "error",
-                        duration: 9000,
-                        isClosable: true,
-                    })
-                });
+            .catch((error) => {
+                setIsLoading(false);
+                // Error
+                toast({
+                    title: "Failed to save Notes. Try again.",
+                    description: "We've created your account for you.",
+                    status: "error",
+                    duration: 9000,
+                    isClosable: true,
+                })
+                if (error.response) {
+                    // The request was made and the server responded with a status code
+                    // that falls out of the range of 2xx
+                    // console.log(error.response.data);
+                    // console.log(error.response.status);
+                    // console.log(error.response.headers);
+                } else if (error.request) {
+                    // The request was made but no response was received
+                    // `error.request` is an instance of XMLHttpRequest in the
+                    // browser and an instance of
+                    // http.ClientRequest in node.js
+                    console.log(error.request);
+                } else {
+                    // Something happened in setting up the request that triggered an Error
+                    console.log('Error', error.message);
+                }
+                console.log(error.config);
+            });
+
+
     }
+
+    const notesColumns = [{
+        dataField: 'id',
+        text: 'Product ID'
+    }, {
+        dataField: 'epochTime',
+        text: 'Product Name'
+    }, {
+        dataField: 'userEmail',
+        text: 'User'
+    }, {
+        dataField: 'note',
+        text: 'Note'
+    }];
 
     return (
         <>
@@ -145,7 +172,7 @@ export const Notes = (props) =>{
                     style={{ minHeight: '16rem' }}
                 >
                     <FieldInput
-                        name="newNote"
+                        name="note"
                         label="Notes"
                         required="Notes are required"
                         defaultValue="Test Note..."
@@ -163,7 +190,7 @@ export const Notes = (props) =>{
                 isLoading ? <Spinner/>:""
 
             }
-            <Text mb="8px">{prevNotes}</Text>
+            <BootstrapTable keyField='id' data={ prevNotes } columns={ notesColumns } />
         </>
     );
 }

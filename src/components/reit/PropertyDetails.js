@@ -5,6 +5,7 @@ import React, { Component,useState, useEffect, } from 'react'
 import {Tags} from "./Tags"
 import {Notes} from "./Notes"
 import {Docs} from "./Docs"
+import {WorkFlow} from "./WorkFlow"
 import {AiOutlineLock} from "react-icons/ai"
 import { Tabs, TabList, TabPanels, Tab, TabPanel,Box,Badge,Icon,Popover,
     } from "@chakra-ui/core";
@@ -20,11 +21,12 @@ export const PropertyDetails = (props) =>{
 
     return(
         <>
-        <Tabs variant="enclosed" isLazy defaultIndex={2}>
+        <Tabs variant="enclosed" isLazy defaultIndex={3}>
             <TabList>
                 <Tab>Tags</Tab>
                 <Tab>Notes</Tab>
                 <Tab>Docs</Tab>
+                <Tab>Deal Group</Tab>
             </TabList>
 
             <TabPanels>
@@ -41,6 +43,9 @@ export const PropertyDetails = (props) =>{
                 </TabPanel>
                 <TabPanel>
                     <Docs propId={propId} listNoi={listNoi} listCap={listCap} askingPrice={askingPrice}/>
+                </TabPanel>
+                <TabPanel>
+                    <WorkFlow propId={propId}/>
                 </TabPanel>
             </TabPanels>
         </Tabs>

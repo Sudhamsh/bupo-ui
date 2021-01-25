@@ -27,12 +27,20 @@ export const Login = (props) => {
     const {successCallBack} = props;
 
     const onSuccess = (res) => {
+        //Works for Google login, will need changes for other third party sign-in.
         console.log('Login Success: currentUser:', JSON.stringify(res));
         if(res.profileObj) {
             setIsLoggedIn(true);
             let name = res.profileObj.givenName == null ? res.profileObj.name : res.profileObj.givenName;
-            successCallBack(name)
+            //perform serverside login
+
             //createUser(res.profileObj,"google")
+            let values = {};
+            values.email = res.profileObj.email;
+            values.token = res.tokenId;
+            login(values);
+
+            successCallBack(name)
         }
     };
 
