@@ -5,7 +5,12 @@
 import React, { Component,useState, useEffect, } from 'react'
 
 import { Box, Heading, Flex , MenuButton,Menu,
-    MenuList,MenuItem,Button,Textarea,Spinner,useDisclosure} from "@chakra-ui/core";
+    MenuList,MenuItem,Button,Textarea,Spinner,useDisclosure,
+    RadioGroup,
+    Radio,
+    Link,
+    Icon,
+    } from "@chakra-ui/core";
 import {
     Formiz,
     useForm,
@@ -28,11 +33,13 @@ import {
 import {formatCurrency} from "../common/utils";
 import axios from 'axios';
 import {FieldSelect} from "../Fields/FieldSelect"
+import {FieldRadio} from "../Fields/FieldRadio"
 
 
 export const Docs = (props) => {
     const loiForm = useForm()
-    const [isLoading, setIsLoading] = React.useState(false)
+    const [isLoading, setIsLoading] = useState(false)
+    const [showDropboxLink, setShowDropboxLink] = useState()
     const[propId, setPropId] = useState(props.propId);
     const toast = useToast()
     const { isOpen, onOpen, onClose } = useDisclosure();
@@ -42,6 +49,10 @@ export const Docs = (props) => {
     const[offerPrice, setOfferPrice] = useState();
     const [dropDownOptions,setDropDownOptions] = useState();
     let init = false;
+    const radioOptions =[
+        {value:"digiSign", text: "Send for Digital Signature"},
+        {value:"dropbox",text:"Draft in DropBox"}
+        ]
 
     useEffect(()=>{
         if(!init){
@@ -95,44 +106,49 @@ export const Docs = (props) => {
         values.propId=propId;
         values.offerPrice=offerPrice;
 
-        axios.post('/rest/reit/doc',values)
-            .then((response) => {
-                setIsLoading(false);
-                toast({
-                    title: "Doc created.",
-                    description: "We've created your account for you.",
-                    status: "success",
-                    duration: 9000,
-                    isClosable: true,
-                })
-            })
-            .catch((error) => {
-                setIsLoading(false);
-                // Error
-                toast({
-                    title: "Doc creation failed.",
-                    status: "error",
-                    duration: 9000,
-                    isClosable: true,
-                })
-                if (error.response) {
-                    // The request was made and the server responded with a status code
-                    // that falls out of the range of 2xx
-                    // console.log(error.response.data);
-                    // console.log(error.response.status);
-                    // console.log(error.response.headers);
-                } else if (error.request) {
-                    // The request was made but no response was received
-                    // `error.request` is an instance of XMLHttpRequest in the
-                    // browser and an instance of
-                    // http.ClientRequest in node.js
-                    console.log(error.request);
-                } else {
-                    // Something happened in setting up the request that triggered an Error
-                    console.log('Error', error.message);
-                }
-                console.log(error.config);
-            });
+        console.log("values:" + JSON.stringify(values));
+
+        // axios.post('/rest/reit/doc',values)
+        //     .then((response) => {
+        //         setIsLoading(false);
+        //         if(response.data && response.data.key == "dropboxPath"){
+        //             setShowDropboxLink("https://dropbox.com/home/"+response.data.value)
+        //         }
+        //         toast({
+        //             title: "Doc created.",
+        //             description: "We've created your account for you.",
+        //             status: "success",
+        //             duration: 9000,
+        //             isClosable: true,
+        //         })
+        //     })
+        //     .catch((error) => {
+        //         setIsLoading(false);
+        //         // Error
+        //         toast({
+        //             title: "Doc creation failed.",
+        //             status: "error",
+        //             duration: 9000,
+        //             isClosable: true,
+        //         })
+        //         if (error.response) {
+        //             // The request was made and the server responded with a status code
+        //             // that falls out of the range of 2xx
+        //             // console.log(error.response.data);
+        //             // console.log(error.response.status);
+        //             // console.log(error.response.headers);
+        //         } else if (error.request) {
+        //             // The request was made but no response was received
+        //             // `error.request` is an instance of XMLHttpRequest in the
+        //             // browser and an instance of
+        //             // http.ClientRequest in node.js
+        //             console.log(error.request);
+        //         } else {
+        //             // Something happened in setting up the request that triggered an Error
+        //             console.log('Error', error.message);
+        //         }
+        //         console.log(error.config);
+        //     });
 
     }
 
@@ -190,7 +206,24 @@ export const Docs = (props) => {
                                     required="User is required"
                                     options={dropDownOptions}
                                 />
+                                <FieldSelect
+                                    name={`sellerEmail`}
+                                    label="Siging Authority"
+                                    placeholder="Select one..."
+                                    required="User is required"
+                                    options={dropDownOptions}
+                                />
+                                <FieldRadio name="type"
+                                            radioOptions={radioOptions}
+                                            required="Choose one Option"
+                                />
                             </Stack>
+                            {
+                                showDropboxLink &&
+                                <Link href={showDropboxLink} isExternal>
+                                    Open DropBox File <Icon name="external-link" mx="2px" />
+                                </Link>
+                            }
                         </ModalBody>
 
                         <ModalFooter>

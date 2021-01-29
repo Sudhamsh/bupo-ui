@@ -5,16 +5,17 @@ import React, { Component,useState, useEffect,useRef, } from 'react'
 import { ThemeProvider,CSSReset,SimpleGrid,Text,Stack,Button,Box,useToast } from "@chakra-ui/core";
 
 import BootstrapTable from 'react-bootstrap-table-next';
-import filterFactory, { textFilter } from 'react-bootstrap-table2-filter';
+import filterFactory, { numberFilter,selectFilter } from 'react-bootstrap-table2-filter';
 import { MdBuild , MdCall } from "react-icons/md"
 import { IconButton,SearchIcon } from "@chakra-ui/core"
 import { AiOutlineStar,AiFillStar,AiOutlineProfile } from "react-icons/ai";
-import { Switch } from "@chakra-ui/core";
+
 import PropertyDetails from "./PropertyDetails";
 import Notes from "./Notes"
-import { Link,Icon } from "@chakra-ui/core";
-import {formatCurrency} from "../common/utils";
+import { Link,Icon,Flex,FormLabel,Switch } from "@chakra-ui/core";
+import {formatCurrency,formatNumber} from "../common/utils";
 import axios from 'axios'
+import cellEditFactory, { Type } from 'react-bootstrap-table2-editor';
 
 export const Properties = (props) =>{
 
@@ -22,8 +23,9 @@ export const Properties = (props) =>{
     const [show, setShow] = useState(false);
     const [isLoading, setIsLoading] = useState(false);
     const [isFav, setIsFav] = useState(false);
+    const [isAdvanceFilter, setAdvanceFilter] = useState(false);
     const target = useRef(null);
-    const toast = useToast()
+    const toast = useToast();
 
     function handleErrors(response) {
         if (!response.ok) {
@@ -91,8 +93,9 @@ export const Properties = (props) =>{
                     const data = response.data;
                     if (data != null && data.results) {
                         console.log("JSON : " + JSON.stringify(data.results));
+                        const propList = data.results;
+                        setPropertiesList(propList)
 
-                        setPropertiesList(data.results)
                     } else {
                         toast({
                             title: "Error Getting Property list.",
@@ -134,85 +137,176 @@ export const Properties = (props) =>{
 
     },[isFav]);
 
+    const statusOptions = {
+        SHORTLISTED:"SHORTLISTED",
+        LOI_SUBMITTED:"LOI_SUBMITTED",
+        LOI_ACCEPTED:"LOI_ACCEPTED",
+        PSA_RECEIVED:"PSA_RECEIVED",
+        PSA_SIGNED:"PSA_SIGNED",
+        INSPECTION_PERIOD:"INSPECTION_PERIOD",
+        INSPECTION_COMPLETED:"INSPECTION_COMPLETED",
+        FINANCE_APPROVED:"FINANCE_APPROVED",
+        CLOSED:"CLOSED",
+        IGNORE:"IGNORE"
+    };
 
+    const simpleColumns = [
+        {
+            dataField: 'id',
+            text: 'Property ID',
+            hidden: true
+        },{
+            dataField: 'propertyName',
+            text: 'Property Name',
+        }, {
+            dataField: 'remainingTerm',
+            text: 'Remaining Term',
+            sort: true
+        },  {
+            dataField: 'statusBean.status',
+            text: 'Status',
+        },  {
+            dataField: 'externalLink',
+            text: 'External Link',
+            sort: true,
+            formatter: (cellContent, row) => {
+                return (
+                    <Link href={cellContent} isExternal>
+                        Source <Icon name="external-link" mx="2px" />
+                    </Link>
+                );
+            }
+        }, {
+            dataField: 'askingPrice',
+            text: 'Asking Price',
+            sort: true,
+            formatter: (cellContent, row) => {
+                return (
+                    formatNumber(cellContent)
+                );
+            }
+        }, {
+            dataField: 'cap',
+            text: 'CAP',
+            sort: true,
+        },{
+            dataField: 'noi',
+            text: 'NOI',
+            sort: true,
+            formatter: (cellContent, row) => {
+                return (
+                    formatNumber(cellContent)
+                );
+            }
+        },{
+            dataField: 'population',
+            text: 'Population',
+            sort: true,
+            formatter: (cellContent, row) => {
+                return (
+                    formatNumber(cellContent)
+                );
+            }
+        }, {
+            dataField: 'weightedScore',
+            text: 'Weighted Score',
+            sort: true,
+            formatter: (cellContent, row) => {
+                return (
+                    formatNumber(cellContent,3)
+                );
+            }
+        }];
+    const [columns, setColumns] = useState(simpleColumns);
 
-    const columns = [
-    {
-        dataField: 'id',
-        text: 'Property ID',
-        hidden: true
-    },
-    {
-        dataField: 'df1',
-        isDummyField: true,
-        text: 'Actions',
-        formatter: (cellContent, row) => {
-                    return (
-                       <>
-                        <Box as={AiOutlineStar} size="32px" color="yellow.400" onClick={() => fav(row.id)}/>
-                       </>
-                    );
+    const advanceColumns = [
+        {
+            dataField: 'id',
+            text: 'Property ID',
+            hidden: true
+        },
+        {
+            dataField: 'df1',
+            isDummyField: true,
+            text: 'Actions',
+            formatter: (cellContent, row) => {
+                return (
+                    <>
+                    <Box as={AiOutlineStar} size="32px" color="yellow.400" onClick={() => fav(row.id)}/>
+                    </>
+                );
 
                 //<IconButton aria-label="Search database" icon="search" onClick={() => fav(row.id)}/>
-        }
-    },{
-        dataField: 'propertyName',
-        text: 'Property Name',
-    }, {
-        dataField: 'remainingTerm',
-        text: 'Remaining Term',
-        sort: true
-    },  {
-        dataField: 'status',
-        text: 'Status',
-        sort: true
-    },  {
-        dataField: 'externalLink',
-        text: 'External Link',
-        sort: true,
-        formatter: (cellContent, row) => {
-        return (
-            <Link href={cellContent} isExternal>
-                Source <Icon name="external-link" mx="2px" />
-            </Link>
-        );
-    }
-    }, {
-        dataField: 'askingPrice',
-        text: 'Asking Price',
-        sort: true,
-        formatter: (cellContent, row) => {
-            return (
-                formatCurrency(cellContent)
-            );
-        }
-    }, {
-        dataField: 'cap',
-        text: 'CAP',
-        sort: true,
-    },{
-        dataField: 'noi',
-        text: 'NOI',
-        sort: true,
-        formatter: (cellContent, row) => {
-            return (
-                formatCurrency(cellContent)
-            );
-        }
-    },{
-        dataField: 'population',
-        text: 'Population',
-        sort: true,
-        formatter: (cellContent, row) => {
-            return (
-                formatCurrency(cellContent)
-            );
-        }
-    }, {
-        dataField: 'weightedScore',
-        text: 'Weighted Score',
-        sort: true,
-    }];
+            }
+        },{
+            dataField: 'propertyName',
+            text: 'Property Name',
+        }, {
+            dataField: 'remainingTerm',
+            text: 'Remaining Term',
+            filter: numberFilter(),
+            sort: true
+        },  {
+            dataField: 'status',
+            text: 'Status',
+            filter: selectFilter({
+                options: statusOptions
+            })
+        },  {
+            dataField: 'externalLink',
+            text: 'External Link',
+            sort: true,
+            formatter: (cellContent, row) => {
+                return (
+                    <Link href={cellContent} isExternal>
+                        Source <Icon name="external-link" mx="2px" />
+                    </Link>
+                );
+            }
+        }, {
+            dataField: 'askingPrice',
+            text: 'Asking Price',
+            sort: true,
+            filter: numberFilter(),
+            formatter: (cellContent, row) => {
+                return (
+                    formatNumber(cellContent)
+                );
+            }
+        }, {
+            dataField: 'cap',
+            text: 'CAP',
+            sort: true,
+            filter: numberFilter(),
+        },{
+            dataField: 'noi',
+            text: 'NOI',
+            sort: true,
+            formatter: (cellContent, row) => {
+                return (
+                    formatNumber(cellContent)
+                );
+            }
+        },{
+            dataField: 'population',
+            text: 'Population',
+            sort: true,
+            formatter: (cellContent, row) => {
+                return (
+                    formatNumber(cellContent)
+                );
+            }
+        }, {
+            dataField: 'weightedScore',
+            text: 'Weighted Score',
+            sort: true,
+            formatter: (cellContent, row) => {
+                return (
+                    formatNumber(cellContent,3)
+                );
+            }
+        }];
+
     const expandRow = {
         renderer: row => (
             <div>
@@ -222,6 +316,16 @@ export const Properties = (props) =>{
         showExpandColumn: true
     };
 
+    const toggleFilter = () =>{
+
+        if(!isAdvanceFilter) {
+            setColumns(advanceColumns);
+        }else{
+            setColumns(simpleColumns);
+        }
+        setAdvanceFilter(!isAdvanceFilter);
+    }
+
     if(propertiesList == null) {
         return (
             <p>No Data!</p>
@@ -230,6 +334,10 @@ export const Properties = (props) =>{
         return (
             <ThemeProvider>
                 <CSSReset />
+                <Flex justify="left" align="right">
+                    <FormLabel htmlFor="advance-filters">Advance Filters</FormLabel>
+                    <Switch id="advance-filters" onChange={toggleFilter}/>
+                </Flex>
                 <BootstrapTable
                     keyField='id'
                     data={ propertiesList }
@@ -238,6 +346,8 @@ export const Properties = (props) =>{
                     striped
                     noDataIndication={ indication }
                     expandRow={ expandRow }
+                    cellEdit={ cellEditFactory({ mode: 'click', blurToSave: true }) }
+
                 />
             </ThemeProvider>
         )

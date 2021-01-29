@@ -10,6 +10,7 @@ import {AiOutlineLock} from "react-icons/ai"
 import { Tabs, TabList, TabPanels, Tab, TabPanel,Box,Badge,Icon,Popover,
     } from "@chakra-ui/core";
 import {getWithExpiry} from '../common/utils'
+import {Summary} from './Summary'
 
 export const PropertyDetails = (props) =>{
 
@@ -23,6 +24,7 @@ export const PropertyDetails = (props) =>{
         <>
         <Tabs variant="enclosed" isLazy defaultIndex={3}>
             <TabList>
+                <Tab>Summary</Tab>
                 <Tab>Tags</Tab>
                 <Tab>Notes</Tab>
                 <Tab>Docs</Tab>
@@ -30,6 +32,9 @@ export const PropertyDetails = (props) =>{
             </TabList>
 
             <TabPanels>
+                <TabPanel>
+                    <Summary propId={propId}/>
+                </TabPanel>
                 <TabPanel>
                     <Tags propId={propId}/>
                 </TabPanel>

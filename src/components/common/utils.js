@@ -9,12 +9,22 @@ export var formatCurrency = function(num) {
     });
 }
 
+export var formatNumber = function(num, fraction) {
+    return isNaN(num) ? num : num.toLocaleString(undefined, {
+        maximumFractionDigits: fraction ? fraction : 0
+    });
+}
+const ttl = 60*60*1000;
 export var localStore = function(key,data){
-    setWithExpiry(key,data,5*60*1000)
+    setWithExpiry(key,data,ttl)
 }
 
 export var isUserLoggedIn = function(){
 
+}
+
+ var updateTtl = function(key,data){
+    setWithExpiry(key,data,ttl)
 }
 
 
@@ -50,6 +60,10 @@ export function getWithExpiry(key) {
         localStorage.removeItem(key)
         return null
     }
+
+    //Update ttl
+    updateTtl(key, item.value)
+
     return item.value
 }
 
