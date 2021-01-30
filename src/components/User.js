@@ -3,7 +3,7 @@
  */
 
 import React, { Component,useState, useEffect,useRef, } from 'react'
-import { ThemeProvider,CSSReset,SimpleGrid,Text,Stack,Button,useToast } from "@chakra-ui/core";
+import { ChakraProvider,CSSReset,SimpleGrid,Text,Stack,Button,useToast } from "@chakra-ui/react";
 import {FieldInput} from "./Fields/FieldInput"
 import {FieldSelect} from "./Fields/FieldSelect"
 import {

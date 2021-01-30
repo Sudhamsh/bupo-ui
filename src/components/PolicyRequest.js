@@ -9,15 +9,15 @@ import { Formiz, useForm } from '@formiz/core';
 import  {isEmail}  from '@formiz/validations'
 import {FieldInput} from "./Fields/FieldInput"
 import {FieldAutoComplete} from "./Fields/FieldAutoComplete"
-import { ThemeProvider,CSSReset,SimpleGrid,Text,Stack,Box, } from "@chakra-ui/core";
+import { ChakraProvider,CSSReset,SimpleGrid,Text,Stack,Box, } from "@chakra-ui/react";
 
 export const PolicyRequest = (props) => {
     const { policyData } = props;
     const [apiResp, setApiResp] = useState([]);
 
     return (
-    <ThemeProvider>
-        <CSSReset />
+    <ChakraProvider>
+
         <Stack spacing={10}>
             <Text fontSize="3xl">Basic Information</Text>
         </Stack>
@@ -63,7 +63,7 @@ export const PolicyRequest = (props) => {
             </SimpleGrid>
         </Box>
 
-    </ThemeProvider>
+    </ChakraProvider>
 
 
 

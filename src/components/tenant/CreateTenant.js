@@ -2,7 +2,7 @@
  * Created by sudhamshbachu on 1/4/21.
  */
 import React, { Component,useState, useEffect,useRef, } from 'react'
-import { ThemeProvider,CSSReset,SimpleGrid,Text,Stack,Button,useToast } from "@chakra-ui/core";
+import { ChakraProvider,CSSReset,SimpleGrid,Text,Stack,Button,useToast } from "@chakra-ui/react";
 import {FieldInput} from "../Fields/FieldInput"
 import {
     Formiz,
@@ -60,8 +60,8 @@ export const CreateTenant = (props) => {
                 });
     }
     return (
-        <ThemeProvider>
-            <CSSReset />
+        <ChakraProvider>
+
             <Stack spacing={10}>
                 <Text fontSize="3xl">Create new Organization</Text>
             </Stack>
@@ -103,7 +103,7 @@ export const CreateTenant = (props) => {
                     </Button>
                 </form>
             </Formiz>
-        </ThemeProvider>
+        </ChakraProvider>
     )
 }
 

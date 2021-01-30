@@ -4,7 +4,7 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Button } from '@chakra-ui/core';
+import { Button } from '@chakra-ui/react';
 
 
 const propTypes = {

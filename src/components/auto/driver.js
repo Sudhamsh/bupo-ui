@@ -4,7 +4,7 @@
 
 import React, { Component,useState, useEffect, } from 'react'
 import {
-        ThemeProvider,CSSReset,SimpleGrid,Text,Stack,Button, Flex,Box,IconButton,
+        ChakraProvider,CSSReset,SimpleGrid,Text,Stack,Button, Flex,Box,IconButton,
         Divider,
         Accordion,
         AccordionItem,
@@ -12,7 +12,7 @@ import {
         AccordionPanel,
         AccordionIcon,
         Icon,
-        } from "@chakra-ui/core";
+        } from "@chakra-ui/react";
 import {  useForm } from '@formiz/core';
 import {FieldInput} from "../Fields/FieldInput"
 import {FieldSelect} from "../Fields/FieldSelect"
@@ -60,8 +60,8 @@ export const Driver = (props) =>{
     };
 
     return(
-    <ThemeProvider>
-        <CSSReset />
+    <ChakraProvider>
+
         <Stack spacing={10}>
             <Text fontSize="3xl">Driver(s)</Text>
         </Stack>
@@ -156,7 +156,7 @@ export const Driver = (props) =>{
                 <AddPlaceholder label="Add Driver" onClick={addItem} />
             )}
         </Accordion>
-    </ThemeProvider>
+    </ChakraProvider>
 
     )
 

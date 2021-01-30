@@ -12,7 +12,7 @@ import { Box, Heading, Flex, Text, MenuButton,Menu,
     MenuList,MenuItem,Button,Textarea,Spinner,FormControl,FormHelperText,FormLabel,Select,
     Icon,
     SimpleGrid,
-    } from "@chakra-ui/core";
+    } from "@chakra-ui/react";
 import {
     Formiz,
     FormizStep, // Import the FormizStep component
@@ -29,9 +29,12 @@ import {
     ModalCloseButton,
     useDisclosure,
     useToast
-} from "@chakra-ui/core";
-import { Tag, TagIcon, TagLabel, TagCloseButton,Stack, } from "@chakra-ui/core";
+} from "@chakra-ui/react";
+import { Tag, TagIcon, TagLabel, TagCloseButton,Stack, } from "@chakra-ui/react";
 import axios from 'axios';
+import {ToastUtil} from '../common/ToastUtil';
+import {isUserLoggedIn} from '../common/utils'
+
 
 export const Summary = (props) =>{
 
@@ -48,12 +51,9 @@ export const Summary = (props) =>{
             .then((response) => {
                 setIsLoading(false);
                 setUpdateSuccess(true);
-                toast({
-                    title: "Status Saved.",
-                    status: "success",
-                    duration: 9000,
-                    isClosable: true,
-                })
+                ToastUtil.newToast(
+                    "Status Saved.",
+                     "success")
             })
             .catch((error) => {
                 setIsLoading(false);

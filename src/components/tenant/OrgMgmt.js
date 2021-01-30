@@ -2,7 +2,7 @@
  * Created by sudhamshbachu on 1/5/21.
  */
 import React, { Component,useState, useEffect,useRef, } from 'react'
-import { ThemeProvider,CSSReset,SimpleGrid,Text,Stack,Button,useToast } from "@chakra-ui/core";
+import { ChakraProvider,CSSReset,SimpleGrid,Text,Stack,Button,useToast } from "@chakra-ui/react";
 import {FieldInput} from "../Fields/FieldInput"
 import {
     Formiz,
@@ -10,14 +10,14 @@ import {
     useForm,
 } from '@formiz/core'
 import  {isEmail}  from '@formiz/validations'
-import { Tabs, TabList, TabPanels, Tab, TabPanel } from "@chakra-ui/core"
+import { Tabs, TabList, TabPanels, Tab, TabPanel } from "@chakra-ui/react"
 import Teams from  './Teams'
 import Members from './Members'
 
 export const OrgMgmt = (props) => {
     return (
-        <ThemeProvider>
-            <CSSReset />
+        <ChakraProvider>
+
             <Stack spacing={10}>
                 <Text fontSize="3xl">Organization Management</Text>
             </Stack>
@@ -33,7 +33,7 @@ export const OrgMgmt = (props) => {
                 </TabPanels>
             </Tabs>
 
-        </ThemeProvider>
+        </ChakraProvider>
     )
 
 }

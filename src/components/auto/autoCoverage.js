@@ -3,7 +3,7 @@
  */
 
 import React, {Component} from 'react'
-import { ThemeProvider,CSSReset,SimpleGrid,Text,Stack, } from "@chakra-ui/core";
+import { ChakraProvider,CSSReset,SimpleGrid,Text,Stack, } from "@chakra-ui/react";
 import {FieldInput} from "../Fields/FieldInput"
 import {FieldSelect} from "../Fields/FieldSelect"
 
@@ -13,8 +13,8 @@ export const Coverage = (props) =>{
     const { policyData } = props;
 
     return (
-        <ThemeProvider>
-            <CSSReset />
+        <ChakraProvider>
+
             <Stack spacing={10}>
                 <Text fontSize="3xl">Coverage</Text>
             </Stack>
@@ -97,7 +97,7 @@ export const Coverage = (props) =>{
                     ]}
                 />
             </SimpleGrid>
-        </ThemeProvider>
+        </ChakraProvider>
     )
 }
 

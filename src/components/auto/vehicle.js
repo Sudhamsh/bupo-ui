@@ -8,7 +8,7 @@ import React, { Component,useState, useEffect, } from 'react'
 import vehicleMakes from "../../data/vehicleMakes.json"
 import allModelsByMakeByYear from "../../data/models.json"
 import {
-    ThemeProvider,CSSReset,SimpleGrid,Text,Stack,Button, Flex,Box,IconButton,
+    ChakraProvider,CSSReset,SimpleGrid,Text,Stack,Button, Flex,Box,IconButton,
     Divider,Input,
     Accordion,
     AccordionItem,
@@ -16,7 +16,7 @@ import {
     AccordionPanel,
     AccordionIcon,
     Icon,
-} from "@chakra-ui/core";
+} from "@chakra-ui/react";
 import {AddPlaceholder} from "../AddPlaceholder"
 import {  useForm } from '@formiz/core';
 import { v4 as uuidv4 } from 'uuid'
@@ -119,8 +119,8 @@ export const Vehicle = (props) =>{
     }
 
     return(
-        <ThemeProvider>
-            <CSSReset />
+        <ChakraProvider>
+
             <Stack spacing={10}>
                 <Text fontSize="3xl">Vehicle(s)</Text>
             </Stack>
@@ -199,7 +199,7 @@ export const Vehicle = (props) =>{
 
                 )}
             </Accordion>
-        </ThemeProvider>
+        </ChakraProvider>
     )
 }
 

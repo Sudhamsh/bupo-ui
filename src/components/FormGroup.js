@@ -8,7 +8,7 @@ import {
     FormLabel,
     FormErrorMessage,
     FormHelperText,
-} from '@chakra-ui/core';
+} from '@chakra-ui/react';
 
 const propTypes = {
     children: PropTypes.node,

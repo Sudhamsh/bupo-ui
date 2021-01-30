@@ -20,7 +20,7 @@ export var localStore = function(key,data){
 }
 
 export var isUserLoggedIn = function(){
-
+    return getWithExpiry("userDisplayName");
 }
 
  var updateTtl = function(key,data){

@@ -11,7 +11,7 @@ import  Vehicle  from './auto/vehicle'
 import  Driver  from './auto/driver'
 import PolicyRequest from './PolicyRequest'
 import Coverage from "./auto/autoCoverage";
-import { Button,Box,Grid,ThemeProvider,CSSReset,Stack,Text,SimpleGrid,ButtonGroup,useToast,Heading,Spinner, } from "@chakra-ui/core";
+import { Button,Box,Grid,ChakraProvider,CSSReset,Stack,Text,SimpleGrid,ButtonGroup,useToast,Heading,Spinner, } from "@chakra-ui/react";
 import SimpleStorage from 'react-simple-storage'
 import { useToastValues } from '../hooks/useToastValues'
 import {getWithExpiry} from '../utils'
@@ -64,8 +64,8 @@ export const Auto = (props) => {
         )
     }else{
         return (
-        <ThemeProvider>
-            <CSSReset />
+        <ChakraProvider>
+
 
                 <Formiz
                     connect={myForm}
@@ -144,7 +144,7 @@ export const Auto = (props) => {
 
                     </form>
                 </Formiz>
-            </ThemeProvider>
+            </ChakraProvider>
 
         )
     }

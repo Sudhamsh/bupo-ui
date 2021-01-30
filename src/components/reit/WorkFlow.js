@@ -7,7 +7,7 @@ import {FieldSelect} from "../Fields/FieldSelect"
 
 import React, { Component,useState, useEffect, } from 'react'
 import {
-    ThemeProvider,CSSReset,SimpleGrid,Text,Stack,Button, Flex,Box,IconButton,
+    ChakraProvider,CSSReset,SimpleGrid,Text,Stack,Button, Flex,Box,IconButton,
     Divider,Input,
     Accordion,
     AccordionItem,
@@ -16,7 +16,7 @@ import {
     AccordionIcon,
     Icon,
     useToast,
-} from "@chakra-ui/core";
+} from "@chakra-ui/react";
 import {AddPlaceholder} from "../AddPlaceholder"
 import { v4 as uuidv4 } from 'uuid'
 import {
@@ -172,7 +172,7 @@ export const WorkFlow = (props) =>{
                 className="demo-form"
                 style={{ minHeight: '16rem' }}
             >
-                <CSSReset />
+
                 <Stack spacing={10}>
                     <Text fontSize="3xl">Users(s)</Text>
                 </Stack>

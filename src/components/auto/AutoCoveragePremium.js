@@ -3,7 +3,7 @@
  */
 
 import React, {Component,useState,useEffect,} from 'react'
-import { ThemeProvider,CSSReset,SimpleGrid,Text,Stack, } from "@chakra-ui/core";
+import { ChakraProvider,CSSReset,SimpleGrid,Text,Stack, } from "@chakra-ui/react";
 import {FieldInput} from "../Fields/FieldInput"
 import {FieldSelect} from "../Fields/FieldSelect"
 
@@ -34,8 +34,8 @@ export const AutoCoveragePremium = (props) =>{
     }
 
     return (
-        <ThemeProvider>
-            <CSSReset />
+        <ChakraProvider>
+
 
             <SimpleGrid columns={2} spacing={10}>
                 <FieldSelect
@@ -146,7 +146,7 @@ export const AutoCoveragePremium = (props) =>{
                 <Text><b>Total</b></Text>
                 <Text>{quoteTotal}</Text>
             </SimpleGrid>
-        </ThemeProvider>
+        </ChakraProvider>
     )
 }
 

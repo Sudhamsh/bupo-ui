@@ -2,7 +2,7 @@
  * Created by sudhamshbachu on 8/10/20.
  */
 import Downshift from 'downshift'
-import { Input,InputGroup, } from "@chakra-ui/core";
+import { Input,InputGroup, } from "@chakra-ui/react";
 import React, { useEffect, useState } from 'react';
 import { useField, fieldPropTypes, fieldDefaultProps } from '@formiz/core';
 import {FormGroup} from '../FormGroup'

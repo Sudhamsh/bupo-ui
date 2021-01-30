@@ -3,7 +3,7 @@
  */
 
 import React, { Component } from 'react'
-import { Button,Box,Grid,ThemeProvider,CSSReset } from "@chakra-ui/core";
+import { Button,Box,Grid,ChakraProvider,CSSReset } from "@chakra-ui/react";
 
 class InfoOptions extends Component{
 
@@ -11,8 +11,8 @@ class InfoOptions extends Component{
 
 
         return(
-            <ThemeProvider>
-                <CSSReset />
+            <ChakraProvider>
+
                 <Stack spacing={10}>
                     <Text fontSize="3xl">Information Options</Text>
                 </Stack>
@@ -21,7 +21,7 @@ class InfoOptions extends Component{
                     <Button>Upload Policy</Button>
                     <Button>Enter Details</Button>
                 </SimpleGrid>
-            </ThemeProvider>
+            </ChakraProvider>
 
 
         )

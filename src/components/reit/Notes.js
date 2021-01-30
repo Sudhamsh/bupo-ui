@@ -3,7 +3,7 @@
  */
 import React, { Component,useState, useEffect, } from 'react'
 import { Box, Heading, Flex, Text, MenuButton,Menu,
-    MenuList,MenuItem,Button,Textarea,Spinner} from "@chakra-ui/core";
+    MenuList,MenuItem,Button,Textarea,Spinner} from "@chakra-ui/react";
 import {
     Formiz,
     FormizStep, // Import the FormizStep component
@@ -20,7 +20,7 @@ import {
     ModalCloseButton,
     useDisclosure,
     useToast
-} from "@chakra-ui/core";
+} from "@chakra-ui/react";
 import axios from 'axios';
 import BootstrapTable from 'react-bootstrap-table-next';
 

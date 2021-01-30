@@ -4,11 +4,11 @@
 import React, { Component } from 'react'
 import {FieldInput} from "./Fields/FieldInput"
 import {FieldSelect} from "./Fields/FieldSelect"
-import { ThemeProvider,CSSReset } from "@chakra-ui/core";
+import { ChakraProvider,CSSReset } from "@chakra-ui/react";
 import { SimpleGrid,
         Stack,
         Text,
-        } from "@chakra-ui/core";
+        } from "@chakra-ui/react";
 import { isLength } from '@formiz/validations'
 
 
@@ -17,8 +17,8 @@ export const GeneralInfo = (props) => {
     const { policyData } = props;
 
     return(
-        <ThemeProvider>
-            <CSSReset />
+        <ChakraProvider>
+
 
             <Stack spacing={10}>
                 <Text fontSize="3xl">General Information</Text>
@@ -74,7 +74,7 @@ export const GeneralInfo = (props) => {
                 />
 
             </SimpleGrid>
-        </ThemeProvider>
+        </ChakraProvider>
     )
 
 

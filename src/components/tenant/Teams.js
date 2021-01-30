@@ -14,10 +14,10 @@ import {
     useForm,
 } from '@formiz/core'
 import {
-    ThemeProvider,CSSReset,SimpleGrid,Text,Stack,Button, Flex,Box,IconButton,
+    ChakraProvider,CSSReset,SimpleGrid,Text,Stack,Button, Flex,Box,IconButton,
     Divider,Input,
     Icon,
-} from "@chakra-ui/core";
+} from "@chakra-ui/react";
 import {AddPlaceholder} from "../AddPlaceholder"
 
 import { v4 as uuidv4 } from 'uuid'
@@ -58,8 +58,8 @@ export const Teams = (props) =>{
 
 
     return(
-        <ThemeProvider>
-            <CSSReset />
+        <ChakraProvider>
+
 
             <Formiz>
                 <Stack spacing={10}>
@@ -84,7 +84,7 @@ export const Teams = (props) =>{
 
                 )}
             </Formiz>
-        </ThemeProvider>
+        </ChakraProvider>
     )
 }
 

@@ -10,7 +10,7 @@ import { Box, Heading, Flex , MenuButton,Menu,
     Radio,
     Link,
     Icon,
-    } from "@chakra-ui/core";
+    } from "@chakra-ui/react";
 import {
     Formiz,
     useForm,
@@ -29,7 +29,7 @@ import {
     InputLeftElement,
     Input,
     useToast,
-} from "@chakra-ui/core"
+} from "@chakra-ui/react"
 import {formatCurrency} from "../common/utils";
 import axios from 'axios';
 import {FieldSelect} from "../Fields/FieldSelect"

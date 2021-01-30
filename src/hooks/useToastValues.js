@@ -3,7 +3,7 @@
  */
 
 import React from 'react';
-import { Box, useToast } from '@chakra-ui/core';
+import { Box, useToast } from '@chakra-ui/react';
 
 export const useToastValues = () => {
     const toast = useToast();

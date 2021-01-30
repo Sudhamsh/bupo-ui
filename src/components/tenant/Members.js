@@ -18,7 +18,7 @@ import {
     useForm,
 } from '@formiz/core'
 import {
-    ThemeProvider,CSSReset,SimpleGrid,Text,Stack,Button, Flex,Box,IconButton,
+    ChakraProvider,CSSReset,SimpleGrid,Text,Stack,Button, Flex,Box,IconButton,
     Divider,Input,
     Icon,Grid,useDisclosure,
     Modal,
@@ -29,7 +29,7 @@ import {
     ModalBody,
     ModalCloseButton,
     useToast,
-} from "@chakra-ui/core";
+} from "@chakra-ui/react";
 
 import {AddPlaceholder} from "../AddPlaceholder"
 import User from "../User"

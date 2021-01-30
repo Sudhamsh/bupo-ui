@@ -6,11 +6,13 @@ import {Tags} from "./Tags"
 import {Notes} from "./Notes"
 import {Docs} from "./Docs"
 import {WorkFlow} from "./WorkFlow"
-import {AiOutlineLock} from "react-icons/ai"
+import {AiOutlineShareAlt} from "react-icons/ai"
 import { Tabs, TabList, TabPanels, Tab, TabPanel,Box,Badge,Icon,Popover,
-    } from "@chakra-ui/core";
-import {getWithExpiry} from '../common/utils'
+    } from "@chakra-ui/react";
+import {getWithExpiry,isUserLoggedIn} from '../common/utils'
 import {Summary} from './Summary'
+import {EmailShareButton,FacebookShareButton,FacebookIcon,EmailIcon,
+    WhatsappShareButton,WhatsappIcon} from 'react-share'
 
 export const PropertyDetails = (props) =>{
 
@@ -22,6 +24,28 @@ export const PropertyDetails = (props) =>{
 
     return(
         <>
+        {/*<Icon as={AiOutlineShareAlt}/>*/}
+        <FacebookShareButton
+            url="http://www.reit.com"
+            quote="Title"
+        >
+            <FacebookIcon size={32} round />
+        </FacebookShareButton>
+        <EmailShareButton
+            url="http://www.reit.com"
+            subject="subject"
+            body="body"
+
+        >
+            <EmailIcon size={32} round />
+        </EmailShareButton>
+        <WhatsappShareButton
+            url="http://www.reit.com"
+            title="title"
+            separator=":: "
+        >
+            <WhatsappIcon size={32} round />
+        </WhatsappShareButton>
         <Tabs variant="enclosed" isLazy defaultIndex={3}>
             <TabList>
                 <Tab>Summary</Tab>
@@ -33,13 +57,23 @@ export const PropertyDetails = (props) =>{
 
             <TabPanels>
                 <TabPanel>
-                    <Summary propId={propId}/>
+                    {isUserLoggedIn() ?
+                        <Summary propId={propId}/>:
+                        <>
+                            <Icon name="lock" color="red.500"/><Badge variantColor="red">Login required!!!</Badge>
+                        </>
+                    }
                 </TabPanel>
                 <TabPanel>
-                    <Tags propId={propId}/>
+                    {isUserLoggedIn() ?
+                        <Tags propId={propId}/> :
+                        <>
+                            <Icon name="lock" color="red.500"/><Badge variantColor="red">Login required!!!</Badge>
+                        </>
+                    }
                 </TabPanel>
                 <TabPanel>
-                    {getWithExpiry("userDisplayName") ?
+                    {isUserLoggedIn() ?
                         <Notes propId={propId} /> :
                         <>
                             <Icon name="lock" color="red.500"/><Badge variantColor="red">Login required!!!</Badge>
@@ -47,10 +81,20 @@ export const PropertyDetails = (props) =>{
                     }
                 </TabPanel>
                 <TabPanel>
-                    <Docs propId={propId} listNoi={listNoi} listCap={listCap} askingPrice={askingPrice}/>
+                    {isUserLoggedIn() ?
+                    <Docs propId={propId} listNoi={listNoi} listCap={listCap} askingPrice={askingPrice}/> :
+                        <>
+                        <Icon name="lock" color="red.500"/><Badge variantColor="red">Login required!!!</Badge>
+                        </>
+                    }
                 </TabPanel>
                 <TabPanel>
-                    <WorkFlow propId={propId}/>
+                    {isUserLoggedIn() ?
+                    <WorkFlow propId={propId}/> :
+                        <>
+                        <Icon name="lock" color="red.500"/><Badge variantColor="red">Login required!!!</Badge>
+                        </>
+                    }
                 </TabPanel>
             </TabPanels>
         </Tabs>

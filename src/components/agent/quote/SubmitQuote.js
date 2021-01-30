@@ -4,7 +4,7 @@
 
 import React, { Component,useState, useEffect, } from 'react'
 import {
-    ThemeProvider,CSSReset,SimpleGrid,Text,Stack,Button, Flex,Box,IconButton,
+    ChakraProvider,CSSReset,SimpleGrid,Text,Stack,Button, Flex,Box,IconButton,
     Divider,
     Accordion,
     AccordionItem,
@@ -15,7 +15,7 @@ import {
     Tabs, TabList, TabPanels, Tab, TabPanel,
     Heading,
     Grid,
-} from "@chakra-ui/core";
+} from "@chakra-ui/react";
 import {
     Formiz,
 } from '@formiz/core'
@@ -24,7 +24,7 @@ import {FieldInput} from "../../Fields/FieldInput"
 import {FieldSelect} from "../../Fields/FieldSelect"
 import AutoCoveragePremium from "../../auto/AutoCoveragePremium"
 import {AddPlaceholder} from "../../AddPlaceholder"
-import { useToast } from "@chakra-ui/core";
+import { useToast } from "@chakra-ui/react";
 
 const defaultQuotes = [
     {
@@ -104,8 +104,8 @@ export const SubmitQuote = (props) =>{
         }
     },[policyDetails])
     return(
-        <ThemeProvider>
-            <CSSReset />
+        <ChakraProvider>
+
 
 
             <Heading as="h1" size="xl">Provide Quote</Heading>
@@ -244,7 +244,7 @@ export const SubmitQuote = (props) =>{
             </Box>
 
 
-        </ThemeProvider>
+        </ChakraProvider>
     )
 }
 

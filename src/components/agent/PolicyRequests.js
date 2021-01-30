@@ -4,7 +4,7 @@
 
 import React, { Component,useState, useEffect, } from 'react'
 import {
-    ThemeProvider,CSSReset,SimpleGrid,Text,Stack,Button, Flex,Box,IconButton,
+    ChakraProvider,CSSReset,SimpleGrid,Text,Stack,Button, Flex,Box,IconButton,
     Divider,
     Accordion,
     AccordionItem,
@@ -16,7 +16,7 @@ import {
     Heading,
     Grid,
     Link,
-} from "@chakra-ui/core";
+} from "@chakra-ui/react";
 import { Link as ReachLink } from "@reach/router"
 import {
     Formiz,
@@ -58,8 +58,8 @@ export  const PolicyRequests = (props) =>{
     })
 
     return(
-        <ThemeProvider>
-            <CSSReset />
+        <ChakraProvider>
+
             Policy Requests
             <SimpleGrid columns={3} spacing={10} border="1px">
                 <Text>Request #</Text>
@@ -81,7 +81,7 @@ export  const PolicyRequests = (props) =>{
                 </>
             ))}
             </SimpleGrid>
-        </ThemeProvider>
+        </ChakraProvider>
     )
 
 }

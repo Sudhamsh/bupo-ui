@@ -2,17 +2,17 @@
  * Created by sudhamshbachu on 1/1/21.
  */
 import React, { Component,useState, useEffect,useRef, } from 'react'
-import { ThemeProvider,CSSReset,SimpleGrid,Text,Stack,Button,Box,useToast } from "@chakra-ui/core";
+import { ChakraProvider,CSSReset,SimpleGrid,Text,Stack,Button,Box,useToast } from "@chakra-ui/react";
 
 import BootstrapTable from 'react-bootstrap-table-next';
 import filterFactory, { numberFilter,selectFilter } from 'react-bootstrap-table2-filter';
 import { MdBuild , MdCall } from "react-icons/md"
-import { IconButton,SearchIcon } from "@chakra-ui/core"
+import { IconButton,SearchIcon } from "@chakra-ui/react"
 import { AiOutlineStar,AiFillStar,AiOutlineProfile } from "react-icons/ai";
 
 import PropertyDetails from "./PropertyDetails";
 import Notes from "./Notes"
-import { Link,Icon,Flex,FormLabel,Switch } from "@chakra-ui/core";
+import { Link,Icon,Flex,FormLabel,Switch } from "@chakra-ui/react";
 import {formatCurrency,formatNumber} from "../common/utils";
 import axios from 'axios'
 import cellEditFactory, { Type } from 'react-bootstrap-table2-editor';
@@ -332,8 +332,8 @@ export const Properties = (props) =>{
         )
     }else{
         return (
-            <ThemeProvider>
-                <CSSReset />
+            <ChakraProvider>
+
                 <Flex justify="left" align="right">
                     <FormLabel htmlFor="advance-filters">Advance Filters</FormLabel>
                     <Switch id="advance-filters" onChange={toggleFilter}/>
@@ -349,7 +349,7 @@ export const Properties = (props) =>{
                     cellEdit={ cellEditFactory({ mode: 'click', blurToSave: true }) }
 
                 />
-            </ThemeProvider>
+            </ChakraProvider>
         )
     }
 }

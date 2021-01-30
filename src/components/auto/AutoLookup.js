@@ -3,13 +3,13 @@
  */
 import React, { Component,useState, useEffect, } from 'react'
 import {
-    ThemeProvider,CSSReset,SimpleGrid,Text,Stack,Button, Flex,Box,IconButton,
+    ChakraProvider,CSSReset,SimpleGrid,Text,Stack,Button, Flex,Box,IconButton,
     Divider,Grid,
-} from "@chakra-ui/core";
+} from "@chakra-ui/react";
 import {  useForm,Formiz, } from '@formiz/core';
 import {FieldInput} from "../Fields/FieldInput"
 import Auto from "../auto"
-import {  useToast } from '@chakra-ui/core';
+import {  useToast } from '@chakra-ui/react';
 import { useHistory } from "react-router-dom";
 import {setWithExpiry} from '../../utils'
 
@@ -62,8 +62,8 @@ export const AutoLookup = () =>{
     }
     if(showSearch) {
         return (
-            <ThemeProvider>
-                <CSSReset />
+            <ChakraProvider>
+
 
                 <Formiz connect={myForm} onValidSubmit={handleSubmit}>
                     <Stack spacing={10}>
@@ -111,7 +111,7 @@ export const AutoLookup = () =>{
                         </Grid>
                     </form>
                 </Formiz>
-            </ThemeProvider>
+            </ChakraProvider>
         )
     }else{
         return <Auto policyData={policyData}/>

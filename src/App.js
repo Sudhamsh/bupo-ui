@@ -14,10 +14,15 @@ import ViewQuotes from './components/auto/ViewQuotes'
 import Properties from './components/reit/properties'
 import CreateTenant from './components/tenant/CreateTenant'
 import OrgMgmt from './components/tenant/OrgMgmt'
+import HowItWorks from './components/reit/HowItWorks'
+import Investments from './components/reit/Investments'
+import FAQs from './components/reit/FAQs'
+import AboutUs from './components/reit/AboutUs'
+import ContactUs from './components/reit/ContactUs'
 
 import {
-    ThemeProvider,CSSReset,Box,Stack,Text,Button,Flex,
-} from "@chakra-ui/core";
+    ChakraProvider,CSSReset,Box,Stack,Text,Button,Flex,
+} from "@chakra-ui/react";
 
 import {
     Container,
@@ -53,8 +58,8 @@ export const App = () =>{
     }
 
     return (
-        <ThemeProvider>
-            <CSSReset />
+        <ChakraProvider>
+
             <Header/>
             <Container>
 
@@ -81,7 +86,11 @@ export const App = () =>{
                         <Route exact path="/properties" component={Properties}/>
                         <Route exact path="/createTenant" component={CreateTenant}/>
                         <Route exact path="/OrgMgmt" component={OrgMgmt}/>
-
+                        <Route exact path="/HowItWorks" component={HowItWorks}/>
+                        <Route exact path="/Investments" component={Investments}/>
+                        <Route exact path="/FAQs" component={FAQs}/>
+                        <Route exact path="/ContactUs" component={ContactUs}/>
+                        <Route exact path="/AboutUs" component={AboutUs}/>
                     </Router>
                 </Container>
                 <br/>
@@ -103,7 +112,7 @@ export const App = () =>{
                 <hr/>
                 <span>Footer</span>
             </Container>
-        </ThemeProvider>
+        </ChakraProvider>
 
     )
 }
