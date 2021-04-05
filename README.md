@@ -1,5 +1,8 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+
+Note: Pet UI project to capture auto insurance needs and Property comparision dashboard. Needs API application to function.
+
 ## Available Scripts
 
 In the project directory, you can run:
