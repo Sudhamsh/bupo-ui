@@ -2,52 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="245b6ed8-a596-43ea-a44d-804935745976" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/components/common/ToastUtil.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/components/reit/AboutUs.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/components/reit/ContactUs.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/components/reit/FAQs.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/components/reit/HowItWorks.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/components/reit/Investments.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/iconfinder_negotiation_3827980.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/machine-learning.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/returns.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/teamwork.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/machineLearning.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/components/reit/FinInfo.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package-lock.json" afterPath="$PROJECT_DIR$/package-lock.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/App.js" afterPath="$PROJECT_DIR$/src/App.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/AddPlaceholder.js" afterPath="$PROJECT_DIR$/src/components/AddPlaceholder.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/Fields/FieldAutoComplete.js" afterPath="$PROJECT_DIR$/src/components/Fields/FieldAutoComplete.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/Fields/FieldInput.js" afterPath="$PROJECT_DIR$/src/components/Fields/FieldInput.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/Fields/FieldRadio.js" afterPath="$PROJECT_DIR$/src/components/Fields/FieldRadio.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/Fields/FieldSelect.js" afterPath="$PROJECT_DIR$/src/components/Fields/FieldSelect.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/FormGroup.js" afterPath="$PROJECT_DIR$/src/components/FormGroup.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/Header.js" afterPath="$PROJECT_DIR$/src/components/Header.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/Home.js" afterPath="$PROJECT_DIR$/src/components/Home.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/Login.js" afterPath="$PROJECT_DIR$/src/components/Login.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/PolicyRequest.js" afterPath="$PROJECT_DIR$/src/components/PolicyRequest.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/User.js" afterPath="$PROJECT_DIR$/src/components/User.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/agent/PolicyRequests.js" afterPath="$PROJECT_DIR$/src/components/agent/PolicyRequests.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/agent/quote/SubmitQuote.js" afterPath="$PROJECT_DIR$/src/components/agent/quote/SubmitQuote.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/auto.js" afterPath="$PROJECT_DIR$/src/components/auto.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/auto/AutoCoveragePremium.js" afterPath="$PROJECT_DIR$/src/components/auto/AutoCoveragePremium.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/auto/AutoLookup.js" afterPath="$PROJECT_DIR$/src/components/auto/AutoLookup.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/auto/ViewQuotes.js" afterPath="$PROJECT_DIR$/src/components/auto/ViewQuotes.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/auto/autoCoverage.js" afterPath="$PROJECT_DIR$/src/components/auto/autoCoverage.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/auto/driver.js" afterPath="$PROJECT_DIR$/src/components/auto/driver.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/auto/infoOptions.js" afterPath="$PROJECT_DIR$/src/components/auto/infoOptions.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/auto/vehicle.js" afterPath="$PROJECT_DIR$/src/components/auto/vehicle.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/common/utils.js" afterPath="$PROJECT_DIR$/src/components/common/utils.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/generalInfo.js" afterPath="$PROJECT_DIR$/src/components/generalInfo.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/reit/Docs.js" afterPath="$PROJECT_DIR$/src/components/reit/Docs.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/reit/Notes.js" afterPath="$PROJECT_DIR$/src/components/reit/Notes.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/auto/address.js" afterPath="$PROJECT_DIR$/src/components/auto/address.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/reit/HowItWorks.js" afterPath="$PROJECT_DIR$/src/components/reit/HowItWorks.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/reit/PropertyDetails.js" afterPath="$PROJECT_DIR$/src/components/reit/PropertyDetails.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/reit/Summary.js" afterPath="$PROJECT_DIR$/src/components/reit/Summary.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/reit/Tags.js" afterPath="$PROJECT_DIR$/src/components/reit/Tags.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/reit/WorkFlow.js" afterPath="$PROJECT_DIR$/src/components/reit/WorkFlow.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/reit/properties.js" afterPath="$PROJECT_DIR$/src/components/reit/properties.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/tenant/CreateTenant.js" afterPath="$PROJECT_DIR$/src/components/tenant/CreateTenant.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/tenant/Department.js" afterPath="$PROJECT_DIR$/src/components/tenant/Department.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/tenant/Members.js" afterPath="$PROJECT_DIR$/src/components/tenant/Members.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/tenant/OrgMgmt.js" afterPath="$PROJECT_DIR$/src/components/tenant/OrgMgmt.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/tenant/Teams.js" afterPath="$PROJECT_DIR$/src/components/tenant/Teams.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/hooks/useToastValues.js" afterPath="$PROJECT_DIR$/src/hooks/useToastValues.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -62,11 +31,11 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Notes.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/reit/Notes.js">
+      <file leaf-file-name="FinInfo.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/components/reit/FinInfo.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="172">
-              <caret line="158" column="4" lean-forward="true" selection-start-line="158" selection-start-column="4" selection-end-line="159" selection-end-column="10" />
+            <state relative-caret-position="1440">
+              <caret line="120" column="30" lean-forward="false" selection-start-line="120" selection-start-column="30" selection-end-line="120" selection-end-column="30" />
               <folding>
                 <element signature="e#48#109#0" expanded="true" />
               </folding>
@@ -74,88 +43,74 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="FieldInput.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/components/Fields/FieldInput.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="855">
+              <caret line="63" column="54" lean-forward="false" selection-start-line="63" selection-start-column="42" selection-end-line="63" selection-end-column="54" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="properties.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/reit/properties.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="8" column="44" lean-forward="false" selection-start-line="8" selection-start-column="40" selection-end-line="8" selection-end-column="44" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Header.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/Header.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="158">
-              <caret line="152" column="69" lean-forward="false" selection-start-line="152" selection-start-column="60" selection-end-line="152" selection-end-column="69" />
+            <state relative-caret-position="416">
+              <caret line="214" column="11" lean-forward="true" selection-start-line="214" selection-start-column="11" selection-end-line="214" selection-end-column="11" />
               <folding>
-                <element signature="e#0#26#0" expanded="true" />
+                <element signature="e#47#115#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="App.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="package.json" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/package.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="428">
+              <caret line="65" column="23" lean-forward="true" selection-start-line="65" selection-start-column="23" selection-end-line="65" selection-end-column="23" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/index.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="5" column="46" lean-forward="false" selection-start-line="5" selection-start-column="46" selection-end-line="5" selection-end-column="46" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="App.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/App.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="191">
-              <caret line="91" column="53" lean-forward="false" selection-start-line="91" selection-start-column="53" selection-end-line="91" selection-end-column="53" />
-              <folding>
-                <element signature="e#0#26#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="HowItWorks.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/reit/HowItWorks.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="215">
-              <caret line="23" column="13" lean-forward="false" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="13" />
+            <state relative-caret-position="240">
+              <caret line="62" column="15" lean-forward="true" selection-start-line="62" selection-start-column="15" selection-end-line="62" selection-end-column="15" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AboutUs.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/reit/AboutUs.js">
+      <file leaf-file-name="Header.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/components/Header.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="33" column="24" lean-forward="false" selection-start-line="33" selection-start-column="24" selection-end-line="33" selection-end-column="24" />
+            <state relative-caret-position="541">
+              <caret line="180" column="19" lean-forward="false" selection-start-line="180" selection-start-column="19" selection-end-line="180" selection-end-column="19" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ContactUs.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/reit/ContactUs.js">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="41" column="24" lean-forward="false" selection-start-line="41" selection-start-column="24" selection-end-line="41" selection-end-column="24" />
+            <state relative-caret-position="45">
+              <caret line="3" column="28" lean-forward="true" selection-start-line="3" selection-start-column="28" selection-end-line="3" selection-end-column="28" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="FAQs.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/reit/FAQs.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="33" column="19" lean-forward="false" selection-start-line="33" selection-start-column="19" selection-end-line="33" selection-end-column="19" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Investments.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/reit/Investments.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="335">
-              <caret line="31" column="7" lean-forward="true" selection-start-line="31" selection-start-column="7" selection-end-line="35" selection-end-column="20" />
-              <folding>
-                <element signature="e#49#110#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -163,11 +118,19 @@
       <file leaf-file-name="Home.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/Home.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-490">
-              <caret line="64" column="20" lean-forward="false" selection-start-line="64" selection-start-column="20" selection-end-line="64" selection-end-column="20" />
-              <folding>
-                <element signature="e#47#73#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="-346">
+              <caret line="26" column="13" lean-forward="false" selection-start-line="26" selection-start-column="13" selection-end-line="26" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/server/index.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="315">
+              <caret line="21" column="60" lean-forward="false" selection-start-line="21" selection-start-column="60" selection-end-line="21" selection-end-column="60" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -183,22 +146,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>addite</find>
-      <find>delete</find>
-      <find>setuser</find>
-      <find>localStore</find>
-      <find>axios.ge</find>
-      <find>notes</find>
-      <find>fetc</find>
-      <find>select</find>
-      <find>row</find>
-      <find>createUser</find>
-      <find>setWithExpiry</find>
-      <find>statusOptions</find>
-      <find>fetch</find>
-      <find>chakra</find>
-      <find>&lt;CSSReset /&gt;</find>
-      <find>@chakra-ui/core</find>
       <find>@emotion/core</find>
       <find>ThemeProvider</find>
       <find>emotion-theming</find>
@@ -207,12 +154,28 @@
       <find>@emotion</find>
       <find>boots</find>
       <find>icon</find>
-      <find>h</find>
       <find>history</find>
       <find>statusChange</find>
       <find>logout</find>
       <find>AboutUs</find>
       <find>ContactUs</find>
+      <find>formi</find>
+      <find>defa</find>
+      <find>SimpleGrid</find>
+      <find>default</find>
+      <find>cap</find>
+      <find>dev</find>
+      <find>ma</find>
+      <find>machine le</find>
+      <find>A</find>
+      <find>Admin</find>
+      <find>h</find>
+      <find>header</find>
+      <find>{header</find>
+      <find>{eader</find>
+      <find>{Header</find>
+      <find>Header</find>
+      <find>process</find>
     </findStrings>
     <replaceStrings>
       <replace>quotes[</replace>
@@ -229,8 +192,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/components/Fields/FieldSelect.js" />
-        <option value="$PROJECT_DIR$/src/utils.js" />
         <option value="$PROJECT_DIR$/src/components/generalInfo.js" />
         <option value="$PROJECT_DIR$/src/components/hooks/useToastValues.js" />
         <option value="$PROJECT_DIR$/src/components/Fields/FieldAutoComplete.js" />
@@ -241,7 +202,6 @@
         <option value="$PROJECT_DIR$/src/components/auto/autoCoveragePremium.js" />
         <option value="$PROJECT_DIR$/src/components/agent/PolicyRequests.js" />
         <option value="$PROJECT_DIR$/src/components/auto/autoCoverage.js" />
-        <option value="$PROJECT_DIR$/src/components/Fields/FieldInput.js" />
         <option value="$PROJECT_DIR$/src/components/auto/AutoCoveragePremium.js" />
         <option value="$PROJECT_DIR$/src/components/auto/AutoLookup.js" />
         <option value="$PROJECT_DIR$/src/MaterialTableTest.js" />
@@ -269,17 +229,20 @@
         <option value="$PROJECT_DIR$/src/components/common/utils.js" />
         <option value="$PROJECT_DIR$/src/components/reit/Summary.js" />
         <option value="$PROJECT_DIR$/package.json" />
-        <option value="$PROJECT_DIR$/src/components/reit/PropertyDetails.js" />
-        <option value="$PROJECT_DIR$/src/components/reit/properties.js" />
-        <option value="$PROJECT_DIR$/src/components/Home.js" />
         <option value="$PROJECT_DIR$/src/components/reit/Investments.js" />
-        <option value="$PROJECT_DIR$/src/components/reit/HowItWorks.js" />
-        <option value="$PROJECT_DIR$/src/components/reit/FAQs.js" />
         <option value="$PROJECT_DIR$/src/components/reit/AboutUs.js" />
         <option value="$PROJECT_DIR$/src/components/reit/ContacUs.js" />
-        <option value="$PROJECT_DIR$/src/components/Header.js" />
         <option value="$PROJECT_DIR$/src/components/reit/ContactUs.js" />
+        <option value="$PROJECT_DIR$/src/components/reit/HowItWorks.js" />
+        <option value="$PROJECT_DIR$/src/components/reit/FAQs.js" />
+        <option value="$PROJECT_DIR$/src/components/auto/address.js" />
+        <option value="$PROJECT_DIR$/src/components/reit/PropertyDetails.js" />
+        <option value="$PROJECT_DIR$/src/components/Fields/FieldInput.js" />
+        <option value="$PROJECT_DIR$/src/components/reit/FinInfo.js" />
+        <option value="$PROJECT_DIR$/src/components/reit/properties.js" />
         <option value="$PROJECT_DIR$/src/App.js" />
+        <option value="$PROJECT_DIR$/src/components/Home.js" />
+        <option value="$PROJECT_DIR$/src/components/Header.js" />
       </list>
     </option>
   </component>
@@ -301,8 +264,8 @@
     <handled-path value="$PROJECT_DIR$/node_modules" />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="172" />
-    <option name="y" value="52" />
+    <option name="x" value="198" />
+    <option name="y" value="28" />
     <option name="width" value="1400" />
     <option name="height" value="933" />
   </component>
@@ -360,90 +323,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="components" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bupo-ui" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bupo-ui" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="components" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="reit" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bupo-ui" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bupo-ui" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="components" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="common" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bupo-ui" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bupo-ui" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="components" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="auto" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bupo-ui" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bupo-ui" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="server" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -464,8 +343,8 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -480,11 +359,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/public/images" />
       <recent name="$PROJECT_DIR$/src/components/reit" />
       <recent name="$PROJECT_DIR$/src/components/Fields" />
       <recent name="$PROJECT_DIR$/src/components/tenant" />
       <recent name="$PROJECT_DIR$/src/components/auto" />
-      <recent name="$PROJECT_DIR$/public/images" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/components/tenant" />
@@ -616,18 +495,21 @@
       <workItem from="1605651473816" duration="10000" />
       <workItem from="1609557749123" duration="17766000" />
       <workItem from="1609977395576" duration="285000" />
-      <workItem from="1609978206406" duration="106891000" />
+      <workItem from="1609978206406" duration="122809000" />
+      <workItem from="1612799769171" duration="969000" />
+      <workItem from="1615328379226" duration="12000" />
+      <workItem from="1615333019061" duration="4000" />
+      <workItem from="1626825069161" duration="727000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="363368000" />
+    <option name="totallyTimeSpent" value="380998000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="172" y="52" width="1400" height="933" extended-state="0" />
+    <frame x="198" y="28" width="1400" height="933" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="TypeScript" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2262509" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -643,6 +525,7 @@
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="TypeScript" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
@@ -682,7 +565,6 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/components/Header.js</url>
-          <properties />
           <option name="timeStamp" value="1" />
         </line-breakpoint>
       </breakpoints>
@@ -691,30 +573,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/components/agent/quote/SubmitQuote.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="540">
-          <caret line="60" column="5" lean-forward="false" selection-start-line="48" selection-start-column="4" selection-end-line="60" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/auto/ViewQuotes.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="912">
-          <caret line="79" column="42" lean-forward="false" selection-start-line="79" selection-start-column="42" selection-end-line="79" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/tenant/Department.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="2" column="3" lean-forward="true" selection-start-line="2" selection-start-column="3" selection-end-line="14" selection-end-column="0" />
-          <folding>
-            <element signature="e#47#115#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/agent/PolicyRequests.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="510">
@@ -740,17 +598,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="195">
           <caret line="17" column="18" lean-forward="false" selection-start-line="17" selection-start-column="18" selection-end-line="17" selection-end-column="18" />
-          <folding>
-            <element signature="e#47#94#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="21" column="60" lean-forward="false" selection-start-line="21" selection-start-column="60" selection-end-line="21" selection-end-column="60" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -758,31 +605,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-423">
           <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="5" selection-end-column="21" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/@chakra-ui/core/dist/useDisclosure/index.d.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="17" lean-forward="false" selection-start-line="11" selection-start-column="17" selection-end-line="11" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/auto/address.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="20" column="63" lean-forward="false" selection-start-line="20" selection-start-column="63" selection-end-line="20" selection-end-column="63" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/@chakra-ui/core/dist/useDisclosure/index.d.ts" />
     <entry file="file://$PROJECT_DIR$/src/components/auto/autoCoverage.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1045">
           <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="7" selection-end-column="49" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -790,57 +620,15 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="26">
           <caret line="16" column="28" lean-forward="false" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="28" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/@chakra-ui/core/dist/Tag/index.d.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="242">
-          <caret line="22" column="23" lean-forward="true" selection-start-line="22" selection-start-column="23" selection-end-line="22" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/utils.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="19" column="45" lean-forward="true" selection-start-line="19" selection-start-column="45" selection-end-line="19" selection-end-column="45" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/@chakra-ui/core/dist/Modal/index.d.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="212">
-          <caret line="117" column="13" lean-forward="false" selection-start-line="117" selection-start-column="13" selection-end-line="117" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/tenant/CreateTenant.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1">
-          <caret line="2" column="3" lean-forward="false" selection-start-line="2" selection-start-column="3" selection-end-line="11" selection-end-column="45" />
-          <folding>
-            <element signature="e#47#115#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Fields/FieldAutoComplete.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="33" column="11" lean-forward="true" selection-start-line="33" selection-start-column="11" selection-end-line="33" selection-end-column="11" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/@chakra-ui/core/dist/Tag/index.d.ts" />
+    <entry file="file://$PROJECT_DIR$/node_modules/@chakra-ui/core/dist/Modal/index.d.ts" />
     <entry file="file://$PROJECT_DIR$/src/components/auto/vehicle.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="248">
           <caret line="145" column="58" lean-forward="true" selection-start-line="138" selection-start-column="36" selection-end-line="145" selection-end-column="58" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -848,11 +636,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="380">
           <caret line="47" column="0" lean-forward="true" selection-start-line="44" selection-start-column="4" selection-end-line="47" selection-end-column="0" />
-          <folding>
-            <element signature="e#47#93#0" expanded="false" />
-            <element signature="e#94#141#0" expanded="false" />
-            <element signature="e#143#190#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -860,7 +643,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
           <caret line="30" column="32" lean-forward="true" selection-start-line="30" selection-start-column="32" selection-end-line="30" selection-end-column="32" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -868,10 +650,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="755">
           <caret line="63" column="15" lean-forward="false" selection-start-line="22" selection-start-column="8" selection-end-line="63" selection-end-column="15" />
-          <folding>
-            <element signature="n#!!doc" expanded="false" />
-            <element signature="e#48#116#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -879,25 +657,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="377">
           <caret line="212" column="26" lean-forward="false" selection-start-line="199" selection-start-column="24" selection-end-line="212" selection-end-column="26" />
-          <folding>
-            <element signature="e#50#99#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/auto/driver.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="197">
-          <caret line="103" column="78" lean-forward="false" selection-start-line="103" selection-start-column="78" selection-end-line="103" selection-end-column="78" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Fields/FieldInput.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-163">
-          <caret line="36" column="71" lean-forward="false" selection-start-line="36" selection-start-column="71" selection-end-line="36" selection-end-column="71" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -905,9 +664,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="64">
           <caret line="214" column="34" lean-forward="false" selection-start-line="214" selection-start-column="34" selection-end-line="214" selection-end-column="34" />
-          <folding>
-            <element signature="e#49#110#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -915,7 +671,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="551">
           <caret line="4314" column="45" lean-forward="false" selection-start-line="4314" selection-start-column="45" selection-end-line="4314" selection-end-column="45" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -923,9 +678,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
           <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="51" />
-          <folding>
-            <element signature="e#47#98#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -933,15 +685,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-81">
           <caret line="29" column="21" lean-forward="false" selection-start-line="29" selection-start-column="21" selection-end-line="29" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Fields/FieldSelect.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="27" column="0" lean-forward="false" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="37" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -949,9 +692,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="339">
           <caret line="25" column="24" lean-forward="false" selection-start-line="25" selection-start-column="24" selection-end-line="25" selection-end-column="24" />
-          <folding>
-            <element signature="e#48#92#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -959,9 +699,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="265">
           <caret line="117" column="43" lean-forward="false" selection-start-line="117" selection-start-column="28" selection-end-line="117" selection-end-column="43" />
-          <folding>
-            <element signature="e#49#95#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -969,30 +706,188 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-574">
           <caret line="35" column="22" lean-forward="false" selection-start-line="35" selection-start-column="8" selection-end-line="35" selection-end-column="22" />
-          <folding>
-            <element signature="e#48#95#0" expanded="false" />
-            <element signature="e#96#143#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/reit/Tags.js">
+    <entry file="file://$PROJECT_DIR$/node_modules/@chakra-ui/menu/dist/types/menu.d.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1002">
-          <caret line="224" column="11" lean-forward="false" selection-start-line="224" selection-start-column="11" selection-end-line="224" selection-end-column="11" />
-          <folding>
-            <element signature="e#48#95#0" expanded="false" />
-          </folding>
+        <state relative-caret-position="445">
+          <caret line="39" column="71" lean-forward="true" selection-start-line="39" selection-start-column="71" selection-end-line="39" selection-end-column="71" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/auto/AutoLookup.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="479">
+          <caret line="59" column="49" lean-forward="true" selection-start-line="59" selection-start-column="49" selection-end-line="59" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/react-router-dom/cjs/react-router-dom.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="175">
+          <caret line="408" column="31" lean-forward="false" selection-start-line="408" selection-start-column="31" selection-end-line="408" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/reit/Notes.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="172">
+          <caret line="158" column="4" lean-forward="true" selection-start-line="158" selection-start-column="4" selection-end-line="159" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/reit/Investments.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="335">
+          <caret line="31" column="7" lean-forward="true" selection-start-line="31" selection-start-column="7" selection-end-line="35" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/reit/AboutUs.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="33" column="24" lean-forward="false" selection-start-line="33" selection-start-column="24" selection-end-line="33" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/reit/ContactUs.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="41" column="24" lean-forward="false" selection-start-line="41" selection-start-column="24" selection-end-line="41" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/images/machineLearning.svg">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/auto/driver.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="346">
+          <caret line="27" column="0" lean-forward="true" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/auto/address.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="14" column="5" lean-forward="false" selection-start-line="14" selection-start-column="5" selection-end-line="14" selection-end-column="5" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/common/utils.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="104">
+        <state relative-caret-position="285">
           <caret line="21" column="25" lean-forward="false" selection-start-line="21" selection-start-column="11" selection-end-line="21" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/tenant/CreateTenant.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="215">
+          <caret line="97" column="19" lean-forward="false" selection-start-line="97" selection-start-column="19" selection-end-line="102" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/utils.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="19" column="45" lean-forward="false" selection-start-line="19" selection-start-column="45" selection-end-line="19" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/reit/Tags.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2220">
+          <caret line="173" column="0" lean-forward="false" selection-start-line="135" selection-start-column="8" selection-end-line="173" selection-end-column="0" />
           <folding>
-            <element signature="e#0#47#0" expanded="false" />
+            <element signature="e#48#95#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/reit/FAQs.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="40" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/reit/PropertyDetails.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="885">
+          <caret line="73" column="34" lean-forward="false" selection-start-line="73" selection-start-column="34" selection-end-line="73" selection-end-column="34" />
+          <folding>
+            <element signature="e#48#109#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Fields/FieldSelect.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="244">
+          <caret line="29" column="21" lean-forward="true" selection-start-line="29" selection-start-column="21" selection-end-line="29" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Fields/FieldAutoComplete.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="33" column="11" lean-forward="false" selection-start-line="33" selection-start-column="11" selection-end-line="33" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/reit/HowItWorks.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="35" column="13" lean-forward="false" selection-start-line="35" selection-start-column="13" selection-end-line="35" selection-end-column="13" />
+          <folding>
+            <element signature="e#49#110#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Fields/FieldInput.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="855">
+          <caret line="63" column="54" lean-forward="false" selection-start-line="63" selection-start-column="42" selection-end-line="63" selection-end-column="54" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/reit/FinInfo.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1440">
+          <caret line="120" column="30" lean-forward="false" selection-start-line="120" selection-start-column="30" selection-end-line="120" selection-end-column="30" />
+          <folding>
+            <element signature="e#48#109#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/reit/properties.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="416">
+          <caret line="214" column="11" lean-forward="true" selection-start-line="214" selection-start-column="11" selection-end-line="214" selection-end-column="11" />
+          <folding>
+            <element signature="e#47#115#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="428">
+          <caret line="65" column="23" lean-forward="true" selection-start-line="65" selection-start-column="23" selection-end-line="65" selection-end-column="23" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1004,142 +899,43 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
+    <entry file="file://$PROJECT_DIR$/server/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="159">
-          <caret line="28" column="16" lean-forward="false" selection-start-line="28" selection-start-column="11" selection-end-line="28" selection-end-column="16" />
-          <folding>
-            <marker date="1611941119299" expanded="true" signature="82:1509" ph="{&quot;@chakra-ui/button&quot;: &quot;^1.0.2&quot;...}" />
-            <marker date="1611941119299" expanded="true" signature="1524:1875" ph="{&quot;start&quot;: &quot;react-scripts start&quot;...}" />
-            <marker date="1611941119299" expanded="true" signature="1931:1963" ph="{&quot;extends&quot;: &quot;react-app&quot;...}" />
-            <marker date="1611941119299" expanded="true" signature="1983:2192" ph="{...}" />
-            <marker date="1611941119299" expanded="true" signature="2003:2067" ph="[...]" />
-            <marker date="1611941119299" expanded="true" signature="2088:2188" ph="[...]" />
-          </folding>
+        <state relative-caret-position="315">
+          <caret line="21" column="60" lean-forward="false" selection-start-line="21" selection-start-column="60" selection-end-line="21" selection-end-column="60" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/reit/PropertyDetails.js">
+    <entry file="file://$PROJECT_DIR$/public/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="308">
-          <caret line="44" column="27" lean-forward="false" selection-start-line="44" selection-start-column="27" selection-end-line="44" selection-end-column="27" />
-          <folding>
-            <element signature="e#48#109#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/reit/properties.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="8" column="44" lean-forward="false" selection-start-line="8" selection-start-column="40" selection-end-line="8" selection-end-column="44" />
+        <state relative-caret-position="45">
+          <caret line="3" column="28" lean-forward="true" selection-start-line="3" selection-start-column="28" selection-end-line="3" selection-end-column="28" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/Home.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-490">
-          <caret line="64" column="20" lean-forward="false" selection-start-line="64" selection-start-column="20" selection-end-line="64" selection-end-column="20" />
-          <folding>
-            <element signature="e#47#73#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/@chakra-ui/menu/dist/types/menu.d.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="445">
-          <caret line="39" column="71" lean-forward="true" selection-start-line="39" selection-start-column="71" selection-end-line="39" selection-end-column="71" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/auto/AutoLookup.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="479">
-          <caret line="59" column="49" lean-forward="true" selection-start-line="59" selection-start-column="49" selection-end-line="59" selection-end-column="49" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/react-router-dom/cjs/react-router-dom.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="175">
-          <caret line="408" column="31" lean-forward="false" selection-start-line="408" selection-start-column="31" selection-end-line="408" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/reit/Notes.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="172">
-          <caret line="158" column="4" lean-forward="true" selection-start-line="158" selection-start-column="4" selection-end-line="159" selection-end-column="10" />
-          <folding>
-            <element signature="e#48#109#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/reit/Investments.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="335">
-          <caret line="31" column="7" lean-forward="true" selection-start-line="31" selection-start-column="7" selection-end-line="35" selection-end-column="20" />
-          <folding>
-            <element signature="e#49#110#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/reit/HowItWorks.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="215">
-          <caret line="23" column="13" lean-forward="false" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/reit/FAQs.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="33" column="19" lean-forward="false" selection-start-line="33" selection-start-column="19" selection-end-line="33" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/reit/AboutUs.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="33" column="24" lean-forward="false" selection-start-line="33" selection-start-column="24" selection-end-line="33" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Header.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="158">
-          <caret line="152" column="69" lean-forward="false" selection-start-line="152" selection-start-column="60" selection-end-line="152" selection-end-column="69" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/reit/ContactUs.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="41" column="24" lean-forward="false" selection-start-line="41" selection-start-column="24" selection-end-line="41" selection-end-column="24" />
+        <state relative-caret-position="-346">
+          <caret line="26" column="13" lean-forward="false" selection-start-line="26" selection-start-column="13" selection-end-line="26" selection-end-column="13" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/App.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="191">
-          <caret line="91" column="53" lean-forward="false" selection-start-line="91" selection-start-column="53" selection-end-line="91" selection-end-column="53" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="240">
+          <caret line="62" column="15" lean-forward="true" selection-start-line="62" selection-start-column="15" selection-end-line="62" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Header.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="541">
+          <caret line="180" column="19" lean-forward="false" selection-start-line="180" selection-start-column="19" selection-end-line="180" selection-end-column="19" />
+          <folding />
         </state>
       </provider>
     </entry>

@@ -135,9 +135,6 @@ const Header = props => {
                 </Menu>
 
                 <Menu >
-                    <MenuButton as={Button} rightIcon={<ChevronDownIcon />} variantColor="black" align="top">
-                        Admin
-                    </MenuButton>
                     <MenuList>
                         <MenuItem minH="48px" as="a" href="/createTenant">Create Tenant</MenuItem>
                         <MenuItem minH="48px" as="a" href="/OrgMgmt">Org Management</MenuItem>
@@ -155,7 +152,7 @@ const Header = props => {
                 </Menu>
 
 
-                {
+               /* {
                     !isLoggedIn &&
                          <Button class="btn btn-outline-primary" onClick={onOpen}>Sign In</Button>
 
@@ -181,7 +178,7 @@ const Header = props => {
                         </PopoverContent>
                     </Popover>
                     </>
-                }
+                }*/
 
                 <Modal isOpen={isOpen} onClose={onClose}>
                     <ModalOverlay />

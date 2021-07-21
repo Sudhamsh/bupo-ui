@@ -13,6 +13,7 @@ import {getWithExpiry,isUserLoggedIn} from '../common/utils'
 import {Summary} from './Summary'
 import {EmailShareButton,FacebookShareButton,FacebookIcon,EmailIcon,
     WhatsappShareButton,WhatsappIcon} from 'react-share'
+import {FinInfo} from './FinInfo'
 
 export const PropertyDetails = (props) =>{
 
@@ -21,6 +22,7 @@ export const PropertyDetails = (props) =>{
     const[listCap, setListCap] = useState(props.listCap);
     const[askingPrice, setAskingPrice] = useState(props.askingPrice);
     const[notesInit, setNotesInit] = useState(false);
+
 
     return(
         <>
@@ -46,9 +48,10 @@ export const PropertyDetails = (props) =>{
         >
             <WhatsappIcon size={32} round />
         </WhatsappShareButton>
-        <Tabs variant="enclosed" isLazy defaultIndex={3}>
+        <Tabs variant="enclosed" isLazy defaultIndex={1}>
             <TabList>
                 <Tab>Summary</Tab>
+                <Tab>FinInfo</Tab>
                 <Tab>Tags</Tab>
                 <Tab>Notes</Tab>
                 <Tab>Docs</Tab>
@@ -56,11 +59,21 @@ export const PropertyDetails = (props) =>{
             </TabList>
 
             <TabPanels>
+
                 <TabPanel>
                     {isUserLoggedIn() ?
                         <Summary propId={propId}/>:
                         <>
                             <Icon name="lock" color="red.500"/><Badge variantColor="red">Login required!!!</Badge>
+                        </>
+                    }
+                </TabPanel>
+                <TabPanel>
+
+                    {isUserLoggedIn() ?
+                        <FinInfo propId={propId}/>:
+                        <>
+                        <Icon name="lock" color="red.500"/><Badge variantColor="red">Login required!!!</Badge>
                         </>
                     }
                 </TabPanel>

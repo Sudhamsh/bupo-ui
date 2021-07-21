@@ -21,19 +21,52 @@ import {
     ModalCloseButton,
     useDisclosure,
     useToast,
-    Container
+    Container,
+    SimpleGrid,
+    Icon,
+    Center,
 } from "@chakra-ui/react";
+import {AiFillPieChart,AiFillBank,AiFillDollarCircle} from 'react-icons/ai';
 import axios from 'axios';
 import BootstrapTable from 'react-bootstrap-table-next';
 
 export const HowItWorks = (props) =>{
     return (
         <>
-        <Container maxW="xl" centerContent>
-            <Box padding="4" bg="gray.100" maxW="3xl">
-                How It Works....
-            </Box>
-        </Container>
+        <Box>
+
+            <SimpleGrid columns={3} spacing={10} height="240px">
+                <Box >
+                    <Center>
+                        Invest
+                    </Center>
+                    <br/>
+                    <Center>
+                        <Icon as={AiFillPieChart} w={20} h={20} color="green.300"/>
+                    </Center>
+                </Box>
+                <Box >
+                    <Center>
+                        Assets Generate Rent
+                    </Center>
+                    <br/>
+                    <Center>
+                        <Icon as={AiFillBank} w={20} h={20} color="blue.300"/>
+                    </Center>
+
+                </Box>
+                <Box >
+                    <Center>
+                        Collect Monthly
+                        Distributions
+                    </Center>
+                    <br/>
+                    <Center>
+                        <Icon as={AiFillDollarCircle} w={20} h={20} color="green.300"/>
+                    </Center>
+                </Box>
+            </SimpleGrid>
+        </Box>
         </>
     );
 }

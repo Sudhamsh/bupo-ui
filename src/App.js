@@ -65,11 +65,9 @@ export const App = () =>{
 
                 <Flex justify="space-between">
                     <Flex  align="flex-end">
-                        <Text fontSize="4xl"> Save money with Privacy Protection.</Text>
+                        <Text fontSize="4xl">Balance Risk And Reward</Text>
                     </Flex>
-                    <Flex  align="center" justify="right">
-                        <Button leftIcon="search" onClick={autoSearch}>Retrieve Existing Quote</Button>
-                    </Flex>
+
                 </Flex>
 
 

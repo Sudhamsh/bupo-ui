@@ -29,12 +29,12 @@ export const FieldInput = (props) => {
         isSubmitted,
         isValidating,
         resetKey,
-        setValue,
         value,
+        setValue,
     } = useField(props);
 
     const {
-        label, type, required, placeholder, helper,parentCallBack,name, ...otherProps
+        defaultValue,label, type, required, placeholder, helper,parentCallBack,name, ...otherProps
     } = props;
 
     const [isTouched, setIsTouched] = useState(false);
@@ -61,7 +61,7 @@ export const FieldInput = (props) => {
                     key={resetKey}
                     type={type || 'text'}
                     id={id}
-                    value={value}
+                    value={defaultValue ? defaultValue : value}
                     onChange={(e) => {setValue(e.target.value); parentCallBack && parentCallBack(name,e.target.value)}}
                     onBlur={() => setIsTouched(true)}
                     aria-invalid={showError}

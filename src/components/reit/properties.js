@@ -189,6 +189,44 @@ export const Properties = (props) =>{
             dataField: 'cap',
             text: 'CAP',
             sort: true,
+        }, {
+            dataField: 'predictedCap',
+            text: 'Predicted CAP',
+            sort: true,
+            formatter: (cellContent, row) => {
+                return (
+                    formatNumber(cellContent,2)
+                );
+            }
+        },{
+            dataField: 'capsList',
+            text: '10 Year Avg. CAP',
+            sort: true,
+            formatter: (cellContent, row) => {
+
+                // Sum of CAP array values
+                const total = cellContent ? cellContent.reduce(function(a, b){
+                    return a + b;
+                }, 0) : 0;
+                return (
+                    formatNumber(total/10,2)
+                );
+            }
+        },{
+            dataField: 'Asset App',
+            text: 'Asset App',
+            sort: true,
+            formatter: (cellContent, row) => {
+
+                // Sum of CAP array values
+                const total = row.capsList ? row.capsList.reduce(function(a, b){
+                    return a + b;
+                }, 0) : 0;
+                const totalApprecition = row.cap - total/10;
+                return (
+                    formatNumber(totalApprecition,2)
+                );
+            }
         },{
             dataField: 'noi',
             text: 'NOI',
@@ -278,6 +316,15 @@ export const Properties = (props) =>{
             text: 'CAP',
             sort: true,
             filter: numberFilter(),
+        },{
+            dataField: 'capsList',
+            text: 'CAP',
+            sort: true,
+            formatter: (cellContent, row) => {
+                return (
+                    cellContent
+                );
+            }
         },{
             dataField: 'noi',
             text: 'NOI',
